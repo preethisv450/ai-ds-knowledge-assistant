@@ -3,7 +3,6 @@ import streamlit as st
 
 st.set_page_config(
     page_title="AI & DS Knowledge Assistant",
-    page_icon="🎓",
     layout="wide"
 )
 
@@ -17,7 +16,8 @@ page = st.sidebar.radio(
         "Home",
         "Module Assistant",
         "Regulation Chatbot",
-        "Knowledge Network"
+        "Knowledge Network",
+        "Timetable"
     ]
 )
 
@@ -56,3 +56,7 @@ elif page == "Regulation Chatbot":
 elif page == "Knowledge Network":
     from src.ui.pages.knowledge_network import show_knowledge_network
     show_knowledge_network()
+
+elif page == "Timetable":
+    from src.ui.pages.timetable import show_timetable
+    show_timetable()
