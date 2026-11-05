@@ -9,3 +9,4 @@ env/
 data/vector_store/
 data/processed/chunks/
 *.ipynb_checkpoints
+docs/wireframes/wireframes_all.png

@@ -1,5 +1,6 @@
 
 import streamlit as st
+from src.ui.sidebar import render_sidebar
 
 st.set_page_config(
     page_title="AI & DS Knowledge Assistant",
@@ -20,6 +21,7 @@ page = st.sidebar.radio(
         "Timetable"
     ]
 )
+selection = render_sidebar()
 
 if page == "Home":
     st.header("Welcome!")

@@ -5,9 +5,13 @@ def show_module_assistant():
 
     st.title("📚 Module Assistant")
 
-    st.write(
-        "Explore subjects and modules with summaries, "
-        "questions and quizzes."
-    )
+    selection = st.session_state.get("selection")
 
-    st.info("Module assistant page is ready. Navigation comes on Day 2.")
+    if not selection:
+        st.warning("Choose a year, semester, subject and module in the sidebar.")
+        return
+
+    st.subheader(f"{selection['subject']} — {selection['module']}")
+    st.caption(f"{selection['year']} · {selection['semester']}")
+
+    st.info("Content tabs arrive on Day 3.") 
