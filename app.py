@@ -7,7 +7,7 @@ st.set_page_config(
     layout="wide"
 )
 
-st.title("🎓 AI & DS Knowledge Assistant")
+st.title("AI & DS Knowledge Assistant")
 
 st.sidebar.title("Navigation")
 
