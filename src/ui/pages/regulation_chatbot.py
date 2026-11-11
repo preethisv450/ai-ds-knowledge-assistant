@@ -1,4 +1,5 @@
 import streamlit as st
+from src.ui.answer_service import get_answer
 
 MODES = ["Syllabus", "Regulation"]
 
@@ -44,12 +45,11 @@ def show_regulation_chatbot():
             {"role": "user", "content": question}
         )
 
-        reply = (
-            f"*Echo ({mode} mode).* You asked: {question}\n\n"
-            "The real answer arrives on Day 6, from Pragna's answer function."
-        )
+        with st.spinner("Thinking..."):
+            result = get_answer(question, mode, selection)
+
         st.session_state["chat_messages"].append(
-            {"role": "assistant", "content": reply}
+            {"role": "assistant", "content": result["answer"]}
         )
 
         st.rerun()
