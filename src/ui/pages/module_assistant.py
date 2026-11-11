@@ -9,8 +9,11 @@ def show_module_assistant():
         st.warning("Choose a year, semester, subject and module in the sidebar.")
         return
 
-    st.subheader(f"{selection['subject']} — {selection['module']}")
-    st.caption(f"{selection['year']} · {selection['semester']}")
+        st.subheader(f"{selection['subject']} — {selection['module']}")
+    st.caption(
+        f"{selection['year']} · {selection['semester']} · "
+        f"{selection['subject_code']} · {selection['module_id']}"
+    )
     st.divider()
 
     tab_summary, tab_qa, tab_questions, tab_quiz = st.tabs(

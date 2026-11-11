@@ -1,0 +1,156 @@
+{
+  "schema_version": 1,
+  "programme": "AI & DS",
+  "years": [
+    {
+      "year": "Year 1",
+      "semesters": [
+        {
+          "semester": "Semester 1",
+          "subjects": [
+            {
+              "code": "MA101",
+              "name": "Engineering Mathematics I",
+              "modules": [
+                { "id": "MA101-M1", "title": "Calculus" },
+                { "id": "MA101-M2", "title": "Linear Algebra" },
+                { "id": "MA101-M3", "title": "Differential Equations" }
+              ]
+            },
+            {
+              "code": "CS101",
+              "name": "Programming in C",
+              "modules": [
+                { "id": "CS101-M1", "title": "Basics and Control Flow" },
+                { "id": "CS101-M2", "title": "Arrays and Strings" },
+                { "id": "CS101-M3", "title": "Pointers" }
+              ]
+            }
+          ]
+        },
+        {
+          "semester": "Semester 2",
+          "subjects": [
+            {
+              "code": "CS102",
+              "name": "Data Structures",
+              "modules": [
+                { "id": "CS102-M1", "title": "Arrays and Linked Lists" },
+                { "id": "CS102-M2", "title": "Stacks and Queues" },
+                { "id": "CS102-M3", "title": "Trees and Graphs" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": "Year 2",
+      "semesters": [
+        {
+          "semester": "Semester 3",
+          "subjects": [
+            {
+              "code": "AI201",
+              "name": "Artificial Intelligence",
+              "modules": [
+                { "id": "AI201-M1", "title": "Introduction to AI" },
+                { "id": "AI201-M2", "title": "Problem Solving and Search" },
+                { "id": "AI201-M3", "title": "Knowledge Representation" }
+              ]
+            },
+            {
+              "code": "CS201",
+              "name": "Database Systems",
+              "modules": [
+                { "id": "CS201-M1", "title": "ER Modelling" },
+                { "id": "CS201-M2", "title": "SQL" },
+                { "id": "CS201-M3", "title": "Normalization" }
+              ]
+            }
+          ]
+        },
+        {
+          "semester": "Semester 4",
+          "subjects": [
+            {
+              "code": "DS202",
+              "name": "Machine Learning",
+              "modules": [
+                { "id": "DS202-M1", "title": "Supervised Learning" },
+                { "id": "DS202-M2", "title": "Unsupervised Learning" },
+                { "id": "DS202-M3", "title": "Model Evaluation" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": "Year 3",
+      "semesters": [
+        {
+          "semester": "Semester 5",
+          "subjects": [
+            {
+              "code": "DS301",
+              "name": "Deep Learning",
+              "modules": [
+                { "id": "DS301-M1", "title": "Neural Network Basics" },
+                { "id": "DS301-M2", "title": "Convolutional Networks" },
+                { "id": "DS301-M3", "title": "Sequence Models" }
+              ]
+            }
+          ]
+        },
+        {
+          "semester": "Semester 6",
+          "subjects": [
+            {
+              "code": "DS302",
+              "name": "Natural Language Processing",
+              "modules": [
+                { "id": "DS302-M1", "title": "Text Preprocessing" },
+                { "id": "DS302-M2", "title": "Language Models" },
+                { "id": "DS302-M3", "title": "Applications" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": "Year 4",
+      "semesters": [
+        {
+          "semester": "Semester 7",
+          "subjects": [
+            {
+              "code": "DS401",
+              "name": "Big Data Analytics",
+              "modules": [
+                { "id": "DS401-M1", "title": "Distributed Storage" },
+                { "id": "DS401-M2", "title": "MapReduce and Spark" },
+                { "id": "DS401-M3", "title": "Streaming Analytics" }
+              ]
+            }
+          ]
+        },
+        {
+          "semester": "Semester 8",
+          "subjects": [
+            {
+              "code": "DS402",
+              "name": "AI Ethics and Governance",
+              "modules": [
+                { "id": "DS402-M1", "title": "Bias and Fairness" },
+                { "id": "DS402-M2", "title": "Privacy and Data Protection" },
+                { "id": "DS402-M3", "title": "Regulation and Accountability" }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
