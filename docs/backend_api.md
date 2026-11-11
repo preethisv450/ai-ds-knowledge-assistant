@@ -52,3 +52,7 @@ questions and summaries do not use a request.
 ## Summary (D11)
 
 `src.backend.study.generate_summary(selection)` returns `{"summary": str (markdown), "sources": [{document, page, snippet}]}`. `selection` is the sidebar dict (needs `module`; `subject`, `subject_code`, `module_id` scope the search). Never raises for expected problems: a friendly message goes in `summary` and `sources` is `[]`. Wired into the Summary tab of `src/ui/pages/module_assistant.py`; the result is kept in `st.session_state` per module so rerenders do not call Gemini again.
+
+## Practice questions (D12)
+
+`src.backend.study.generate_questions(selection, qtype="short", n=5, difficulty="medium")` returns `{"questions": [{"question", "model_answer"}], "message": str, "sources": [{document, page, snippet}]}`. `qtype` accepts "short"/"long" or the UI labels "Short answer"/"Long answer"; `n` is clamped to 1-20. Gemini is called in JSON mode and the reply is validated (re-asked up to 3 times). On any expected problem (no module chosen, no index, no documents, nothing relevant, Gemini error) `questions` is `[]` and `message` holds a friendly sentence for `st.warning`. `sources` are the pages the questions were written from (questions are not cited one by one).
