@@ -143,7 +143,8 @@ def test_parse_citation_formats():
 def test_answer_prompt_has_citation_rules():
     from src.backend.prompts import answer_prompt
     system, _ = answer_prompt("q", [_r("A.pdf", 1, 0.5) | {"text": "t"}])
-    assert "(file.pdf, p.3)" in system and "Only cite pages" in system and "do not guess" in system
+    assert "[S2]" in system and "Use only markers" in system and "do not guess" in system
+    assert "Never write file names or page numbers" in system
 
 
 # ---- D8: scoping ----
@@ -186,3 +187,46 @@ def test_selected_module_is_named_in_the_prompt():
     sel = {"subject": "Machine Learning", "module": "Regression"}
     rag.answer("q", "Syllabus", sel, retrieve_fn=lambda q, k=5, where=None: [_r("A.pdf", 1, 0.5)], generate_fn=gen)
     assert "Machine Learning — Regression" in seen["system"]
+
+
+# ---- marker citations ([S2] -> real file and page) ----
+from src.backend.rag import render_citations
+
+
+def _chunks3():
+    return [_r("A.pdf", 1, 0.9), _r("A.pdf", 7, 0.8), _r("B.pdf", 3, 0.7)]
+
+
+def test_markers_become_file_and_page_and_select_sources():
+    r = rag.answer("q", retrieve_fn=lambda q, k=5, where=None: _chunks3(),
+                   generate_fn=lambda p, system=None: "Fact one [S2]. Fact two [S3].")
+    assert r["answer"] == "Fact one (A.pdf, p.7). Fact two (B.pdf, p.3)."
+    assert [(s["document"], s["page"]) for s in r["sources"]] == [("A.pdf", 7), ("B.pdf", 3)]
+
+
+def test_multiple_markers_merge_and_duplicate_pages_collapse():
+    out = render_citations("Both facts [S1][S3] and again [S1, S1].", _chunks3())
+    assert out == "Both facts (A.pdf, p.1; B.pdf, p.3) and again (A.pdf, p.1)."
+
+
+def test_markers_pointing_at_nothing_are_removed_and_fall_back_to_all_pages():
+    r = rag.answer("q", retrieve_fn=lambda q, k=5, where=None: _chunks3(),
+                   generate_fn=lambda p, system=None: "Invented source [S9].")
+    assert r["answer"] == "Invented source." and [s["page"] for s in r["sources"]] == [1, 7, 3]
+
+
+def test_code_like_brackets_are_left_alone():
+    text = "Use arr[1] and matrix[2][3], not citations."
+    assert render_citations(text, _chunks3()) == text
+
+
+def test_legacy_file_page_citations_still_work_when_no_markers():
+    r = rag.answer("q", retrieve_fn=lambda q, k=5, where=None: _chunks3(),
+                   generate_fn=lambda p, system=None: "Fact (B.pdf, p.3).")
+    assert [s["page"] for s in r["sources"]] == [3] and r["answer"] == "Fact (B.pdf, p.3)."
+
+
+def test_context_labels_use_s_markers():
+    from src.backend.prompts import format_context
+    ctx = format_context([{"document": "A.pdf", "page": 2, "text": "t"}])
+    assert ctx.startswith("[S1] (Source: A.pdf, page 2)")

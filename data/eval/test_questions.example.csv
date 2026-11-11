@@ -1,0 +1,14 @@
+id,question,mode,subject_code,module_id,expected_keywords,expected_doc,expected_page,answerable
+1,What does the Gemini wrapper need to handle?,Syllabus,,,retries|timeout|error handling,Pragna_SNA.pdf,2,yes
+2,How is the app deployed?,Syllabus,,,Streamlit|secrets,Pragna_SNA.pdf,5,yes
+3,Which embedding model is used?,Syllabus,,,all-MiniLM-L6-v2,Pragna_SNA.pdf,2,yes
+4,What accuracy is required on the test set at Day 10?,Syllabus,,,80%,SNA_project.pdf,3,yes
+5,What must the quiz generator validate?,Syllabus,,,JSON|retry,Pragna_SNA.pdf,4,yes
+6,How many team members work on the project?,Syllabus,,,3,SNA_project.pdf,1,yes
+7,What is the capital of Peru?,Syllabus,,,,,,no
+8,What is the project budget in rupees?,Syllabus,,,,,,no
+9,What is Nishant responsible for?,Syllabus,,,NetworkX|evaluation,SNA_project.pdf,1,yes
+10,What is the milestone on Day 10?,Syllabus,,,chatbots|80%,SNA_project.pdf,3,yes
+11,Who works on the frontend?,Syllabus,,,Preethi,SNA_project.pdf,1,yes
+12,Who is the project supervisor?,Syllabus,,,,,,no
+13,What is the college attendance requirement?,Syllabus,,,,,,no

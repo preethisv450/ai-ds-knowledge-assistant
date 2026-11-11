@@ -11,7 +11,7 @@ def format_context(chunks):
     """Number the chunks and label each with its file and page so the model can cite them."""
     parts = []
     for i, c in enumerate(chunks, 1):
-        parts.append(f"[{i}] (Source: {c['document']}, page {c['page']})\n{c['text']}")
+        parts.append(f"[S{i}] (Source: {c['document']}, page {c['page']})\n{c['text']}")
     return "\n\n".join(parts)
 
 
@@ -20,9 +20,9 @@ def answer_prompt(question, chunks, mode="Syllabus", scope=None):
     system = (
         f"You are a study assistant answering questions about {what} for university students. "
         "Answer ONLY from the numbered context. Do not use outside knowledge and do not guess. "
-        "Cite every fact with the file name and page exactly as shown in the context headers, "
-        "in the form (file.pdf, p.3). Only cite pages that appear in the context. "
-        "Never mention the context numbers like [1]. "
+        "After each fact, cite the context passage it came from by its marker, like [S2] "
+        "(or [S1][S3] when several passages support it). Use only markers that appear in the context. "
+        "Never write file names or page numbers yourself: the system adds them from the markers. "
         "If the context answers only part of the question, answer that part and say what is missing. "
         f"If the context does not contain the answer at all, reply with exactly: {NOT_FOUND} "
         "Be concise and clear."
