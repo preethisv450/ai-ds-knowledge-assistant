@@ -15,6 +15,8 @@ import time
 from src.backend import config
 
 _client = None
+_quota_until = {}  # model -> time until which its daily quota is known to be used up
+_now = time.time
 log = logging.getLogger(__name__)
 
 
@@ -102,8 +104,13 @@ def generate(prompt, system=None, json_mode=False, temperature=0.2, client=None,
     if config.GEMINI_FALLBACK_MODEL and config.GEMINI_FALLBACK_MODEL != config.GEMINI_MODEL:
         models.append(config.GEMINI_FALLBACK_MODEL)
 
+    now = _now()
+    open_models = [m for m in models if _quota_until.get(m, 0) <= now]
+    if not open_models:  # every model hit its daily limit a moment ago: do not waste a round trip
+        raise GeminiError("quota", _MESSAGES["quota"], "all models in quota cooldown")
+
     last = None
-    for model in models:
+    for model in open_models:
         for attempt in range(retries + 1):
             try:
                 return _call(client, model, prompt, system, json_mode, temperature)
@@ -113,6 +120,7 @@ def generate(prompt, system=None, json_mode=False, temperature=0.2, client=None,
                 kind = classify(e)
                 last = GeminiError(kind, _MESSAGES[kind], f"{model}: {e}")
             if last.kind == "quota":
+                _quota_until[model] = _now() + config.QUOTA_COOLDOWN_S
                 break  # daily limit used up on this model: waiting is pointless, go to the fallback model
             if last.kind not in _RETRIABLE:
                 raise last  # auth / bad request: retrying will not help
