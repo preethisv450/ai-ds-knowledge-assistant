@@ -1,11 +1,8 @@
 """Answer service boundary.
 
-Day 6: stub implementation so the chat UI can be built and demoed before
-Pragna's retrieval code lands. When it does, replace the body of
-get_answer() only — the return shape must not change.
+D6: wired to Pragna's RAG backend (src/backend/rag.py). The signature and the return
+shape are unchanged from the Day 6 stub, so the chat UI needs no changes.
 """
-
-import time
 
 
 def get_answer(question, mode, selection=None):
@@ -24,22 +21,6 @@ def get_answer(question, mode, selection=None):
             ],
         }
     """
-    time.sleep(1.0)  # stand-in for retrieval + generation latency
+    from src.backend.rag import answer  # imported here so the UI still loads if the backend is missing deps
 
-    scope = "the academic regulations"
-    if mode == "Syllabus" and selection:
-        scope = f"{selection['subject']} — {selection['module']}"
-
-    return {
-        "answer": (
-            f"**Placeholder answer** for: _{question}_\n\n"
-            f"This would be answered from {scope}."
-        ),
-        "sources": [
-            {
-                "document": "AI_Syllabus.pdf",
-                "page": 4,
-                "snippet": "Placeholder source snippet text.",
-            }
-        ],
-    }
+    return answer(question, mode, selection)
