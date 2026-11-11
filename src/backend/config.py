@@ -22,6 +22,7 @@ GEMINI_MAX_RETRIES = 3
 CHUNK_WORDS = 180  # see ingest.py: MiniLM reads ~256 word-pieces, so 500 would be truncated
 CHUNK_OVERLAP = 30
 TOP_K = 5
+RAG_MIN_SCORE = float(os.getenv("RAG_MIN_SCORE", "0.20"))  # below this the chunk is ignored; tune on real data (D9)
 
 
 def get_gemini_key() -> str:

@@ -19,9 +19,12 @@ def answer_prompt(question, chunks, mode="Syllabus"):
     what = "the academic regulations" if mode == "Regulation" else "the syllabus"
     system = (
         f"You are a study assistant answering questions about {what} for university students. "
-        "Answer ONLY from the numbered context. Do not use outside knowledge. "
-        "After each fact, cite its source like (file.pdf, p.3). "
-        f"If the context does not contain the answer, reply exactly: {NOT_FOUND} "
+        "Answer ONLY from the numbered context. Do not use outside knowledge and do not guess. "
+        "Cite every fact with the file name and page exactly as shown in the context headers, "
+        "in the form (file.pdf, p.3). Only cite pages that appear in the context. "
+        "Never mention the context numbers like [1]. "
+        "If the context answers only part of the question, answer that part and say what is missing. "
+        f"If the context does not contain the answer at all, reply with exactly: {NOT_FOUND} "
         "Be concise and clear."
     )
     prompt = f"Context:\n{format_context(chunks)}\n\nQuestion: {question}\n\nAnswer:"
