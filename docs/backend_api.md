@@ -56,3 +56,7 @@ questions and summaries do not use a request.
 ## Practice questions (D12)
 
 `src.backend.study.generate_questions(selection, qtype="short", n=5, difficulty="medium")` returns `{"questions": [{"question", "model_answer"}], "message": str, "sources": [{document, page, snippet}]}`. `qtype` accepts "short"/"long" or the UI labels "Short answer"/"Long answer"; `n` is clamped to 1-20. Gemini is called in JSON mode and the reply is validated (re-asked up to 3 times). On any expected problem (no module chosen, no index, no documents, nothing relevant, Gemini error) `questions` is `[]` and `message` holds a friendly sentence for `st.warning`. `sources` are the pages the questions were written from (questions are not cited one by one).
+
+## Quiz (D13)
+
+`src.backend.study.generate_quiz(selection, n=5)` returns `{"quiz": [{"question", "options": [4 strings], "correct_index": 0-3, "explanation"}], "message": str, "sources": [{document, page, snippet}]}`. `n` is clamped to 1-15. Gemini replies in JSON mode and is validated (4 distinct options, correct_index 0-3, explanation present; re-asked up to 3 times). The options are shuffled in code so the right answer is not always in the same slot, and `correct_index` is remapped. On any expected problem `quiz` is `[]` and `message` is a friendly sentence. The Quiz tab keeps the quiz and the student's answers in `st.session_state`, so scoring does not call Gemini again.
