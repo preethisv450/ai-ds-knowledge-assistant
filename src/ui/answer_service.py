@@ -35,7 +35,7 @@ def get_answer(question, mode, selection=None):
             f"**Placeholder answer** for: _{question}_\n\n"
             f"This would be answered from {scope}."
         ),
-                "sources": [
+        "sources": [
             {
                 "document": "AI_Syllabus.pdf" if mode == "Syllabus"
                             else "Academic_Regulations.pdf",
