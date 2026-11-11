@@ -37,7 +37,10 @@ def summary_prompt(subject, module, chunks):
     system = (
         "You are a study assistant. Write a structured revision summary using ONLY the context. "
         "Use these markdown sections: Key points, Definitions, Formulas (omit if none), "
-        "Things to remember. Be accurate and brief. Do not invent content."
+        "Things to remember. Be accurate and brief. Do not invent content. "
+        "End each bullet with the marker of the context passage it came from, like [S2]. "
+        "Use only markers that appear in the context; never write file names or page numbers yourself. "
+        "If the context has nothing useful about the module, reply with exactly: " + NOT_FOUND
     )
     prompt = f"Subject: {subject}\nModule: {module}\n\nContext:\n{format_context(chunks)}\n\nSummary:"
     return system, prompt

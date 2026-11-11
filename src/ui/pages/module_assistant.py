@@ -9,7 +9,7 @@ def show_module_assistant():
         st.warning("Choose a year, semester, subject and module in the sidebar.")
         return
 
-        st.subheader(f"{selection['subject']} — {selection['module']}")
+    st.subheader(f"{selection['subject']} — {selection['module']}")
     st.caption(
         f"{selection['year']} · {selection['semester']} · "
         f"{selection['subject_code']} · {selection['module_id']}"
@@ -22,8 +22,20 @@ def show_module_assistant():
 
     with tab_summary:
         st.write("Generate a structured summary of this module.")
-        st.button("Generate summary", disabled=True, key="btn_summary")
-        st.caption("Connects to Pragna's summary function on Day 11.")
+        cache_key = f"summary_{selection['module_id']}"
+        if st.button("Generate summary", key="btn_summary"):
+            from src.backend.study import generate_summary  # imported here so the page loads without backend deps
+
+            with st.spinner("Writing the summary..."):
+                st.session_state[cache_key] = generate_summary(selection)
+        result = st.session_state.get(cache_key)
+        if result:
+            st.markdown(result["summary"])
+            if result["sources"]:
+                with st.expander("Sources"):
+                    for src in result["sources"]:
+                        st.markdown(f"**{src['document']}**, page {src['page']}")
+                        st.caption(src["snippet"])
 
     with tab_qa:
         st.write("Ask a question about this module.")

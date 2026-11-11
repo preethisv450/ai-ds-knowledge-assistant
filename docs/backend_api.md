@@ -47,3 +47,8 @@ used up, `generate()` does not retry it; it moves to the fallback model straight
 
 Save requests: `scripts/evaluate.py --retrieval-only` costs nothing, tests never call Gemini, and D14 adds a cache so repeated
 questions and summaries do not use a request.
+
+
+## Summary (D11)
+
+`src.backend.study.generate_summary(selection)` returns `{"summary": str (markdown), "sources": [{document, page, snippet}]}`. `selection` is the sidebar dict (needs `module`; `subject`, `subject_code`, `module_id` scope the search). Never raises for expected problems: a friendly message goes in `summary` and `sources` is `[]`. Wired into the Summary tab of `src/ui/pages/module_assistant.py`; the result is kept in `st.session_state` per module so rerenders do not call Gemini again.
