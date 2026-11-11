@@ -4,17 +4,20 @@ retrieve -> drop weak chunks -> "not found" if nothing relevant -> prompt -> Gem
 keep only the sources the answer actually cites.
 
 Never raises for expected problems (no index, Gemini down): returns a friendly message.
-D8 will use `selection` to scope retrieval to the chosen subject/module.
+D8: `mode` and `selection` scope retrieval (Regulation -> regulation documents only;
+Syllabus -> the chosen subject/module).
 """
 import re
 
 from src.backend import config
+from src.backend.catalog import make_filter, scope_label
 from src.backend.prompts import NOT_FOUND
 
 NOT_FOUND_MSG = NOT_FOUND + " Try rephrasing your question, or check that the right subject and module are selected."
 NO_INDEX_MSG = ("The knowledge base has not been built yet. "
                 "Ask the team to run `python scripts/build_index.py`.")
 EMPTY_MSG = "Please type a question."
+NO_DOCS_MSG = "No documents have been added yet for {scope}. Please ask the team to add them."
 
 _PAREN = re.compile(r"\(([^()]*\.pdf[^()]*)\)", re.IGNORECASE)
 _FILE = re.compile(r"([^\s,;()\[\]]+\.pdf)", re.IGNORECASE)
@@ -67,15 +70,18 @@ def answer(question, mode="Syllabus", selection=None, k=None, min_score=None,
     from src.backend.retrieval import to_sources
 
     try:
-        results = retrieve_fn(question, k=k)
+        results = retrieve_fn(question, k=k, where=make_filter(mode, selection))
     except FileNotFoundError:
         return {"answer": NO_INDEX_MSG, "sources": []}
+
+    if not results:  # the scope (subject/module or regulations) has no documents in the index
+        return {"answer": NO_DOCS_MSG.format(scope=scope_label(mode, selection)), "sources": []}
 
     chunks = [c for c in results if c["score"] >= min_score]
     if not chunks:  # nothing relevant enough: do not even call Gemini
         return {"answer": NOT_FOUND_MSG, "sources": []}
 
-    system, prompt = answer_prompt(question, chunks, mode)
+    system, prompt = answer_prompt(question, chunks, mode, scope=scope_label(mode, selection))
     try:
         text = generate_fn(prompt, system=system)
     except GeminiError as e:

@@ -28,19 +28,30 @@ def _snippet(text, n=SNIPPET_CHARS):
     return text if len(text) <= n else text[:n].rsplit(" ", 1)[0] + "..."
 
 
-def retrieve(query, k=TOP_K, index_dir=INDEX_DIR, embed_fn=None):
+def _has_classified(chunks):
+    return any(c.get("doc_type") in ("syllabus", "regulation") for c in chunks)
+
+
+def retrieve(query, k=TOP_K, index_dir=INDEX_DIR, embed_fn=None, where=None):
     """Return up to k results, best first:
-    {"document", "page", "snippet", "score", "chunk_id", "text"}"""
+    {"document", "page", "snippet", "score", "chunk_id", "text"}
+
+    where: optional predicate on a chunk dict (see catalog.make_filter). It is ignored while
+    the index has no labelled documents at all (dev mode before real data / a manifest exists)."""
     if not query or not query.strip():
         raise ValueError("Query is empty.")
     index, chunks = _load(index_dir)
-    k = max(1, min(k, index.ntotal))
-    scores, ids = index.search(embed_texts([query.strip()], embed_fn), k)
+    filt = where if (where and _has_classified(chunks)) else None
+    n = index.ntotal
+    # A flat index is exact and fast, so with a filter we rank everything and keep the first k that pass.
+    scores, ids = index.search(embed_texts([query.strip()], embed_fn), n if filt else max(1, min(k, n)))
     results = []
     for score, i in zip(scores[0], ids[0]):
         if i < 0:  # FAISS pads with -1 when it has fewer results than asked for
             continue
         c = chunks[i]
+        if filt and not filt(c):
+            continue
         results.append({
             "document": c["document"],
             "page": c["page"],
@@ -49,6 +60,8 @@ def retrieve(query, k=TOP_K, index_dir=INDEX_DIR, embed_fn=None):
             "chunk_id": c["chunk_id"],
             "text": c["text"],
         })
+        if len(results) >= k:
+            break
     return results
 
 

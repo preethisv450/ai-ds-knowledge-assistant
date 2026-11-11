@@ -15,7 +15,7 @@ def format_context(chunks):
     return "\n\n".join(parts)
 
 
-def answer_prompt(question, chunks, mode="Syllabus"):
+def answer_prompt(question, chunks, mode="Syllabus", scope=None):
     what = "the academic regulations" if mode == "Regulation" else "the syllabus"
     system = (
         f"You are a study assistant answering questions about {what} for university students. "
@@ -27,6 +27,8 @@ def answer_prompt(question, chunks, mode="Syllabus"):
         f"If the context does not contain the answer at all, reply with exactly: {NOT_FOUND} "
         "Be concise and clear."
     )
+    if scope and mode != "Regulation":
+        system += f" The student is currently studying: {scope}."
     prompt = f"Context:\n{format_context(chunks)}\n\nQuestion: {question}\n\nAnswer:"
     return system, prompt
 

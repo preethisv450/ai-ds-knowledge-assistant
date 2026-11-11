@@ -7,7 +7,7 @@ RESULTS = [
 ]
 
 
-def fake_retrieve(q, k=5):
+def fake_retrieve(q, k=5, where=None):
     return RESULTS[:k]
 
 
@@ -34,7 +34,7 @@ def test_prompt_given_to_gemini_contains_question_and_retrieved_text():
 def test_k_is_passed_to_retrieval():
     got = {}
 
-    def ret(q, k=5):
+    def ret(q, k=5, where=None):
         got["k"] = k
         return RESULTS
 
@@ -51,7 +51,7 @@ def test_gemini_failure_becomes_friendly_answer_not_exception():
 
 
 def test_missing_index_becomes_friendly_answer():
-    def no_index(q, k=5):
+    def no_index(q, k=5, where=None):
         raise FileNotFoundError("No index")
 
     r = rag.answer("q", retrieve_fn=no_index, generate_fn=lambda p, system=None: "x")
@@ -84,7 +84,7 @@ def test_low_top_score_returns_not_found_without_calling_gemini():
     def fail(*a, **k):
         raise AssertionError("Gemini must not be called")
 
-    r = rag.answer("capital of Peru?", retrieve_fn=lambda q, k=5: [_r("A.pdf", 1, 0.05)], generate_fn=fail)
+    r = rag.answer("capital of Peru?", retrieve_fn=lambda q, k=5, where=None: [_r("A.pdf", 1, 0.05)], generate_fn=fail)
     assert r == {"answer": NOT_FOUND_MSG, "sources": []}
 
 
@@ -95,38 +95,38 @@ def test_weak_chunks_are_dropped_from_the_prompt():
         seen["prompt"] = prompt
         return "ok (A.pdf, p.1)"
 
-    rag.answer("q", retrieve_fn=lambda q, k=5: [_r("A.pdf", 1, 0.5), _r("B.pdf", 2, 0.05)], generate_fn=gen)
+    rag.answer("q", retrieve_fn=lambda q, k=5, where=None: [_r("A.pdf", 1, 0.5), _r("B.pdf", 2, 0.05)], generate_fn=gen)
     assert "A.pdf, page 1" in seen["prompt"] and "B.pdf" not in seen["prompt"]
 
 
 def test_threshold_is_inclusive_and_overridable():
-    res = lambda q, k=5: [_r("A.pdf", 1, 0.20)]
+    res = lambda q, k=5, where=None: [_r("A.pdf", 1, 0.20)]
     assert rag.answer("q", retrieve_fn=res, generate_fn=lambda p, system=None: "yes (A.pdf, p.1)")["answer"].startswith("yes")
     assert rag.answer("q", min_score=0.5, retrieve_fn=res, generate_fn=lambda p, system=None: "x")["answer"] == NOT_FOUND_MSG
 
 
 def test_model_not_found_reply_returns_not_found_and_no_sources():
     from src.backend.prompts import NOT_FOUND
-    r = rag.answer("q", retrieve_fn=lambda q, k=5: [_r("A.pdf", 1, 0.5)], generate_fn=lambda p, system=None: NOT_FOUND + " whatever")
+    r = rag.answer("q", retrieve_fn=lambda q, k=5, where=None: [_r("A.pdf", 1, 0.5)], generate_fn=lambda p, system=None: NOT_FOUND + " whatever")
     assert r == {"answer": NOT_FOUND_MSG, "sources": []}
 
 
 def test_only_cited_pages_are_returned_as_sources():
     chunks = [_r("A.pdf", 1, 0.9), _r("A.pdf", 2, 0.8), _r("B.pdf", 7, 0.7)]
-    r = rag.answer("q", retrieve_fn=lambda q, k=5: chunks, generate_fn=lambda p, system=None: "Fact one (A.pdf, p.2). Fact two (B.pdf, page 7).")
+    r = rag.answer("q", retrieve_fn=lambda q, k=5, where=None: chunks, generate_fn=lambda p, system=None: "Fact one (A.pdf, p.2). Fact two (B.pdf, page 7).")
     assert [(s["document"], s["page"]) for s in r["sources"]] == [("A.pdf", 2), ("B.pdf", 7)]
 
 
 def test_uncited_or_hallucinated_citations_fall_back_to_pages_given():
     chunks = [_r("A.pdf", 1, 0.9), _r("A.pdf", 2, 0.8)]
     for text in ("no citation at all", "made up (Z.pdf, p.99)"):
-        r = rag.answer("q", retrieve_fn=lambda q, k=5: chunks, generate_fn=lambda p, system=None, t=text: t)
+        r = rag.answer("q", retrieve_fn=lambda q, k=5, where=None: chunks, generate_fn=lambda p, system=None, t=text: t)
         assert [s["page"] for s in r["sources"]] == [1, 2]
 
 
 def test_sources_deduplicated_by_page():
     chunks = [_r("A.pdf", 1, 0.9), _r("A.pdf", 1, 0.8), _r("A.pdf", 3, 0.7)]
-    r = rag.answer("q", retrieve_fn=lambda q, k=5: chunks, generate_fn=lambda p, system=None: "x")
+    r = rag.answer("q", retrieve_fn=lambda q, k=5, where=None: chunks, generate_fn=lambda p, system=None: "x")
     assert [s["page"] for s in r["sources"]] == [1, 3]
 
 
@@ -144,3 +144,45 @@ def test_answer_prompt_has_citation_rules():
     from src.backend.prompts import answer_prompt
     system, _ = answer_prompt("q", [_r("A.pdf", 1, 0.5) | {"text": "t"}])
     assert "(file.pdf, p.3)" in system and "Only cite pages" in system and "do not guess" in system
+
+
+# ---- D8: scoping ----
+def test_rag_passes_a_scope_filter_to_retrieval():
+    from src.backend.catalog import make_filter
+    got = {}
+
+    def ret(q, k=5, where=None):
+        got["where"] = where
+        return [_r("A.pdf", 1, 0.5)]
+
+    sel = {"subject": "AI", "module": "NN", "subject_code": "AI201", "module_id": "AI201-M1"}
+    rag.answer("q", "Syllabus", sel, retrieve_fn=ret, generate_fn=lambda p, system=None: "ok")
+    f = got["where"]
+    assert f({"doc_type": "syllabus", "subject_code": "AI201", "module_id": "AI201-M1"})
+    assert not f({"doc_type": "regulation"})
+    rag.answer("q", "Regulation", sel, retrieve_fn=ret, generate_fn=lambda p, system=None: "ok")
+    assert got["where"]({"doc_type": "regulation"}) and not got["where"]({"doc_type": "syllabus", "subject_code": "AI201"})
+
+
+def test_empty_scope_gives_specific_no_documents_message():
+    sel = {"subject": "Machine Learning", "module": "Regression", "subject_code": "DS202", "module_id": "DS202-M1"}
+
+    def fail(*a, **k):
+        raise AssertionError("Gemini must not be called")
+
+    r = rag.answer("q", "Syllabus", sel, retrieve_fn=lambda q, k=5, where=None: [], generate_fn=fail)
+    assert "Machine Learning" in r["answer"] and "No documents" in r["answer"] and r["sources"] == []
+    r = rag.answer("q", "Regulation", None, retrieve_fn=lambda q, k=5, where=None: [], generate_fn=fail)
+    assert "regulations" in r["answer"]
+
+
+def test_selected_module_is_named_in_the_prompt():
+    seen = {}
+
+    def gen(prompt, system=None):
+        seen["system"] = system
+        return "ok"
+
+    sel = {"subject": "Machine Learning", "module": "Regression"}
+    rag.answer("q", "Syllabus", sel, retrieve_fn=lambda q, k=5, where=None: [_r("A.pdf", 1, 0.5)], generate_fn=gen)
+    assert "Machine Learning — Regression" in seen["system"]

@@ -1,0 +1,21 @@
+[
+  {
+    "file": "AI201_syllabus.pdf",
+    "doc_type": "syllabus",
+    "subject_code": "AI201",
+    "modules": {
+      "AI201-M1": [1, 4],
+      "AI201-M2": [5, 8],
+      "AI201-M3": [9, 12]
+    }
+  },
+  {
+    "file": "DS202_syllabus.pdf",
+    "doc_type": "syllabus",
+    "subject_code": "DS202"
+  },
+  {
+    "file": "Academic_Regulations.pdf",
+    "doc_type": "regulation"
+  }
+]

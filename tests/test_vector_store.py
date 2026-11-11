@@ -84,3 +84,21 @@ def test_build_from_pdfs_end_to_end(tmp_path):
     assert index.ntotal == len(chunks) > 0
     index2, chunks2 = vs.load_index(tmp_path / "idx")
     assert chunks2[0]["document"] == "ml.pdf" and chunks2[0]["page"] == 1
+
+
+def test_build_from_pdfs_labels_chunks_from_manifest_and_filename(tmp_path):
+    import pymupdf
+    pdf_dir = tmp_path / "pdfs"
+    pdf_dir.mkdir()
+    for name in ("AI201_syllabus.pdf", "Academic_Regulations.pdf", "notes.pdf"):
+        doc = pymupdf.open()
+        doc.new_page().insert_textbox(pymupdf.Rect(50, 50, 550, 780), "Some course text about topics. " * 30, fontsize=10)
+        doc.save(pdf_dir / name)
+    manifest = {"notes.pdf": {"file": "notes.pdf", "doc_type": "syllabus", "subject_code": "DS202", "modules": {"DS202-M1": [1, 1]}}}
+    _, chunks = vs.build_from_pdfs(pdf_dir, tmp_path / "idx", fake_embed, manifest=manifest)
+    by_doc = {c["document"]: c for c in chunks}
+    assert by_doc["AI201_syllabus.pdf"]["doc_type"] == "syllabus" and by_doc["AI201_syllabus.pdf"]["subject_code"] == "AI201"
+    assert by_doc["Academic_Regulations.pdf"]["doc_type"] == "regulation"
+    assert by_doc["notes.pdf"]["module_id"] == "DS202-M1"
+    _, reloaded = vs.load_index(tmp_path / "idx")
+    assert all("doc_type" in c for c in reloaded)  # labels survive save/load
