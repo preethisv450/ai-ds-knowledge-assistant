@@ -68,3 +68,9 @@ questions and summaries do not use a request.
 `generate_summary`, `generate_questions` and `generate_quiz` take `refresh=True` to skip the saved result and replace it (the UI "make a new set" checkbox). `answer` and the study functions accept `cache=None` to switch caching off; `scripts/evaluate.py` does this so accuracy is always measured on fresh answers. When functions are injected (tests) no cache is used unless one is passed. `python scripts/clear_cache.py` removes everything.
 
 Rate limits: transient errors are retried with backoff and then the fallback model is tried (D5). New in D14: when a model reports its daily quota is used up, it is skipped for `QUOTA_COOLDOWN_S` (15 minutes), so later requests fail fast with the "daily limit reached" message instead of waiting on a call that cannot succeed. Cached results keep working while the quota is exhausted.
+
+## End-to-end check (D15)
+
+Before the real PDFs exist, `python scripts/make_sample_data.py` writes sample documents (AI201 and DS202 syllabi, academic regulations), `data/processed/documents.json` and `data/eval/e2e_questions.csv` (14 questions with known answers, including three that must be refused). Everything it writes is marked SAMPLE; `--clean` removes exactly those files. Then `python scripts/build_index.py` and `python scripts/e2e_check.py`.
+
+`scripts/e2e_check.py` runs: (1) retrieval stays inside each module's pages; (2) for every module a summary (text, structure, sources inside the module, repeat call is instant), 3 short and 2 long questions, a 3-question quiz; (3) the chat questions with accuracy against the 80% target. Each check is PASS, FAIL or SKIP (SKIP = Gemini itself failed). `--no-gemini` runs only the free checks; `--delay=N` sets the pause between Gemini calls. Results go to `results/e2e_*.csv` and the exit code is 1 if anything FAILED. With real documents, list them in `documents.json` and put the 30 test questions in a CSV with the same columns.
