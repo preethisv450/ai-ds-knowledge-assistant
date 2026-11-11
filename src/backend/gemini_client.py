@@ -7,6 +7,7 @@ generate() returns text or raises GeminiError. GeminiError.user_message is safe 
 in the UI; the technical detail stays in .detail for logs.
 """
 import json
+import logging
 import random
 import re
 import time
@@ -14,18 +15,20 @@ import time
 from src.backend import config
 
 _client = None
+log = logging.getLogger(__name__)
 
 
 class GeminiError(Exception):
     def __init__(self, kind, user_message, detail=""):
         super().__init__(f"{kind}: {detail or user_message}")
-        self.kind = kind  # rate_limit | timeout | server | auth | bad_request | empty | network
+        self.kind = kind  # rate_limit | quota | timeout | server | auth | bad_request | empty | network
         self.user_message = user_message
         self.detail = detail
 
 
 _MESSAGES = {
     "rate_limit": "The AI service is busy right now. Please try again in a minute.",
+    "quota": "Today's free AI usage limit has been reached. Please try again tomorrow.",
     "timeout": "The AI service took too long to respond. Please try again.",
     "server": "The AI service is having problems. Please try again shortly.",
     "network": "Could not reach the AI service. Check your internet connection.",
@@ -42,7 +45,8 @@ def classify(exc):
     text = f"{type(exc).__name__} {exc}".lower()
     if isinstance(code, int):
         if code == 429:
-            return "rate_limit"
+            # a per-DAY quota will not clear by waiting a few seconds, so it is a different kind of error
+            return "quota" if ("perday" in text or "per day" in text) else "rate_limit"
         if code in (401, 403):
             return "auth"
         if code == 408 or code == 504:
@@ -108,11 +112,14 @@ def generate(prompt, system=None, json_mode=False, temperature=0.2, client=None,
             except Exception as e:  # SDK / network errors
                 kind = classify(e)
                 last = GeminiError(kind, _MESSAGES[kind], f"{model}: {e}")
+            if last.kind == "quota":
+                break  # daily limit used up on this model: waiting is pointless, go to the fallback model
             if last.kind not in _RETRIABLE:
                 raise last  # auth / bad request: retrying will not help
             if attempt < retries:
                 sleep(min(2 ** attempt, 8) + random.random() * 0.5)
         # retries exhausted on this model -> loop moves on to the fallback model
+    log.warning("Gemini gave up (%s): %s", last.kind, last.detail)  # technical detail for the terminal / logs
     raise last
 
 

@@ -14,15 +14,16 @@ CACHE_DIR = ROOT / ".cache"
 # D1 stack decisions
 EMBEDDING_MODEL = "sentence-transformers/all-MiniLM-L6-v2"  # 384-dim, fast on CPU
 VECTOR_STORE = "faiss"  # IndexFlatIP on normalised vectors = cosine similarity
-GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-3.6-flash")
-GEMINI_FALLBACK_MODEL = os.getenv("GEMINI_FALLBACK_MODEL", "")  # optional backup model name
+GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-3.5-flash-lite")  # free tier ~500 requests/day (3.6-flash only ~20)
+GEMINI_FALLBACK_MODEL = os.getenv("GEMINI_FALLBACK_MODEL", "gemini-3.6-flash")  # optional backup model name
 GEMINI_TIMEOUT_S = 60
 GEMINI_MAX_RETRIES = 3
 
 CHUNK_WORDS = 180  # see ingest.py: MiniLM reads ~256 word-pieces, so 500 would be truncated
 CHUNK_OVERLAP = 30
 TOP_K = 5
-RAG_MIN_SCORE = float(os.getenv("RAG_MIN_SCORE", "0.20"))  # below this the chunk is ignored; tune on real data (D9)
+RAG_MIN_SCORE = float(os.getenv("RAG_MIN_SCORE", "0.12"))  # below this the chunk is ignored; tune on real data (D9)
+EVAL_PASS_COVERAGE = 0.6  # share of expected keywords an answer must contain to count as correct (scripts/evaluate.py)
 
 
 def get_gemini_key() -> str:

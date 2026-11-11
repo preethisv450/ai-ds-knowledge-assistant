@@ -127,3 +127,43 @@ def test_generate_json_rejects_malformed_quiz_items():
     c = FakeClient([bad, bad, bad])
     with pytest.raises(gc.GeminiError):
         gc.generate_json("quiz", client=c, validate=validate_quiz, attempts=3, sleep=NOSLEEP)
+
+
+def test_giving_up_logs_the_technical_detail(caplog):
+    import logging
+    c = FakeClient([FakeAPIError(429, "RESOURCE_EXHAUSTED quota exceeded")] * 2)
+    with caplog.at_level(logging.WARNING):
+        with pytest.raises(gc.GeminiError):
+            gc.generate("hi", client=c, max_retries=1, sleep=NOSLEEP)
+    assert "RESOURCE_EXHAUSTED" in caplog.text and "rate_limit" in caplog.text
+
+
+QUOTA_MSG = ("429 RESOURCE_EXHAUSTED: Generate content requests per day limit exceeded on Free Tier. "
+             "quotaId GenerateRequestsPerDayPerProjectPerModel-FreeTier")
+
+
+def test_daily_quota_is_a_different_kind_from_per_minute_limit():
+    assert gc.classify(FakeAPIError(429, QUOTA_MSG)) == "quota"
+    assert gc.classify(FakeAPIError(429, "Too many requests per minute")) == "rate_limit"
+
+
+def test_daily_quota_skips_retries_and_goes_straight_to_fallback(monkeypatch):
+    monkeypatch.setattr(config, "GEMINI_FALLBACK_MODEL", "backup-lite")
+    slept = []
+    c = FakeClient([FakeAPIError(429, QUOTA_MSG), "answer from lite"])
+    assert gc.generate("hi", client=c, sleep=slept.append) == "answer from lite"
+    assert c.calls == [config.GEMINI_MODEL, "backup-lite"] and slept == []  # no wasted retries or waiting
+
+
+def test_daily_quota_on_every_model_gives_clear_message_without_waiting(monkeypatch):
+    monkeypatch.setattr(config, "GEMINI_FALLBACK_MODEL", "backup-lite")
+    slept = []
+    c = FakeClient([FakeAPIError(429, QUOTA_MSG)] * 2)
+    with pytest.raises(gc.GeminiError) as e:
+        gc.generate("hi", client=c, sleep=slept.append)
+    assert e.value.kind == "quota" and "tomorrow" in e.value.user_message and slept == [] and len(c.calls) == 2
+
+
+def test_quota_message_counts_as_service_error_in_evaluation():
+    from src.backend.evaluation import SERVICE_ERRORS
+    assert gc._MESSAGES["quota"] in SERVICE_ERRORS
