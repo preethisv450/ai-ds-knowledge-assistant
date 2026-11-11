@@ -23,11 +23,12 @@ def show_module_assistant():
     with tab_summary:
         st.write("Generate a structured summary of this module.")
         cache_key = f"summary_{selection['module_id']}"
+        sum_new = st.checkbox("Rewrite it (skip the saved summary)", key="sum_new")
         if st.button("Generate summary", key="btn_summary"):
             from src.backend.study import generate_summary  # imported here so the page loads without backend deps
 
             with st.spinner("Writing the summary..."):
-                st.session_state[cache_key] = generate_summary(selection)
+                st.session_state[cache_key] = generate_summary(selection, refresh=sum_new)
         result = st.session_state.get(cache_key)
         if result:
             st.markdown(result["summary"])
@@ -50,11 +51,12 @@ def show_module_assistant():
         with col2:
             q_count = st.number_input("How many", min_value=1, max_value=20, value=5, key="q_count")
         q_key = f"questions_{selection['module_id']}"
+        q_new = st.checkbox("Make a new set (skip the saved one)", key="q_new")
         if st.button("Generate questions", key="btn_questions"):
             from src.backend.study import generate_questions  # imported here so the page loads without backend deps
 
             with st.spinner("Writing questions..."):
-                st.session_state[q_key] = generate_questions(selection, q_type, int(q_count))
+                st.session_state[q_key] = generate_questions(selection, q_type, int(q_count), refresh=q_new)
         q_result = st.session_state.get(q_key)
         if q_result:
             if not q_result["questions"]:
@@ -72,11 +74,12 @@ def show_module_assistant():
         st.write("Take a multiple-choice quiz on this module.")
         quiz_n = st.number_input("Number of questions", min_value=1, max_value=15, value=5, key="quiz_n")
         quiz_key = f"quiz_{selection['module_id']}"
+        quiz_new = st.checkbox("Make a new quiz (skip the saved one)", key="quiz_new")
         if st.button("Start quiz", key="btn_quiz"):
             from src.backend.study import generate_quiz  # imported here so the page loads without backend deps
 
             with st.spinner("Writing the quiz..."):
-                st.session_state[quiz_key] = generate_quiz(selection, int(quiz_n))
+                st.session_state[quiz_key] = generate_quiz(selection, int(quiz_n), refresh=quiz_new)
             st.session_state[quiz_key + "_done"] = False
             for i in range(15):
                 st.session_state.pop(f"{quiz_key}_a{i}", None)

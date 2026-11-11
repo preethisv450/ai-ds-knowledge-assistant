@@ -10,6 +10,8 @@ load_dotenv(ROOT / ".env")
 PDF_DIR = ROOT / "data" / "pdfs"
 INDEX_DIR = ROOT / "data" / "vector_store"  # already in .gitignore
 CACHE_DIR = ROOT / ".cache"
+CACHE_TTL_S = 7 * 24 * 3600  # D14: saved summaries/questions/quizzes/answers expire after a week
+QUOTA_COOLDOWN_S = 15 * 60  # D14: a model whose daily quota is used up is skipped for this long
 
 # D1 stack decisions
 EMBEDDING_MODEL = "sentence-transformers/all-MiniLM-L6-v2"  # 384-dim, fast on CPU

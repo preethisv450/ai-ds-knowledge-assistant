@@ -10,6 +10,7 @@ and Gemini error handling (D5).
 import random
 
 from src.backend import config
+from src.backend.cache import AUTO, index_fingerprint, make_key, resolve
 from src.backend.catalog import make_filter, scope_label
 from src.backend.prompts import NOT_FOUND
 from src.backend.rag import (NO_DOCS_MSG, NO_INDEX_MSG, NOT_FOUND_MSG, render_citations,
@@ -46,7 +47,20 @@ def _gather(selection, k, min_score, retrieve_fn):
     return (chunks, None) if chunks else (None, NOT_FOUND_MSG)
 
 
-def generate_summary(selection, k=SUMMARY_K, min_score=None, retrieve_fn=None, generate_fn=None):
+def _cache_key(selection, kind, *params):
+    sel = selection or {}
+    return make_key(kind, sel.get("subject_code"), sel.get("module_id"), sel.get("subject"), sel.get("module"),
+                    params, index_fingerprint())
+
+
+def generate_summary(selection, k=SUMMARY_K, min_score=None, retrieve_fn=None, generate_fn=None,
+                     refresh=False, cache=AUTO):
+    cache = resolve(cache, retrieve_fn, generate_fn)
+    key = _cache_key(selection, "summary", k, min_score) if _topic(selection)[1] else None
+    if cache and key and not refresh:
+        hit = cache.get("summary", key)
+        if hit:
+            return hit
     chunks, problem = _gather(selection, k, min_score, retrieve_fn)
     if problem:
         return {"summary": problem, "sources": []}
@@ -64,7 +78,17 @@ def generate_summary(selection, k=SUMMARY_K, min_score=None, retrieve_fn=None, g
         return {"summary": e.user_message, "sources": []}
     if text.strip().startswith(NOT_FOUND):
         return {"summary": NOT_FOUND_MSG, "sources": []}
-    return {"summary": render_citations(text, chunks), "sources": to_sources(select_sources(text, chunks))}
+    result = {"summary": render_citations(text, chunks), "sources": to_sources(select_sources(text, chunks))}
+    if cache and key:
+        cache.put("summary", key, result)
+    return result
+
+
+def _clamp(n, top, default=5):
+    try:
+        return max(1, min(int(n), top))
+    except (TypeError, ValueError):
+        return default
 
 
 def normalize_qtype(qtype):
@@ -73,10 +97,18 @@ def normalize_qtype(qtype):
 
 
 def generate_questions(selection, qtype="short", n=5, difficulty="medium", k=QUESTIONS_K,
-                       min_score=None, retrieve_fn=None, generate_json_fn=None):
+                       min_score=None, retrieve_fn=None, generate_json_fn=None,
+                       refresh=False, cache=AUTO):
     """Practice questions with model answers for one module.
     Returns {"questions": [{"question", "model_answer"}], "message": str, "sources": [...]}.
     On any expected problem "questions" is [] and "message" says why (friendly text)."""
+    cache = resolve(cache, retrieve_fn, generate_json_fn)
+    key = _cache_key(selection, "questions", normalize_qtype(qtype), _clamp(n, MAX_QUESTIONS), difficulty, k, min_score) \
+        if _topic(selection)[1] else None
+    if cache and key and not refresh:
+        hit = cache.get("questions", key)
+        if hit:
+            return hit
     chunks, problem = _gather(selection, k, min_score, retrieve_fn)
     if problem:
         return {"questions": [], "message": problem, "sources": []}
@@ -86,10 +118,7 @@ def generate_questions(selection, qtype="short", n=5, difficulty="medium", k=QUE
     from src.backend.prompts import questions_prompt, validate_questions
     from src.backend.retrieval import to_sources
 
-    try:
-        n = max(1, min(int(n), MAX_QUESTIONS))
-    except (TypeError, ValueError):
-        n = 5
+    n = _clamp(n, MAX_QUESTIONS)
     subject, module = _topic(selection)
     system, prompt = questions_prompt(subject, module, chunks, qtype=normalize_qtype(qtype), n=n,
                                       difficulty=difficulty)
@@ -99,7 +128,10 @@ def generate_questions(selection, qtype="short", n=5, difficulty="medium", k=QUE
         return {"questions": [], "message": e.user_message, "sources": []}
     items = [{"question": str(q["question"]).strip(), "model_answer": str(q["model_answer"]).strip()}
              for q in data][:n]
-    return {"questions": items, "message": "", "sources": to_sources(chunks)}
+    result = {"questions": items, "message": "", "sources": to_sources(chunks)}
+    if cache and key:
+        cache.put("questions", key, result)
+    return result
 
 
 def _shuffle_options(item, rng):
@@ -111,11 +143,18 @@ def _shuffle_options(item, rng):
             "correct_index": options.index(correct), "explanation": str(item["explanation"]).strip()}
 
 
-def generate_quiz(selection, n=5, k=QUIZ_K, min_score=None, retrieve_fn=None, generate_json_fn=None, rng=None):
+def generate_quiz(selection, n=5, k=QUIZ_K, min_score=None, retrieve_fn=None, generate_json_fn=None, rng=None,
+                  refresh=False, cache=AUTO):
     """Multiple-choice quiz for one module.
     Returns {"quiz": [{"question", "options": [4], "correct_index": 0-3, "explanation"}],
              "message": str, "sources": [...]}. On any expected problem "quiz" is [] and
     "message" says why."""
+    cache = resolve(cache, retrieve_fn, generate_json_fn)
+    key = _cache_key(selection, "quiz", _clamp(n, MAX_QUIZ), k, min_score) if _topic(selection)[1] else None
+    if cache and key and not refresh:
+        hit = cache.get("quiz", key)
+        if hit:
+            return hit
     chunks, problem = _gather(selection, k, min_score, retrieve_fn)
     if problem:
         return {"quiz": [], "message": problem, "sources": []}
@@ -125,10 +164,7 @@ def generate_quiz(selection, n=5, k=QUIZ_K, min_score=None, retrieve_fn=None, ge
     from src.backend.prompts import quiz_prompt, validate_quiz
     from src.backend.retrieval import to_sources
 
-    try:
-        n = max(1, min(int(n), MAX_QUIZ))
-    except (TypeError, ValueError):
-        n = 5
+    n = _clamp(n, MAX_QUIZ)
     subject, module = _topic(selection)
     system, prompt = quiz_prompt(subject, module, chunks, n=n)
     try:
@@ -137,4 +173,7 @@ def generate_quiz(selection, n=5, k=QUIZ_K, min_score=None, retrieve_fn=None, ge
         return {"quiz": [], "message": e.user_message, "sources": []}
     rng = rng or random.Random()
     quiz = [_shuffle_options(q, rng) for q in data[:n]]
-    return {"quiz": quiz, "message": "", "sources": to_sources(chunks)}
+    result = {"quiz": quiz, "message": "", "sources": to_sources(chunks)}
+    if cache and key:
+        cache.put("quiz", key, result)
+    return result

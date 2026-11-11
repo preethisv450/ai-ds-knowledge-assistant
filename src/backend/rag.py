@@ -10,6 +10,7 @@ Syllabus -> the chosen subject/module).
 import re
 
 from src.backend import config
+from src.backend.cache import AUTO, index_fingerprint, make_key, resolve
 from src.backend.catalog import make_filter, scope_label
 from src.backend.prompts import NOT_FOUND
 
@@ -88,12 +89,21 @@ def select_sources(answer_text, chunks):
 
 
 def answer(question, mode="Syllabus", selection=None, k=None, min_score=None,
-           retrieve_fn=None, generate_fn=None):
+           retrieve_fn=None, generate_fn=None, cache=AUTO):
     if not question or not question.strip():
         return {"answer": EMPTY_MSG, "sources": []}
 
     k = k or config.TOP_K
     min_score = config.RAG_MIN_SCORE if min_score is None else min_score
+    cache = resolve(cache, retrieve_fn, generate_fn)
+    key = None
+    if cache:
+        sel = selection or {}
+        key = make_key("answer", " ".join(question.lower().split()), mode, sel.get("subject_code"),
+                       sel.get("module_id"), k, min_score, index_fingerprint())
+        hit = cache.get("answer", key)
+        if hit:
+            return hit
     if retrieve_fn is None:
         from src.backend.retrieval import retrieve as retrieve_fn
     if generate_fn is None:
@@ -123,4 +133,7 @@ def answer(question, mode="Syllabus", selection=None, k=None, min_score=None,
     if text.strip().startswith(NOT_FOUND):  # the model itself found nothing in the context
         return {"answer": NOT_FOUND_MSG, "sources": []}
 
-    return {"answer": render_citations(text, chunks), "sources": to_sources(select_sources(text, chunks))}
+    result = {"answer": render_citations(text, chunks), "sources": to_sources(select_sources(text, chunks))}
+    if cache and key:
+        cache.put("answer", key, result)
+    return result

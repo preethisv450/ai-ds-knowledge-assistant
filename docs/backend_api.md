@@ -60,3 +60,11 @@ questions and summaries do not use a request.
 ## Quiz (D13)
 
 `src.backend.study.generate_quiz(selection, n=5)` returns `{"quiz": [{"question", "options": [4 strings], "correct_index": 0-3, "explanation"}], "message": str, "sources": [{document, page, snippet}]}`. `n` is clamped to 1-15. Gemini replies in JSON mode and is validated (4 distinct options, correct_index 0-3, explanation present; re-asked up to 3 times). The options are shuffled in code so the right answer is not always in the same slot, and `correct_index` is remapped. On any expected problem `quiz` is `[]` and `message` is a friendly sentence. The Quiz tab keeps the quiz and the student's answers in `st.session_state`, so scoring does not call Gemini again.
+
+## Caching and rate limits (D14)
+
+`src/backend/cache.py` keeps successful results on disk in `.cache/generated/` (gitignored): chat answers (same question, mode, subject and module, ignoring case and spacing), summaries, questions (per type, count and difficulty) and quizzes (per count). Entries expire after 7 days (`CACHE_TTL_S`) and are tied to a fingerprint of the index, so rebuilding the index makes old entries unreachable. Errors and "not found" messages are never saved. A corrupt or unwritable cache is treated as a miss, never as an error.
+
+`generate_summary`, `generate_questions` and `generate_quiz` take `refresh=True` to skip the saved result and replace it (the UI "make a new set" checkbox). `answer` and the study functions accept `cache=None` to switch caching off; `scripts/evaluate.py` does this so accuracy is always measured on fresh answers. When functions are injected (tests) no cache is used unless one is passed. `python scripts/clear_cache.py` removes everything.
+
+Rate limits: transient errors are retried with backoff and then the fallback model is tried (D5). New in D14: when a model reports its daily quota is used up, it is skipped for `QUOTA_COOLDOWN_S` (15 minutes), so later requests fail fast with the "daily limit reached" message instead of waiting on a call that cannot succeed. Cached results keep working while the quota is exhausted.
