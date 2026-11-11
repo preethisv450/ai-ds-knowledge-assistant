@@ -10,6 +10,7 @@ import faiss
 import numpy as np
 
 from src.backend.config import EMBEDDING_MODEL, INDEX_DIR, PDF_DIR
+from src.backend.catalog import classify, load_manifest
 from src.backend.ingest import chunk_pdf
 
 INDEX_FILE = "faiss.index"
@@ -71,13 +72,16 @@ def load_index(index_dir=INDEX_DIR):
     return index, chunks
 
 
-def build_from_pdfs(pdf_dir=PDF_DIR, index_dir=INDEX_DIR, embed_fn=None):
+def build_from_pdfs(pdf_dir=PDF_DIR, index_dir=INDEX_DIR, embed_fn=None, manifest=None):
     pdfs = sorted(Path(pdf_dir).glob("*.pdf"))
     if not pdfs:
         raise FileNotFoundError(f"No PDFs found in {pdf_dir}")
+    manifest = load_manifest() if manifest is None else manifest
     chunks = []
     for pdf in pdfs:
-        chunks.extend(chunk_pdf(pdf))
+        for c in chunk_pdf(pdf):
+            c.update(classify(c["document"], c["page"], manifest))
+            chunks.append(c)
     index = build_index(chunks, embed_fn)
     save_index(index, chunks, index_dir)
     return index, chunks

@@ -13,6 +13,20 @@ index, chunks = build_from_pdfs()
 docs = sorted({c["document"] for c in chunks})
 print(f"Built index: {index.ntotal} chunks from {len(docs)} PDFs in {time.time()-t:.1f}s -> {INDEX_DIR}")
 
+print("\nHow each document was labelled (this decides what Syllabus / Regulation mode can search):")
+seen = {}
+for c in chunks:
+    seen.setdefault(c["document"], c)
+for doc, c in sorted(seen.items()):
+    mods = sorted({x["module_id"] for x in chunks if x["document"] == doc and x["module_id"]})
+    print(f"  {doc}: {c['doc_type']}" + (f", subject {c['subject_code']}" if c["subject_code"] else "")
+          + (f", modules {', '.join(mods)}" if mods else ""))
+if not any(c["doc_type"] in ("syllabus", "regulation") for c in chunks):
+    print("  -> No syllabus/regulation documents recognised, so scoping is OFF (dev mode). See docs/data_manifest.md")
+elif any(c["doc_type"] == "other" for c in chunks):
+    print("  -> Documents labelled 'other' are never searched. Rename them or list them in documents.json (docs/data_manifest.md)")
+print()
+
 index2, chunks2 = load_index()
 assert index2.ntotal == index.ntotal == len(chunks2), "reload mismatch"
 print(f"Reloaded OK: {index2.ntotal} vectors, dim {index2.d}")
