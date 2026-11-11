@@ -1,8 +1,8 @@
 """Answer service boundary.
 
-Day 6: stub implementation so the chat UI can be built and demoed before
-Pragna's retrieval code lands. When it does, replace the body of
-get_answer() only — the return shape must not change.
+Day 6: stub implementation so the chat UI can be built and demoed.
+When Pragna's function lands, replace the body of get_answer() only.
+The return shape must not change.
 """
 
 import time
@@ -12,9 +12,9 @@ def get_answer(question, mode, selection=None):
     """Answer a question.
 
     Args:
-        question: the user's question text.
-        mode: "Syllabus" or "Regulation".
-        selection: the sidebar selection dict, or None.
+        question: the user's question text
+        mode: "Syllabus" or "Regulation"
+        selection: the sidebar selection dict, or None
 
     Returns:
         {
@@ -35,9 +35,10 @@ def get_answer(question, mode, selection=None):
             f"**Placeholder answer** for: _{question}_\n\n"
             f"This would be answered from {scope}."
         ),
-        "sources": [
+                "sources": [
             {
-                "document": "AI_Syllabus.pdf",
+                "document": "AI_Syllabus.pdf" if mode == "Syllabus"
+                            else "Academic_Regulations.pdf",
                 "page": 4,
                 "snippet": "Placeholder source snippet text.",
             }
