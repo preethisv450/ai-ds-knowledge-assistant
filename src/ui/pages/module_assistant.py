@@ -70,5 +70,41 @@ def show_module_assistant():
 
     with tab_quiz:
         st.write("Take a multiple-choice quiz on this module.")
-        st.button("Start quiz", disabled=True, key="btn_quiz")
-        st.caption("Connects to Pragna's quiz generator on Day 13.")
+        quiz_n = st.number_input("Number of questions", min_value=1, max_value=15, value=5, key="quiz_n")
+        quiz_key = f"quiz_{selection['module_id']}"
+        if st.button("Start quiz", key="btn_quiz"):
+            from src.backend.study import generate_quiz  # imported here so the page loads without backend deps
+
+            with st.spinner("Writing the quiz..."):
+                st.session_state[quiz_key] = generate_quiz(selection, int(quiz_n))
+            st.session_state[quiz_key + "_done"] = False
+            for i in range(15):
+                st.session_state.pop(f"{quiz_key}_a{i}", None)
+        quiz = st.session_state.get(quiz_key)
+        if quiz:
+            if not quiz["quiz"]:
+                st.warning(quiz["message"])
+            else:
+                done = st.session_state.get(quiz_key + "_done", False)
+                for i, item in enumerate(quiz["quiz"]):
+                    st.markdown(f"**Q{i + 1}. {item['question']}**")
+                    choice = st.radio("Choose one", range(4), index=None, key=f"{quiz_key}_a{i}",
+                                      format_func=lambda j, it=item: it["options"][j],
+                                      label_visibility="collapsed", disabled=done)
+                    if done:
+                        if choice == item["correct_index"]:
+                            st.success("Correct. " + item["explanation"])
+                        else:
+                            st.error(f"Correct answer: {item['options'][item['correct_index']]}. " + item["explanation"])
+                if not done:
+                    if st.button("Submit answers", key=quiz_key + "_submit"):
+                        st.session_state[quiz_key + "_done"] = True
+                        st.rerun()
+                else:
+                    score = sum(st.session_state.get(f"{quiz_key}_a{i}") == it["correct_index"]
+                                for i, it in enumerate(quiz["quiz"]))
+                    st.subheader(f"Score: {score} / {len(quiz['quiz'])}")
+                if quiz["sources"]:
+                    with st.expander("Sources used"):
+                        for src in quiz["sources"]:
+                            st.markdown(f"**{src['document']}**, page {src['page']}")

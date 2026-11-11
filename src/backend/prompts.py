@@ -82,6 +82,8 @@ def validate_quiz(data):
         opts = q.get("options")
         if not isinstance(opts, list) or len(opts) != 4 or not all(isinstance(o, str) and o for o in opts):
             raise ValueError("each item needs exactly 4 options")
+        if len({o.strip().lower() for o in opts}) != 4:
+            raise ValueError("options must be different from each other")
         ci = q.get("correct_index")
         if not isinstance(ci, int) or isinstance(ci, bool) or not 0 <= ci <= 3:
             raise ValueError("correct_index must be 0-3")

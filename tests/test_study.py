@@ -110,3 +110,60 @@ def test_malformed_model_json_is_rejected_by_validator():
     from src.backend.prompts import validate_questions
     with pytest.raises(ValueError):
         validate_questions([{"question": "Q"}])
+
+
+# ---- D13: quiz ----
+import random
+
+MCQ = [{"question": "Which computes y?", "options": ["Perceptron", "Stack", "Queue", "Heap"],
+        "correct_index": 0, "explanation": "A perceptron computes y."},
+       {"question": "Which uses the chain rule?", "options": ["BFS", "Backprop", "Sorting", "Hashing"],
+        "correct_index": 1, "explanation": "Backprop uses it."}]
+
+
+def test_quiz_shape_limit_and_shuffle_keeps_the_right_answer():
+    for seed in range(20):
+        r = study.generate_quiz(SEL, 1, retrieve_fn=ret, generate_json_fn=_gj_quiz(MCQ), rng=random.Random(seed))
+        q = r["quiz"][0]
+        assert set(r) == {"quiz", "message", "sources"} and len(r["quiz"]) == 1
+        assert q["options"][q["correct_index"]] == "Perceptron" and sorted(q["options"]) == sorted(MCQ[0]["options"])
+    assert {s["page"] for s in r["sources"]} == {4, 6}
+
+
+def _gj_quiz(items):
+    from src.backend.prompts import validate_quiz
+    return lambda prompt, system=None, validate=None, **kw: (validate(items), [dict(i) for i in items])[1]
+
+
+def test_shuffle_actually_moves_the_answer_sometimes():
+    spots = set()
+    for seed in range(40):
+        q = study.generate_quiz(SEL, 1, retrieve_fn=ret, generate_json_fn=_gj_quiz(MCQ), rng=random.Random(seed))["quiz"][0]
+        spots.add(q["correct_index"])
+    assert len(spots) > 1
+
+
+def test_quiz_n_clamped_and_problems_become_messages():
+    seen = {}
+
+    def gj(prompt, system=None, validate=None, **kw):
+        seen["p"] = prompt
+        return MCQ
+    study.generate_quiz(SEL, 99, retrieve_fn=ret, generate_json_fn=gj)
+    assert "Write 15 multiple-choice" in seen["p"]
+    assert study.generate_quiz({"subject": "AI"}, retrieve_fn=ret)["message"] == study.NEED_MODULE_MSG
+
+    def bad(prompt, system=None, validate=None, **kw):
+        raise GeminiError("busy", "Gemini is busy, try again.")
+    assert study.generate_quiz(SEL, retrieve_fn=ret, generate_json_fn=bad) == {"quiz": [], "message": "Gemini is busy, try again.", "sources": []}
+
+
+def test_validate_quiz_rejects_bad_items():
+    import pytest
+    from src.backend.prompts import validate_quiz
+    ok = dict(MCQ[0])
+    validate_quiz([ok])
+    for bad in (dict(ok, options=["a", "A", "b", "c"]), dict(ok, options=["a", "b", "c"]),
+                dict(ok, correct_index=4), dict(ok, correct_index=True), dict(ok, explanation="")):
+        with pytest.raises(ValueError):
+            validate_quiz([bad])

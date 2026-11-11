@@ -1,11 +1,14 @@
 """D11/D12: study helpers for the Module Assistant.
   generate_summary(selection)            -> {"summary", "sources"}
   generate_questions(selection, type, n) -> {"questions", "message", "sources"}
+  generate_quiz(selection, n)            -> {"quiz", "message", "sources"}   (D13)
 
 Same contract style as rag.answer: never raises for expected problems; a friendly message goes
 in "summary" and "sources" is []. Reuses retrieval scoping (D8), marker citations (D7/D9)
 and Gemini error handling (D5).
 """
+import random
+
 from src.backend import config
 from src.backend.catalog import make_filter, scope_label
 from src.backend.prompts import NOT_FOUND
@@ -15,6 +18,8 @@ from src.backend.rag import (NO_DOCS_MSG, NO_INDEX_MSG, NOT_FOUND_MSG, render_ci
 SUMMARY_K = 8
 QUESTIONS_K = 8
 MAX_QUESTIONS = 20
+QUIZ_K = 8
+MAX_QUIZ = 15
 NEED_MODULE_MSG = "Please choose a subject and a module first."
 
 
@@ -95,3 +100,41 @@ def generate_questions(selection, qtype="short", n=5, difficulty="medium", k=QUE
     items = [{"question": str(q["question"]).strip(), "model_answer": str(q["model_answer"]).strip()}
              for q in data][:n]
     return {"questions": items, "message": "", "sources": to_sources(chunks)}
+
+
+def _shuffle_options(item, rng):
+    """Models tend to put the right answer in the same slot; shuffle and remap correct_index."""
+    correct = item["options"][item["correct_index"]]
+    options = list(item["options"])
+    rng.shuffle(options)
+    return {"question": str(item["question"]).strip(), "options": [str(o).strip() for o in options],
+            "correct_index": options.index(correct), "explanation": str(item["explanation"]).strip()}
+
+
+def generate_quiz(selection, n=5, k=QUIZ_K, min_score=None, retrieve_fn=None, generate_json_fn=None, rng=None):
+    """Multiple-choice quiz for one module.
+    Returns {"quiz": [{"question", "options": [4], "correct_index": 0-3, "explanation"}],
+             "message": str, "sources": [...]}. On any expected problem "quiz" is [] and
+    "message" says why."""
+    chunks, problem = _gather(selection, k, min_score, retrieve_fn)
+    if problem:
+        return {"quiz": [], "message": problem, "sources": []}
+    if generate_json_fn is None:
+        from src.backend.gemini_client import generate_json as generate_json_fn
+    from src.backend.gemini_client import GeminiError
+    from src.backend.prompts import quiz_prompt, validate_quiz
+    from src.backend.retrieval import to_sources
+
+    try:
+        n = max(1, min(int(n), MAX_QUIZ))
+    except (TypeError, ValueError):
+        n = 5
+    subject, module = _topic(selection)
+    system, prompt = quiz_prompt(subject, module, chunks, n=n)
+    try:
+        data = generate_json_fn(prompt, system=system, validate=validate_quiz)
+    except GeminiError as e:
+        return {"quiz": [], "message": e.user_message, "sources": []}
+    rng = rng or random.Random()
+    quiz = [_shuffle_options(q, rng) for q in data[:n]]
+    return {"quiz": quiz, "message": "", "sources": to_sources(chunks)}
