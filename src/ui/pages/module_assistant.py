@@ -46,13 +46,27 @@ def show_module_assistant():
         st.write("Generate practice questions for this module.")
         col1, col2 = st.columns(2)
         with col1:
-            st.selectbox("Type", ["Short answer", "Long answer"],
-                         disabled=True, key="q_type")
+            q_type = st.selectbox("Type", ["Short answer", "Long answer"], key="q_type")
         with col2:
-            st.number_input("How many", min_value=1, max_value=20, value=5,
-                            disabled=True, key="q_count")
-        st.button("Generate questions", disabled=True, key="btn_questions")
-        st.caption("Connects to Pragna's question generator on Day 12.")
+            q_count = st.number_input("How many", min_value=1, max_value=20, value=5, key="q_count")
+        q_key = f"questions_{selection['module_id']}"
+        if st.button("Generate questions", key="btn_questions"):
+            from src.backend.study import generate_questions  # imported here so the page loads without backend deps
+
+            with st.spinner("Writing questions..."):
+                st.session_state[q_key] = generate_questions(selection, q_type, int(q_count))
+        q_result = st.session_state.get(q_key)
+        if q_result:
+            if not q_result["questions"]:
+                st.warning(q_result["message"])
+            for i, item in enumerate(q_result["questions"], 1):
+                st.markdown(f"**Q{i}. {item['question']}**")
+                with st.expander("Model answer"):
+                    st.markdown(item["model_answer"])
+            if q_result["sources"]:
+                with st.expander("Sources used"):
+                    for src in q_result["sources"]:
+                        st.markdown(f"**{src['document']}**, page {src['page']}")
 
     with tab_quiz:
         st.write("Take a multiple-choice quiz on this module.")

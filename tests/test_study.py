@@ -61,3 +61,52 @@ def test_model_not_found_and_gemini_error_become_messages():
         raise GeminiError("busy", "Gemini is busy, try again.")
     e = study.generate_summary(SEL, retrieve_fn=ret, generate_fn=bad)
     assert e == {"summary": "Gemini is busy, try again.", "sources": []}
+
+
+# ---- D12: practice questions ----
+def _gj(items):
+    return lambda prompt, system=None, validate=None, **kw: (validate(items), items)[1]
+
+
+GOOD = [{"question": "What is a perceptron?", "model_answer": "A unit that computes y."},
+        {"question": "State the chain rule.", "model_answer": "d/dx f(g(x))."}]
+
+
+def test_questions_shape_and_n_limit():
+    r = study.generate_questions(SEL, "Short answer", 1, retrieve_fn=ret, generate_json_fn=_gj(GOOD))
+    assert set(r) == {"questions", "message", "sources"} and r["message"] == ""
+    assert r["questions"] == [GOOD[0]]
+    assert {s["page"] for s in r["sources"]} == {4, 6}
+
+
+def test_qtype_and_n_reach_the_prompt_and_n_is_clamped():
+    seen = {}
+
+    def gj(prompt, system=None, validate=None, **kw):
+        seen["p"] = prompt
+        return GOOD
+
+    study.generate_questions(SEL, "Long answer", 99, retrieve_fn=ret, generate_json_fn=gj)
+    assert "Write 20 long-answer" in seen["p"]
+    study.generate_questions(SEL, "Short answer", "abc", retrieve_fn=ret, generate_json_fn=gj)
+    assert "Write 5 short-answer" in seen["p"]
+    assert study.normalize_qtype("Long answer") == "long" and study.normalize_qtype(None) == "short"
+
+
+def test_questions_problems_become_messages_not_errors():
+    assert study.generate_questions({"subject": "AI"}, retrieve_fn=ret)["message"] == study.NEED_MODULE_MSG
+
+    def bad(prompt, system=None, validate=None, **kw):
+        raise GeminiError("empty", "Gemini returned nothing, try again.")
+    r = study.generate_questions(SEL, retrieve_fn=ret, generate_json_fn=bad)
+    assert r == {"questions": [], "message": "Gemini returned nothing, try again.", "sources": []}
+
+    low = lambda q, k=5, where=None: [dict(R[0], score=0.01)]
+    assert study.generate_questions(SEL, retrieve_fn=low)["questions"] == []
+
+
+def test_malformed_model_json_is_rejected_by_validator():
+    import pytest
+    from src.backend.prompts import validate_questions
+    with pytest.raises(ValueError):
+        validate_questions([{"question": "Q"}])
