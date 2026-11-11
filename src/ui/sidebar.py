@@ -1,5 +1,5 @@
 import streamlit as st
-from src.ui.stub_data import get_curriculum
+from src.ui.data_loader import get_curriculum, get_module_meta
 
 
 def render_sidebar():
@@ -19,11 +19,15 @@ def render_sidebar():
     modules = subjects[subject]
     module = st.sidebar.selectbox("Module", modules)
 
+    code, module_id = get_module_meta(year, semester, subject, module)
+
     selection = {
         "year": year,
         "semester": semester,
         "subject": subject,
+        "subject_code": code,
         "module": module,
+        "module_id": module_id,
     }
     st.session_state["selection"] = selection
 
