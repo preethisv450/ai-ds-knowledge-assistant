@@ -67,9 +67,9 @@ else:
         for sel, doc, pages in targets:
             for r in check_module(
                     sel, doc, pages,
-                    lambda s, refresh: generate_summary(s, refresh=refresh),
-                    lambda s, t, n, refresh: generate_questions(s, t, n, refresh=refresh),
-                    lambda s, n, refresh: generate_quiz(s, n, refresh=refresh),
+                    lambda s, refresh: generate_summary(s, refresh=refresh, fallback=False),
+                    lambda s, t, n, refresh: generate_questions(s, t, n, refresh=refresh, fallback=False),
+                    lambda s, n, refresh: generate_quiz(s, n, refresh=refresh, fallback=False),
                     pause=pause, quota_message=quota):
                 add(r["module"], r["check"], r["status"], r["detail"])
     except Quota:
@@ -79,7 +79,7 @@ else:
         print("\n3. Chat answers with page references")
 
         def paced(q, mode, sel):
-            res = answer(q, mode, sel, cache=None)
+            res = answer(q, mode, sel, cache=None, fallback=False)
             if res["answer"] == quota:
                 sys.exit("\nStopped: the daily Gemini quota is used up.")
             time.sleep(delay)

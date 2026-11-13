@@ -46,7 +46,7 @@ def test_gemini_failure_becomes_friendly_answer_not_exception():
     def boom(p, system=None):
         raise GeminiError("rate_limit", "The AI service is busy right now.")
 
-    r = rag.answer("q", retrieve_fn=fake_retrieve, generate_fn=boom)
+    r = rag.answer("q", retrieve_fn=fake_retrieve, generate_fn=boom, fallback=False)
     assert r == {"answer": "The AI service is busy right now.", "sources": []}
 
 

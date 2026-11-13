@@ -6,7 +6,7 @@ fakes (tests/test_e2e.py) and run for real by scripts/e2e_check.py. Each check i
 """
 import time
 
-from src.backend.evaluation import SERVICE_ERRORS
+from src.backend.evaluation import is_service_error
 
 CACHE_FAST_S = 0.5
 
@@ -20,7 +20,7 @@ def _row(module, check, status, detail=""):
 
 
 def _service_problem(text):
-    return text in SERVICE_ERRORS
+    return is_service_error(text)
 
 
 def check_module(sel, doc, pages, summary_fn, questions_fn, quiz_fn, pause=lambda: None, quota_message=None):
@@ -30,7 +30,7 @@ def check_module(sel, doc, pages, summary_fn, questions_fn, quiz_fn, pause=lambd
     rows = []
 
     def skip(check, text):
-        if quota_message and text == quota_message:
+        if quota_message and (text or "").startswith(quota_message):
             raise Quota()
         rows.append(_row(mid, check, "SKIP", "Gemini problem: " + text))
 

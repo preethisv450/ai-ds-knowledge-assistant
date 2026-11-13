@@ -1,0 +1,22 @@
+concept_id,name,subject_code,module_id,aliases
+rational-agent,Rational Agent,AI201,AI201-M1,agent|intelligent agent
+peas,PEAS Description,AI201,AI201-M1,PEAS
+task-environment,Task Environment,AI201,AI201-M1,environment types
+state-space-search,State Space Search,AI201,AI201-M2,search problem
+heuristic-function,Heuristic Function,AI201,AI201-M2,heuristic|h(n)
+a-star-search,A Star Search,AI201,AI201-M2,A*|A star
+admissibility,Admissibility,AI201,AI201-M2,admissible heuristic
+propositional-logic,Propositional Logic,AI201,AI201-M3,
+first-order-logic,First Order Logic,AI201,AI201-M3,FOL|predicate logic
+resolution,Resolution,AI201,AI201-M3,
+supervised-learning,Supervised Learning,DS202,DS202-M1,
+linear-regression,Linear Regression,DS202,DS202-M1,least squares
+overfitting,Overfitting,DS202,DS202-M1,
+regularisation,Regularisation,DS202,DS202-M1,L1|L2|ridge|lasso
+clustering,Clustering,DS202,DS202-M2,
+k-means,K Means,DS202,DS202-M2,k-means clustering
+principal-component-analysis,Principal Component Analysis,DS202,DS202-M2,PCA
+cross-validation,Cross Validation,DS202,DS202-M3,k-fold
+confusion-matrix,Confusion Matrix,DS202,DS202-M3,
+precision-recall,Precision and Recall,DS202,DS202-M3,precision|recall|F1
+bias-variance,Bias Variance Tradeoff,DS202,DS202-M3,bias-variance

@@ -59,7 +59,7 @@ def test_model_not_found_and_gemini_error_become_messages():
 
     def bad(p, system=None):
         raise GeminiError("busy", "Gemini is busy, try again.")
-    e = study.generate_summary(SEL, retrieve_fn=ret, generate_fn=bad)
+    e = study.generate_summary(SEL, retrieve_fn=ret, generate_fn=bad, fallback=False)
     assert e == {"summary": "Gemini is busy, try again.", "sources": []}
 
 

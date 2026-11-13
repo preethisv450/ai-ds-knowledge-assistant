@@ -7,6 +7,20 @@ st.set_page_config(
     layout="wide"
 )
 
+
+
+@st.cache_resource
+def _warm_up_backend():
+    """D16: load the embedding model and the index in the background so the first question is fast."""
+    try:
+        from src.backend.warmup import start_background
+        return start_background()
+    except Exception:
+        return None
+
+
+_warm_up_backend()
+
 st.title("AI & DS Knowledge Assistant")
 
 st.sidebar.title("Navigation")

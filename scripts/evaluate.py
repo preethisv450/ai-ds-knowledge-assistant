@@ -33,7 +33,7 @@ def paced_answer(q, mode, sel):
     progress["n"] += 1
     print(f"  [{progress['n']}/{len(rows)}] asking: {q[:70]}", flush=True)
     t = time.time()
-    res = answer(q, mode, sel, cache=None)  # D14: never read saved answers while measuring accuracy
+    res = answer(q, mode, sel, cache=None, fallback=False)  # D14: never read saved answers while measuring accuracy
     print(f"        done in {time.time() - t:.1f}s", flush=True)
     if res["answer"] == _MESSAGES["quota"]:
         sys.exit("\nStopped: the daily Gemini quota is used up (free tier limits are small and per model). "

@@ -1,0 +1,15 @@
+id,question,mode,subject_code,module_id,expected_keywords,expected_doc,expected_page,answerable
+1,What does PEAS stand for?,Syllabus,AI201,AI201-M1,Performance|Environment|Actuators|Sensors,AI201_syllabus.pdf,1,yes
+2,Who proposed the Turing test and in which year?,Syllabus,AI201,AI201-M1,Turing|1950,AI201_syllabus.pdf,1,yes
+3,What is an admissible heuristic?,Syllabus,AI201,AI201-M2,overestimate,AI201_syllabus.pdf,2,yes
+4,Which evaluation function does A* search use?,Syllabus,AI201,AI201-M2,g(n)|h(n),AI201_syllabus.pdf,2,yes
+5,State the modus ponens rule.,Syllabus,AI201,AI201-M3,P|infer,AI201_syllabus.pdf,3,yes
+6,How is the number of clusters chosen in k-means?,Syllabus,DS202,DS202-M2,elbow,DS202_syllabus.pdf,2,yes
+7,What is the formula for precision?,Syllabus,DS202,DS202-M3,TP|FP,DS202_syllabus.pdf,3,yes
+8,What does L2 regularisation penalise?,Syllabus,DS202,DS202-M1,squared,DS202_syllabus.pdf,1,yes
+9,What is the minimum attendance required to appear in the end-semester exam?,Regulation,,,75,Academic_Regulations.pdf,1,yes
+10,What is the fee for re-evaluation?,Regulation,,,1000,Academic_Regulations.pdf,2,yes
+11,Which grade is given for 85 marks?,Regulation,,,A+,Academic_Regulations.pdf,2,yes
+12,Who is the vice chancellor of the university?,Regulation,,,,,,no
+13,What is the capital of Peru?,Syllabus,AI201,AI201-M1,,,,no
+14,What is the elbow method?,Syllabus,AI201,AI201-M1,,,,no

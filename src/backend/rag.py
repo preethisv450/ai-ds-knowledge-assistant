@@ -88,8 +88,16 @@ def select_sources(answer_text, chunks):
     return matched or unique
 
 
+def fallback_text(user_message, chunks, n=2):
+    """D16: when Gemini fails, still show something useful: the friendly error plus the best passages found."""
+    lines = [user_message, "", "In the meantime, these are the most relevant passages from the documents:", ""]
+    for c in chunks[:n]:
+        lines += [f"**{c['document']}, page {c['page']}**", "> " + c["snippet"], ""]
+    return "\n".join(lines).rstrip()
+
+
 def answer(question, mode="Syllabus", selection=None, k=None, min_score=None,
-           retrieve_fn=None, generate_fn=None, cache=AUTO):
+           retrieve_fn=None, generate_fn=None, cache=AUTO, fallback=True):
     if not question or not question.strip():
         return {"answer": EMPTY_MSG, "sources": []}
 
@@ -128,7 +136,12 @@ def answer(question, mode="Syllabus", selection=None, k=None, min_score=None,
     try:
         text = generate_fn(prompt, system=system)
     except GeminiError as e:
-        return {"answer": e.user_message, "sources": []}
+        if not fallback:
+            return {"answer": e.user_message, "sources": []}
+        old = cache.get("answer", key, allow_stale=True) if cache and key else None  # expired but better than nothing
+        if old:
+            return old
+        return {"answer": fallback_text(e.user_message, chunks), "sources": to_sources(chunks[:2])}
 
     if text.strip().startswith(NOT_FOUND):  # the model itself found nothing in the context
         return {"answer": NOT_FOUND_MSG, "sources": []}

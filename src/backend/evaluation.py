@@ -16,6 +16,11 @@ REQUIRED = "question"
 SERVICE_ERRORS = set(_MESSAGES.values())  # friendly texts returned when Gemini itself failed
 
 
+def is_service_error(text):
+    """True for a friendly Gemini-failure text, also when a fallback adds passages after it (D16)."""
+    return any((text or "").startswith(m) for m in SERVICE_ERRORS)
+
+
 def load_questions(path):
     with open(path, newline="", encoding="utf-8-sig") as f:
         reader = csv.DictReader(f)
@@ -84,7 +89,7 @@ def run_eval(rows, retrieve_fn, answer_fn=None, min_score=None, pass_coverage=EV
             text, sources = a["answer"], a["sources"]
             nf = _is_not_found(text)
             res["answer"] = text
-            if text in SERVICE_ERRORS:  # Gemini failed: this says nothing about answer quality, so do not score it
+            if is_service_error(text):  # Gemini failed: this says nothing about answer quality, so do not score it
                 res["error"], res["why"] = True, "Gemini error, not scored"
             elif r["answerable"]:
                 res["coverage"] = keyword_coverage(text, r["keywords"])

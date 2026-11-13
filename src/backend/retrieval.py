@@ -3,6 +3,7 @@
 Scores are cosine similarity (1.0 = identical meaning, ~0 = unrelated). The index is
 loaded once and cached, so repeated calls from the UI are fast.
 """
+import threading
 from pathlib import Path
 
 from src.backend.config import INDEX_DIR, TOP_K
@@ -10,13 +11,15 @@ from src.backend.vector_store import embed_texts, load_index
 
 SNIPPET_CHARS = 300
 _cache = {}
+_lock = threading.Lock()
 
 
 def _load(index_dir):
     key = str(Path(index_dir).resolve())
-    if key not in _cache:
-        _cache[key] = load_index(index_dir)
-    return _cache[key]
+    with _lock:
+        if key not in _cache:
+            _cache[key] = load_index(index_dir)
+        return _cache[key]
 
 
 def clear_cache():
