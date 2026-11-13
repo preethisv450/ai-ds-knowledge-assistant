@@ -4,6 +4,7 @@ Vectors are L2-normalised and stored in an inner-product index, so the score FAI
 returns is cosine similarity (1.0 = identical). Row i of the index is chunks[i].
 """
 import json
+import threading
 from pathlib import Path
 
 import faiss
@@ -18,13 +19,15 @@ CHUNKS_FILE = "chunks.json"
 META_FILE = "meta.json"
 
 _model = None
+_model_lock = threading.Lock()
 
 
 def _get_model():
     global _model
-    if _model is None:  # load once; it takes a few seconds
-        from sentence_transformers import SentenceTransformer
-        _model = SentenceTransformer(EMBEDDING_MODEL)
+    with _model_lock:  # D16: the warm-up thread and the first request must not both load it
+        if _model is None:  # load once; it takes a few seconds
+            from sentence_transformers import SentenceTransformer
+            _model = SentenceTransformer(EMBEDDING_MODEL)
     return _model
 
 

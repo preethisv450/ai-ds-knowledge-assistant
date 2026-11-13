@@ -1,0 +1,17 @@
+source,target,relation,weight,note
+rational-agent,task-environment,related-to,2,both introduced together when defining an agent
+peas,task-environment,prerequisite,2,PEAS is how a task environment is described
+state-space-search,a-star-search,prerequisite,3,search must be understood before A star
+heuristic-function,a-star-search,prerequisite,3,A star is defined in terms of h(n)
+heuristic-function,admissibility,prerequisite,2,admissibility is a property of a heuristic
+propositional-logic,first-order-logic,prerequisite,3,FOL extends propositional logic
+first-order-logic,resolution,prerequisite,2,resolution works on first order clauses
+supervised-learning,linear-regression,prerequisite,3,regression is the first supervised method taught
+supervised-learning,overfitting,related-to,2,overfitting is introduced with supervised models
+overfitting,regularisation,prerequisite,3,regularisation is the answer to overfitting
+clustering,k-means,prerequisite,3,k means is the first clustering algorithm
+supervised-learning,cross-validation,prerequisite,2,validation assumes a supervised setting
+confusion-matrix,precision-recall,prerequisite,3,precision and recall are read off the matrix
+cross-validation,bias-variance,related-to,2,both are about generalisation
+overfitting,bias-variance,prerequisite,2,the tradeoff explains why overfitting happens
+linear-regression,principal-component-analysis,related-to,1,both are linear methods taught in different modules

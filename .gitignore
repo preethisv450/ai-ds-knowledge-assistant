@@ -11,3 +11,7 @@ data/processed/chunks/
 *.ipynb_checkpoints
 docs/wireframes/wireframes_all.png
 .cache/
+
+# run outputs and stray folders (D16/D9 reports are regenerated, never reviewed in git)
+results/
+Claude outputs/

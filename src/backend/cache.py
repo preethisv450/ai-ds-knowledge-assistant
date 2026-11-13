@@ -43,10 +43,11 @@ class Cache:
     def _path(self, kind, key):
         return self.dir / f"{kind}-{key}.json"
 
-    def get(self, kind, key):
+    def get(self, kind, key, allow_stale=False):
+        """allow_stale=True also returns expired entries (used when Gemini is down: an old answer beats none)."""
         try:
             entry = json.loads(self._path(kind, key).read_text())
-            if self._now() - entry["saved"] > self.ttl_s:
+            if not allow_stale and self._now() - entry["saved"] > self.ttl_s:
                 return None
             return entry["value"]
         except (OSError, ValueError, KeyError, TypeError):

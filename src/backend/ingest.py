@@ -15,14 +15,21 @@ OVERLAP_WORDS = 30
 MIN_CHUNK_WORDS = 15  # drop page-number-only / near-empty fragments
 
 
-def extract_pages(pdf_path):
-    """Return [(page_number starting at 1, cleaned_text), ...]; skips blank pages."""
+def extract_pages(pdf_path, strip_headers=True):
+    """Return [(page_number starting at 1, cleaned_text), ...]; skips blank pages.
+
+    strip_headers (D6) removes running headers, footers and page numbers that repeat
+    across most pages. It needs at least 3 pages of evidence, so short documents are
+    left exactly as they are."""
     pages = []
     with pymupdf.open(pdf_path) as doc:
         for i, page in enumerate(doc, start=1):
             text = _clean(page.get_text("text"))
             if text:
                 pages.append((i, text))
+    if strip_headers and pages:
+        from src.data.clean_text import strip_boilerplate
+        pages, _ = strip_boilerplate(pages)
     return pages
 
 
@@ -42,11 +49,11 @@ def chunk_words(words, size=CHUNK_WORDS, overlap=OVERLAP_WORDS):
             break
 
 
-def chunk_pdf(pdf_path, size=CHUNK_WORDS, overlap=OVERLAP_WORDS):
+def chunk_pdf(pdf_path, size=CHUNK_WORDS, overlap=OVERLAP_WORDS, strip_headers=True):
     """Return a list of {"document", "page", "chunk_id", "text"} dicts."""
     name = Path(pdf_path).name
     chunks = []
-    for page_no, text in extract_pages(pdf_path):
+    for page_no, text in extract_pages(pdf_path, strip_headers=strip_headers):
         words = text.split()
         for part in chunk_words(words, size, overlap):
             if len(part) < MIN_CHUNK_WORDS and chunks and chunks[-1]["page"] == page_no:

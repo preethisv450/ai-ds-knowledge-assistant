@@ -13,7 +13,7 @@ from src.backend import config
 from src.backend.cache import AUTO, index_fingerprint, make_key, resolve
 from src.backend.catalog import make_filter, scope_label
 from src.backend.prompts import NOT_FOUND
-from src.backend.rag import (NO_DOCS_MSG, NO_INDEX_MSG, NOT_FOUND_MSG, render_citations,
+from src.backend.rag import (NO_DOCS_MSG, fallback_text, NO_INDEX_MSG, NOT_FOUND_MSG, render_citations,
                              select_sources)
 
 SUMMARY_K = 8
@@ -54,7 +54,7 @@ def _cache_key(selection, kind, *params):
 
 
 def generate_summary(selection, k=SUMMARY_K, min_score=None, retrieve_fn=None, generate_fn=None,
-                     refresh=False, cache=AUTO):
+                     refresh=False, cache=AUTO, fallback=True):
     cache = resolve(cache, retrieve_fn, generate_fn)
     key = _cache_key(selection, "summary", k, min_score) if _topic(selection)[1] else None
     if cache and key and not refresh:
@@ -75,7 +75,12 @@ def generate_summary(selection, k=SUMMARY_K, min_score=None, retrieve_fn=None, g
     try:
         text = generate_fn(prompt, system=system)
     except GeminiError as e:
-        return {"summary": e.user_message, "sources": []}
+        if not fallback:
+            return {"summary": e.user_message, "sources": []}
+        old = cache.get("summary", key, allow_stale=True) if cache and key else None
+        if old:
+            return old
+        return {"summary": fallback_text(e.user_message, chunks, 3), "sources": to_sources(chunks[:3])}
     if text.strip().startswith(NOT_FOUND):
         return {"summary": NOT_FOUND_MSG, "sources": []}
     result = {"summary": render_citations(text, chunks), "sources": to_sources(select_sources(text, chunks))}
@@ -98,7 +103,7 @@ def normalize_qtype(qtype):
 
 def generate_questions(selection, qtype="short", n=5, difficulty="medium", k=QUESTIONS_K,
                        min_score=None, retrieve_fn=None, generate_json_fn=None,
-                       refresh=False, cache=AUTO):
+                       refresh=False, cache=AUTO, fallback=True):
     """Practice questions with model answers for one module.
     Returns {"questions": [{"question", "model_answer"}], "message": str, "sources": [...]}.
     On any expected problem "questions" is [] and "message" says why (friendly text)."""
@@ -125,7 +130,8 @@ def generate_questions(selection, qtype="short", n=5, difficulty="medium", k=QUE
     try:
         data = generate_json_fn(prompt, system=system, validate=validate_questions)
     except GeminiError as e:
-        return {"questions": [], "message": e.user_message, "sources": []}
+        old = cache.get("questions", key, allow_stale=True) if (fallback and cache and key) else None
+        return old or {"questions": [], "message": e.user_message, "sources": []}
     items = [{"question": str(q["question"]).strip(), "model_answer": str(q["model_answer"]).strip()}
              for q in data][:n]
     result = {"questions": items, "message": "", "sources": to_sources(chunks)}
@@ -144,7 +150,7 @@ def _shuffle_options(item, rng):
 
 
 def generate_quiz(selection, n=5, k=QUIZ_K, min_score=None, retrieve_fn=None, generate_json_fn=None, rng=None,
-                  refresh=False, cache=AUTO):
+                  refresh=False, cache=AUTO, fallback=True):
     """Multiple-choice quiz for one module.
     Returns {"quiz": [{"question", "options": [4], "correct_index": 0-3, "explanation"}],
              "message": str, "sources": [...]}. On any expected problem "quiz" is [] and
@@ -170,7 +176,8 @@ def generate_quiz(selection, n=5, k=QUIZ_K, min_score=None, retrieve_fn=None, ge
     try:
         data = generate_json_fn(prompt, system=system, validate=validate_quiz)
     except GeminiError as e:
-        return {"quiz": [], "message": e.user_message, "sources": []}
+        old = cache.get("quiz", key, allow_stale=True) if (fallback and cache and key) else None
+        return old or {"quiz": [], "message": e.user_message, "sources": []}
     rng = rng or random.Random()
     quiz = [_shuffle_options(q, rng) for q in data[:n]]
     result = {"quiz": quiz, "message": "", "sources": to_sources(chunks)}

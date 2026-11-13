@@ -1,0 +1,44 @@
+[
+  {
+    "file": "AI201_syllabus.pdf",
+    "doc_type": "syllabus",
+    "subject_code": "AI201",
+    "modules": {
+      "AI201-M1": [
+        1,
+        1
+      ],
+      "AI201-M2": [
+        2,
+        2
+      ],
+      "AI201-M3": [
+        3,
+        3
+      ]
+    }
+  },
+  {
+    "file": "DS202_syllabus.pdf",
+    "doc_type": "syllabus",
+    "subject_code": "DS202",
+    "modules": {
+      "DS202-M1": [
+        1,
+        1
+      ],
+      "DS202-M2": [
+        2,
+        2
+      ],
+      "DS202-M3": [
+        3,
+        3
+      ]
+    }
+  },
+  {
+    "file": "Academic_Regulations.pdf",
+    "doc_type": "regulation"
+  }
+]
