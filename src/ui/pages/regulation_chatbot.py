@@ -3,6 +3,19 @@ from src.ui.answer_service import get_answer
 
 MODES = ["Syllabus", "Regulation"]
 
+EXAMPLE_QUESTIONS = {
+    "Syllabus": [
+        "What are the main topics in this module?",
+        "Explain the key concepts with an example.",
+        "What should I revise first?",
+    ],
+    "Regulation": [
+        "What is the minimum attendance requirement?",
+        "How many backlogs are allowed to move up a year?",
+        "What is the passing mark for internal assessment?",
+    ],
+}
+
 
 def _scope_label(mode, selection):
     if mode == "Syllabus" and selection:
@@ -12,6 +25,7 @@ def _scope_label(mode, selection):
 
 def _render_sources(sources):
     if not sources:
+        st.caption("No source passages were returned for this answer.")
         return
 
     labels = ", ".join(
@@ -55,6 +69,7 @@ def show_regulation_chatbot():
             st.rerun()
 
     selection = st.session_state.get("selection")
+    blocked = mode == "Syllabus" and not selection
 
     if mode == "Syllabus":
         if selection:
@@ -70,21 +85,36 @@ def show_regulation_chatbot():
     st.divider()
 
     if not st.session_state["chat_messages"]:
-        st.info("Ask a question below to start the conversation.")
+        st.info("Ask a question below, or try one of these:")
+        for i, example in enumerate(EXAMPLE_QUESTIONS[mode]):
+            if st.button(
+                example,
+                key=f"example_{mode}_{i}",
+                use_container_width=True,
+                disabled=blocked,
+            ):
+                st.session_state["pending_question"] = example
+                st.rerun()
 
     for message in st.session_state["chat_messages"]:
         with st.chat_message(message["role"]):
-            st.markdown(message["content"])
+            if message.get("is_error"):
+                st.error(message["content"])
+            else:
+                st.markdown(message["content"])
+
             if message.get("scope"):
                 st.caption(message["scope"])
-            _render_sources(message.get("sources"))
 
-    blocked = mode == "Syllabus" and not selection
+            if message["role"] == "assistant" and not message.get("is_error"):
+                _render_sources(message.get("sources"))
 
-    question = st.chat_input(
+    typed = st.chat_input(
         "Pick a module first..." if blocked else "Type your question here...",
         disabled=blocked,
     )
+
+    question = typed or st.session_state.pop("pending_question", None)
 
     if question:
         st.session_state["chat_messages"].append(
@@ -95,15 +125,36 @@ def show_regulation_chatbot():
             }
         )
 
-        with st.spinner("Thinking..."):
-            result = get_answer(question, mode, selection)
+        try:
+            with st.spinner("Searching documents and writing an answer..."):
+                result = get_answer(question, mode, selection)
+        except Exception as exc:
+            st.session_state["chat_messages"].append(
+                {
+                    "role": "assistant",
+                    "content": (
+                        "I couldn't answer that just now. The AI service may be "
+                        "unavailable or out of quota — try again in a moment.\n\n"
+                        f"`{type(exc).__name__}: {exc}`"
+                    ),
+                    "is_error": True,
+                }
+            )
+        else:
+            answer_text = (result.get("answer") or "").strip()
+            if not answer_text:
+                answer_text = (
+                    "I couldn't find anything relevant in the documents for that "
+                    "question. Try rephrasing it, or check you've picked the right "
+                    "module in the sidebar."
+                )
 
-        st.session_state["chat_messages"].append(
-            {
-                "role": "assistant",
-                "content": result["answer"],
-                "sources": result["sources"],
-            }
-        )
+            st.session_state["chat_messages"].append(
+                {
+                    "role": "assistant",
+                    "content": answer_text,
+                    "sources": result.get("sources", []),
+                }
+            )
 
         st.rerun()
