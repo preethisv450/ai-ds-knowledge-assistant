@@ -4,6 +4,12 @@ from src.ui.answer_service import get_answer
 MODES = ["Syllabus", "Regulation"]
 
 
+def _scope_label(mode, selection):
+    if mode == "Syllabus" and selection:
+        return f"Syllabus · {selection['subject']} — {selection['module']}"
+    return "Regulation"
+
+
 def _render_sources(sources):
     if not sources:
         return
@@ -25,13 +31,28 @@ def show_regulation_chatbot():
 
     st.subheader("Chat")
 
-    mode = st.radio(
-        "Mode",
-        MODES,
-        horizontal=True,
-        label_visibility="collapsed",
-        key="chat_mode",
-    )
+    if "chat_messages" not in st.session_state:
+        st.session_state["chat_messages"] = []
+
+    left, right = st.columns([4, 1])
+
+    with left:
+        mode = st.radio(
+            "Mode",
+            MODES,
+            horizontal=True,
+            label_visibility="collapsed",
+            key="chat_mode",
+        )
+
+    with right:
+        if st.button(
+            "Clear chat",
+            use_container_width=True,
+            disabled=not st.session_state["chat_messages"],
+        ):
+            st.session_state["chat_messages"] = []
+            st.rerun()
 
     selection = st.session_state.get("selection")
 
@@ -48,19 +69,30 @@ def show_regulation_chatbot():
 
     st.divider()
 
-    if "chat_messages" not in st.session_state:
-        st.session_state["chat_messages"] = []
+    if not st.session_state["chat_messages"]:
+        st.info("Ask a question below to start the conversation.")
 
     for message in st.session_state["chat_messages"]:
         with st.chat_message(message["role"]):
             st.markdown(message["content"])
+            if message.get("scope"):
+                st.caption(message["scope"])
             _render_sources(message.get("sources"))
 
-    question = st.chat_input("Type your question here...")
+    blocked = mode == "Syllabus" and not selection
+
+    question = st.chat_input(
+        "Pick a module first..." if blocked else "Type your question here...",
+        disabled=blocked,
+    )
 
     if question:
         st.session_state["chat_messages"].append(
-            {"role": "user", "content": question}
+            {
+                "role": "user",
+                "content": question,
+                "scope": _scope_label(mode, selection),
+            }
         )
 
         with st.spinner("Thinking..."):
