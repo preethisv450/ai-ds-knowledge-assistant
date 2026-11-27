@@ -8,7 +8,7 @@ CSV columns (header row required; only `question` is mandatory):
 import csv
 
 from src.backend.catalog import make_filter
-from src.backend.config import EVAL_PASS_COVERAGE, RAG_MIN_SCORE, TOP_K
+from src.backend.config import ANSWER_MIN_SCORE, EVAL_PASS_COVERAGE, TOP_K
 from src.backend.gemini_client import _MESSAGES
 from src.backend.prompts import NOT_FOUND
 
@@ -76,7 +76,7 @@ def _page_hit(items, doc, page):
 
 def run_eval(rows, retrieve_fn, answer_fn=None, min_score=None, pass_coverage=EVAL_PASS_COVERAGE, k=TOP_K):
     """answer_fn=None -> retrieval-only (no Gemini calls). Returns one result dict per question."""
-    min_score = RAG_MIN_SCORE if min_score is None else min_score
+    min_score = ANSWER_MIN_SCORE if min_score is None else min_score
     out = []
     for r in rows:
         retrieved = retrieve_fn(r["question"], k=k, where=make_filter(r["mode"], r["selection"]))
