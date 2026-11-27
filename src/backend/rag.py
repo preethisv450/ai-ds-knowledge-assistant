@@ -102,7 +102,7 @@ def answer(question, mode="Syllabus", selection=None, k=None, min_score=None,
         return {"answer": EMPTY_MSG, "sources": []}
 
     k = k or config.TOP_K
-    min_score = config.RAG_MIN_SCORE if min_score is None else min_score
+    min_score = config.ANSWER_MIN_SCORE if min_score is None else min_score
     cache = resolve(cache, retrieve_fn, generate_fn)
     key = None
     if cache:

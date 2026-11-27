@@ -1,0 +1,31 @@
+id,question,mode,subject_code,module_id,expected_keywords,expected_doc,expected_page,answerable
+1,What does PEAS stand for?,Syllabus,AI201,AI201-M1,Performance|Environment|Actuators|Sensors,AI201_syllabus.pdf,1,yes
+2,Who proposed the Turing test and in which year?,Syllabus,AI201,AI201-M1,Turing|1950,AI201_syllabus.pdf,1,yes
+3,What is an admissible heuristic?,Syllabus,AI201,AI201-M2,overestimate,AI201_syllabus.pdf,2,yes
+4,Which evaluation function does A* search use?,Syllabus,AI201,AI201-M2,g(n)|h(n),AI201_syllabus.pdf,2,yes
+5,State the modus ponens rule.,Syllabus,AI201,AI201-M3,P|infer,AI201_syllabus.pdf,3,yes
+6,How is the number of clusters chosen in k-means?,Syllabus,DS202,DS202-M2,elbow,DS202_syllabus.pdf,2,yes
+7,What is the formula for precision?,Syllabus,DS202,DS202-M3,TP|FP,DS202_syllabus.pdf,3,yes
+8,What does L2 regularisation penalise?,Syllabus,DS202,DS202-M1,squared,DS202_syllabus.pdf,1,yes
+9,What is the minimum attendance required to appear in the end-semester exam?,Regulation,,,75,Academic_Regulations.pdf,1,yes
+10,What is the fee for re-evaluation?,Regulation,,,1000,Academic_Regulations.pdf,2,yes
+11,Which grade is given for 85 marks?,Regulation,,,A+,Academic_Regulations.pdf,2,yes
+12,Who is the vice chancellor of the university?,Regulation,,,,,,no
+13,What is the capital of Peru?,Syllabus,AI201,AI201-M1,,,,no
+14,What is the elbow method?,Syllabus,AI201,AI201-M1,,,,no
+15,Who coined the term artificial intelligence and in which year?,Syllabus,AI201,AI201-M1,McCarthy|1956,AI201_syllabus.pdf,1,yes
+16,Name the types of agents.,Syllabus,AI201,AI201-M1,reflex|goal-based|utility-based|learning,AI201_syllabus.pdf,1,yes
+17,Which search is complete and optimal when every step costs the same?,Syllabus,AI201,AI201-M2,breadth-first,AI201_syllabus.pdf,2,yes
+18,How does simulated annealing escape a local maximum?,Syllabus,AI201,AI201-M2,worse,AI201_syllabus.pdf,2,yes
+19,Which search is used for two-player games?,Syllabus,AI201,AI201-M2,minimax|alpha-beta,AI201_syllabus.pdf,2,yes
+20,What is a Horn clause?,Syllabus,AI201,AI201-M3,positive literal,AI201_syllabus.pdf,3,yes
+21,What is the difference between forward chaining and backward chaining?,Syllabus,AI201,AI201-M3,facts|goal,AI201_syllabus.pdf,3,yes
+22,What does L1 regularisation do?,Syllabus,DS202,DS202-M1,absolute|zero,DS202_syllabus.pdf,1,yes
+23,What does linear regression minimise?,Syllabus,DS202,DS202-M1,squared,DS202_syllabus.pdf,1,yes
+24,Which parameters does DBSCAN use?,Syllabus,DS202,DS202-M2,eps|minPts,DS202_syllabus.pdf,2,yes
+25,Which measures does the Apriori algorithm use?,Syllabus,DS202,DS202-M2,support|confidence,DS202_syllabus.pdf,2,yes
+26,What is the F1 score?,Syllabus,DS202,DS202-M3,harmonic mean,DS202_syllabus.pdf,3,yes
+27,What is data leakage?,Syllabus,DS202,DS202-M3,test|training,DS202_syllabus.pdf,3,yes
+28,What is the condonation fee for attendance between 65 and 75 percent?,Regulation,,,500,Academic_Regulations.pdf,1,yes
+29,What marks are needed to pass a subject?,Regulation,,,40|50,Academic_Regulations.pdf,1,yes
+30,What is the maximum duration to complete the programme?,Regulation,,,6 years,Academic_Regulations.pdf,2,yes
