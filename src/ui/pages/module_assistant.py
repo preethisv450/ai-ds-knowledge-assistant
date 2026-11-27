@@ -38,6 +38,13 @@ def show_module_assistant():
                     for src in result["sources"]:
                         st.markdown(f"**{src['document']}**, page {src['page']}")
                         st.caption(src["snippet"])
+            st.download_button(
+                "Download summary as text",
+                data=result["summary"],
+                file_name=f"{selection['module_id']}_summary.txt",
+                mime="text/plain",
+                key="dl_summary",
+            )
 
     with tab_qa:
         st.write("Ask a question about this module.")
