@@ -15,3 +15,4 @@ docs/wireframes/wireframes_all.png
 # run outputs and stray folders (D16/D9 reports are regenerated, never reviewed in git)
 results/
 Claude outputs/
+data/concepts/concepts.candidates.csv

@@ -6,7 +6,8 @@ A Streamlit app for exploring AI & Data Science course materials. It combines sy
 
 - **Module Assistant:** Generate module summaries, practice questions, and multiple-choice quizzes from the indexed course materials.
 - **Chat:** Ask questions in syllabus or regulation mode and inspect cited source passages. Syllabus answers can be scoped to the selected module.
-- **Knowledge Network and Timetable:** App sections are present; their interactive graph and schedule features are not yet implemented.
+- **Knowledge Network:** An interactive prerequisite map of every module. Concepts are laid out top to bottom so the learning order is visible, coloured by module, with a centrality table and the bridge concepts that the most other topics depend on.
+- **Timetable:** The app section is present; the schedule is not yet connected to real data.
 
 ## Requirements
 
@@ -53,13 +54,22 @@ python scripts/build_index.py
 
 The index is generated under `data/vector_store/` and is intentionally ignored by Git. Re-run the command when source PDFs change.
 
+## Build the concept graph
+
+The Knowledge Network reads `data/concepts/concepts.csv` and `data/concepts/relations.csv`, which are committed. To propose new candidate concepts from the indexed syllabus and check any edits:
+
+```bash
+python scripts/extract_concepts.py     # writes data/concepts/concepts.candidates.csv
+python scripts/check_concepts.py       # validates concepts.csv and relations.csv
+```
+
 ## Run the app
 
 ```bash
 streamlit run app.py
 ```
 
-Open the local URL printed by Streamlit in your browser. Use the sidebar to select a year, semester, subject, and module where applicable.
+Open the local URL printed by Streamlit in your browser. Navigate with the five-item bar fixed at the bottom of the window. Select a year, semester, subject, and module in the **Select Curriculum** panel on the Module Assistant page; the chatbot and the Knowledge Network follow that choice.
 
 ## Validate data and run tests
 
@@ -76,6 +86,13 @@ pytest
 ```
 
 For evaluation workflows, question-set guidance, and the data preparation sequence, see [`docs/nishant_runbook.md`](docs/nishant_runbook.md). The expected structure of curriculum, document, regulation, and concept data is described in [`docs/data_schema.md`](docs/data_schema.md).
+
+## Documentation
+
+- [`docs/user_guide.md`](docs/user_guide.md) — how to use the app, one page.
+- [`docs/demo_script.md`](docs/demo_script.md) — the five-minute demonstration.
+- [`docs/ui_test_checklist.md`](docs/ui_test_checklist.md) — manual test pass before a release.
+- [`docs/usability_test_script.md`](docs/usability_test_script.md) — the usability session protocol.
 
 ## Project layout
 
