@@ -1,4 +1,5 @@
 import streamlit as st
+from src.ui.answer_service import get_answer
 
 
 def show_module_assistant():
@@ -40,8 +41,61 @@ def show_module_assistant():
 
     with tab_qa:
         st.write("Ask a question about this module.")
-        st.chat_input("Ask about this module...", disabled=True, key="qa_input")
-        st.caption("Connects to the syllabus chatbot on Day 8.")
+
+        qa_key = f"qa_{selection['module_id']}"
+        history = st.session_state.setdefault(qa_key, [])
+
+        if history and st.button("Clear answers", key="btn_qa_clear"):
+            st.session_state[qa_key] = []
+            st.rerun()
+
+        for item in history:
+            with st.chat_message(item["role"]):
+                if item.get("is_error"):
+                    st.error(item["content"])
+                else:
+                    st.markdown(item["content"])
+                if item.get("sources"):
+                    with st.expander("Sources"):
+                        for src in item["sources"]:
+                            st.markdown(f"**{src['document']}**, page {src['page']}")
+                            st.caption(src["snippet"])
+
+        asked = st.chat_input("Ask about this module...", key="qa_input")
+
+        if asked:
+            history.append({"role": "user", "content": asked})
+            try:
+                with st.spinner("Searching this module and writing an answer..."):
+                    result = get_answer(asked, "Syllabus", selection)
+            except Exception as exc:
+                history.append(
+                    {
+                        "role": "assistant",
+                        "content": (
+                            "I couldn't answer that just now. The AI service may be "
+                            "unavailable or out of quota — try again in a moment.\n\n"
+                            f"`{type(exc).__name__}: {exc}`"
+                        ),
+                        "is_error": True,
+                    }
+                )
+            else:
+                text = (result.get("answer") or "").strip()
+                if not text:
+                    text = (
+                        "I couldn't find anything relevant in this module for that "
+                        "question. Try rephrasing it."
+                    )
+                history.append(
+                    {
+                        "role": "assistant",
+                        "content": text,
+                        "sources": result.get("sources", []),
+                    }
+                )
+            st.session_state[qa_key] = history
+            st.rerun()
 
     with tab_questions:
         st.write("Generate practice questions for this module.")

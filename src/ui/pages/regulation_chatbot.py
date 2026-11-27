@@ -78,7 +78,7 @@ def show_regulation_chatbot():
                 f"{selection['module']} ({selection['module_id']})"
             )
         else:
-            st.caption("Pick a module in the sidebar to scope syllabus questions.")
+            st.caption("Pick a module on the Module Assistant page to scope syllabus questions.")
     else:
         st.caption("Answering from academic regulations and policy documents.")
 
@@ -146,7 +146,7 @@ def show_regulation_chatbot():
                 answer_text = (
                     "I couldn't find anything relevant in the documents for that "
                     "question. Try rephrasing it, or check you've picked the right "
-                    "module in the sidebar."
+                    "module on the Module Assistant page."
                 )
 
             st.session_state["chat_messages"].append(
