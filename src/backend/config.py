@@ -24,7 +24,8 @@ GEMINI_MAX_RETRIES = 3
 CHUNK_WORDS = 180  # see ingest.py: MiniLM reads ~256 word-pieces, so 500 would be truncated
 CHUNK_OVERLAP = 30
 TOP_K = 5
-RAG_MIN_SCORE = float(os.getenv("RAG_MIN_SCORE", "0.12"))  # below this the chunk is ignored; tune on real data (D9)
+RAG_MIN_SCORE = float(os.getenv("RAG_MIN_SCORE", "0.12"))  # study tools (summary/questions/quiz): chunks scoring below this are ignored
+ANSWER_MIN_SCORE = float(os.getenv("ANSWER_MIN_SCORE", "0.04"))  # chat answers: lower, so short acronym questions still reach Gemini, which refuses unanswerable ones itself (D9, docs/tuning_log.md)
 EVAL_PASS_COVERAGE = 0.6  # share of expected keywords an answer must contain to count as correct (scripts/evaluate.py)
 
 

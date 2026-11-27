@@ -84,7 +84,7 @@ def test_low_top_score_returns_not_found_without_calling_gemini():
     def fail(*a, **k):
         raise AssertionError("Gemini must not be called")
 
-    r = rag.answer("capital of Peru?", retrieve_fn=lambda q, k=5, where=None: [_r("A.pdf", 1, 0.05)], generate_fn=fail)
+    r = rag.answer("capital of Peru?", retrieve_fn=lambda q, k=5, where=None: [_r("A.pdf", 1, 0.02)], generate_fn=fail)
     assert r == {"answer": NOT_FOUND_MSG, "sources": []}
 
 
@@ -95,7 +95,7 @@ def test_weak_chunks_are_dropped_from_the_prompt():
         seen["prompt"] = prompt
         return "ok (A.pdf, p.1)"
 
-    rag.answer("q", retrieve_fn=lambda q, k=5, where=None: [_r("A.pdf", 1, 0.5), _r("B.pdf", 2, 0.05)], generate_fn=gen)
+    rag.answer("q", retrieve_fn=lambda q, k=5, where=None: [_r("A.pdf", 1, 0.5), _r("B.pdf", 2, 0.02)], generate_fn=gen)
     assert "A.pdf, page 1" in seen["prompt"] and "B.pdf" not in seen["prompt"]
 
 
