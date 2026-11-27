@@ -259,9 +259,16 @@ hr{border-color:var(--line) !important;}
 .st-key-graph_panel{min-height:360px;}
 .st-key-legend_panel > [data-testid="stElementContainer"], .st-key-details_panel > [data-testid="stElementContainer"]{width:100% !important;}
 .side-title{font-size:1rem; font-weight:700; color:var(--navy); margin:0 0 8px;}
-.lg-row{display:flex; align-items:center; gap:10px; font-size:.92rem; color:var(--text); margin:6px 0;}
-.lg-dot{width:16px; height:16px; border-radius:50%; border:2px solid; flex:none;}
-.lg-core{background:#D9C8F5; border-color:#8B5CD6;} .lg-sub{background:#CFE3FB; border-color:#3B82F6;} .lg-app{background:#CDF0D2; border-color:#22A447;}
+.lg-row{display:flex; align-items:center; gap:10px; font-size:.88rem; color:var(--text); margin:8px 0;}
+.lg-key{width:34px; flex:none; display:flex; align-items:center; justify-content:center;}
+.lg-dot{border-radius:50%; flex:none;}
+.lg-sm{width:10px; height:10px; background:#8B5CD6;}
+.lg-lg{width:18px; height:18px; background:#8B5CD6;}
+.lg-swatch{display:flex; gap:3px;}
+.lg-swatch i{width:9px; height:9px; border-radius:50%; display:block;}
+.lg-line{width:30px; height:0; border-top:3px solid #9DB9EC;}
+.lg-dash{width:30px; height:0; border-top:3px dashed #9DB9EC;}
+.lg-sep{height:1px; background:var(--line); margin:12px 0 10px;}
 .dt-head{display:flex; justify-content:space-between; background:var(--blue-100); color:var(--navy); font-weight:700; font-size:.88rem;
   padding:7px 10px; border-radius:6px;}
 .dt-empty{color:var(--muted); font-size:.88rem; padding:10px 4px 2px;}
@@ -401,13 +408,16 @@ def network_side_panels():
     until the graph page provides concept data.
     """
     with st.container(key="legend_panel"):
-        st.markdown(
-            '<div class="side-title">Legend</div>'
-            '<div class="lg-row"><span class="lg-dot lg-core"></span>Core Concept</div>'
-            '<div class="lg-row"><span class="lg-dot lg-sub"></span>Sub Concept</div>'
-            '<div class="lg-row"><span class="lg-dot lg-app"></span>Application</div>',
-            unsafe_allow_html=True,
-        )
+        rows = ['<div class="side-title">Legend</div>']
+        for name, colour in st.session_state.get("network_legend", []):
+            rows.append(
+                f'<div class="lg-row"><span class="lg-key">'
+                f'<span class="lg-dot lg-lg" style="background:{colour}"></span></span>{name}</div>'
+            )
+        rows.append('<div class="lg-sep"></div>')
+        rows.append('<div class="lg-row"><span class="lg-key"><span class="lg-line"></span></span>Learn this first</div>')
+        rows.append('<div class="lg-row"><span class="lg-key"><span class="lg-dash"></span></span>Taught alongside</div>')
+        st.markdown("".join(rows), unsafe_allow_html=True)
     with st.container(key="details_panel"):
         st.markdown(
             '<div class="side-title">Concept Details</div>'

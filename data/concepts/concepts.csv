@@ -1,0 +1,152 @@
+concept_id,name,subject_code,module_id,aliases
+rational-agent,Rational Agent,AI201,AI201-M1,agent|intelligent agent
+peas,PEAS Description,AI201,AI201-M1,PEAS
+task-environment,Task Environment,AI201,AI201-M1,environment types
+state-space-search,State Space Search,AI201,AI201-M2,search problem|search space
+breadth-first-search,Breadth First Search,AI201,AI201-M2,BFS
+depth-first-search,Depth First Search,AI201,AI201-M2,DFS
+heuristic-function,Heuristic Function,AI201,AI201-M2,heuristic|h(n)
+admissibility,Admissibility,AI201,AI201-M2,admissible heuristic
+a-star-search,A Star Search,AI201,AI201-M2,A*|A star
+optimality,Optimality,AI201,AI201-M2,optimal solution
+propositional-logic,Propositional Logic,AI201,AI201-M3,
+first-order-logic,First Order Logic,AI201,AI201-M3,FOL|predicate logic
+horn-clause,Horn Clause,AI201,AI201-M3,horn clauses|clauses
+inference,Inference,AI201,AI201-M3,inference procedure
+forward-chaining,Forward Chaining,AI201,AI201-M3,
+backward-chaining,Backward Chaining,AI201,AI201-M3,
+resolution,Resolution,AI201,AI201-M3,
+supervised-learning,Supervised Learning,DS202,DS202-M1,
+linear-regression,Linear Regression,DS202,DS202-M1,least squares|regression
+overfitting,Overfitting,DS202,DS202-M1,
+regularisation,Regularisation,DS202,DS202-M1,L1|L2|ridge|lasso
+clustering,Clustering,DS202,DS202-M2,
+centroid,Centroid,DS202,DS202-M2,cluster centre
+k-means,K Means,DS202,DS202-M2,k-means clustering
+principal-component-analysis,Principal Component Analysis,DS202,DS202-M2,PCA
+train-test-split,Train Test Split,DS202,DS202-M3,training and test data
+cross-validation,Cross Validation,DS202,DS202-M3,k-fold
+confusion-matrix,Confusion Matrix,DS202,DS202-M3,
+precision-recall,Precision and Recall,DS202,DS202-M3,precision|recall|F1
+roc-curve,ROC Curve,DS202,DS202-M3,true positive rate|AUC
+bias-variance,Bias Variance Tradeoff,DS202,DS202-M3,bias-variance
+limit,Limit,MA101,MA101-M1,
+derivative,Derivative,MA101,MA101-M1,differentiation
+chain-rule,Chain Rule,MA101,MA101-M1,
+definite-integral,Definite Integral,MA101,MA101-M1,integration
+taylor-series,Taylor Series,MA101,MA101-M1,series expansion
+vector-space,Vector Space,MA101,MA101-M2,
+matrix-operations,Matrix Operations,MA101,MA101-M2,matrix algebra
+determinant,Determinant,MA101,MA101-M2,
+matrix-inverse,Matrix Inverse,MA101,MA101-M2,inverse
+eigenvalue,Eigenvalue,MA101,MA101-M2,eigenvector|eigenvalues
+differential-equation,Differential Equation,MA101,MA101-M3,ODE
+separable-equation,Separable Equation,MA101,MA101-M3,
+linear-first-order,Linear First Order Equation,MA101,MA101-M3,
+second-order-linear,Second Order Linear Equation,MA101,MA101-M3,
+laplace-transform,Laplace Transform,MA101,MA101-M3,
+variable,Variable,CS101,CS101-M1,
+data-type,Data Type,CS101,CS101-M1,types
+operator,Operator,CS101,CS101-M1,operators
+conditional-statement,Conditional Statement,CS101,CS101-M1,if else
+loop,Loop,CS101,CS101-M1,for loop|while loop
+array,Array,CS101,CS101-M2,arrays
+array-indexing,Array Indexing,CS101,CS101-M2,index
+multidimensional-array,Multidimensional Array,CS101,CS101-M2,2D array
+c-string,String,CS101,CS101-M2,char array
+string-function,String Function,CS101,CS101-M2,strlen|strcpy
+pointer,Pointer,CS101,CS101-M3,pointers
+pointer-arithmetic,Pointer Arithmetic,CS101,CS101-M3,
+pointer-to-array,Pointer to Array,CS101,CS101-M3,
+dynamic-memory,Dynamic Memory,CS101,CS101-M3,malloc|free
+function-pointer,Function Pointer,CS101,CS101-M3,
+abstract-data-type,Abstract Data Type,CS102,CS102-M1,ADT
+static-array,Static Array,CS102,CS102-M1,
+singly-linked-list,Singly Linked List,CS102,CS102-M1,linked list
+doubly-linked-list,Doubly Linked List,CS102,CS102-M1,
+circular-linked-list,Circular Linked List,CS102,CS102-M1,
+stack,Stack,CS102,CS102-M2,LIFO
+stack-application,Stack Application,CS102,CS102-M2,expression evaluation
+queue,Queue,CS102,CS102-M2,FIFO
+circular-queue,Circular Queue,CS102,CS102-M2,
+priority-queue,Priority Queue,CS102,CS102-M2,heap
+binary-tree,Binary Tree,CS102,CS102-M3,tree
+tree-traversal,Tree Traversal,CS102,CS102-M3,inorder|preorder|postorder
+binary-search-tree,Binary Search Tree,CS102,CS102-M3,BST
+graph-representation,Graph Representation,CS102,CS102-M3,adjacency list|adjacency matrix
+graph-traversal,Graph Traversal,CS102,CS102-M3,BFS|DFS
+entity,Entity,CS201,CS201-M1,entity set
+attribute,Attribute,CS201,CS201-M1,
+relationship,Relationship,CS201,CS201-M1,relationship set
+cardinality,Cardinality,CS201,CS201-M1,one to many
+er-diagram,ER Diagram,CS201,CS201-M1,entity relationship diagram
+relational-model,Relational Model,CS201,CS201-M2,relations|tables
+select-query,Select Query,CS201,CS201-M2,SELECT
+join,Join,CS201,CS201-M2,inner join|outer join
+aggregate-function,Aggregate Function,CS201,CS201-M2,GROUP BY|COUNT|SUM
+subquery,Subquery,CS201,CS201-M2,nested query
+functional-dependency,Functional Dependency,CS201,CS201-M3,FD
+first-normal-form,First Normal Form,CS201,CS201-M3,1NF
+second-normal-form,Second Normal Form,CS201,CS201-M3,2NF
+third-normal-form,Third Normal Form,CS201,CS201-M3,3NF
+boyce-codd-normal-form,Boyce Codd Normal Form,CS201,CS201-M3,BCNF
+perceptron,Perceptron,DS301,DS301-M1,
+activation-function,Activation Function,DS301,DS301-M1,ReLU|sigmoid
+feedforward-network,Feedforward Network,DS301,DS301-M1,MLP
+loss-function,Loss Function,DS301,DS301-M1,cost function
+backpropagation,Backpropagation,DS301,DS301-M1,backprop|gradient descent
+convolution,Convolution,DS301,DS301-M2,
+filter-kernel,Filter Kernel,DS301,DS301-M2,kernel|filter
+pooling,Pooling,DS301,DS301-M2,max pooling
+cnn-architecture,CNN Architecture,DS301,DS301-M2,convolutional network
+transfer-learning,Transfer Learning,DS301,DS301-M2,fine tuning
+sequence-data,Sequence Data,DS301,DS301-M3,time series|sequences
+recurrent-network,Recurrent Network,DS301,DS301-M3,RNN
+lstm,LSTM,DS301,DS301-M3,long short term memory
+attention-mechanism,Attention Mechanism,DS301,DS301-M3,attention
+transformer,Transformer,DS301,DS301-M3,
+tokenization,Tokenization,DS302,DS302-M1,tokens
+stopword-removal,Stopword Removal,DS302,DS302-M1,stopwords
+stemming,Stemming,DS302,DS302-M1,
+lemmatization,Lemmatization,DS302,DS302-M1,
+bag-of-words,Bag of Words,DS302,DS302-M1,BoW|TF-IDF
+n-gram-model,N Gram Model,DS302,DS302-M2,ngram
+word-embedding,Word Embedding,DS302,DS302-M2,embeddings
+word2vec,Word2Vec,DS302,DS302-M2,
+contextual-embedding,Contextual Embedding,DS302,DS302-M2,ELMo|BERT embeddings
+pretrained-language-model,Pretrained Language Model,DS302,DS302-M2,LLM|BERT
+text-classification,Text Classification,DS302,DS302-M3,sentiment analysis
+named-entity-recognition,Named Entity Recognition,DS302,DS302-M3,NER
+machine-translation,Machine Translation,DS302,DS302-M3,
+question-answering,Question Answering,DS302,DS302-M3,QA
+text-summarisation,Text Summarisation,DS302,DS302-M3,summarization
+distributed-file-system,Distributed File System,DS401,DS401-M1,
+hdfs,HDFS,DS401,DS401-M1,hadoop file system
+data-replication,Data Replication,DS401,DS401-M1,replication
+partitioning,Partitioning,DS401,DS401-M1,sharding
+cap-theorem,CAP Theorem,DS401,DS401-M1,
+mapreduce,MapReduce,DS401,DS401-M2,
+mapper-reducer,Mapper and Reducer,DS401,DS401-M2,map|reduce
+shuffle-sort,Shuffle and Sort,DS401,DS401-M2,
+spark-rdd,Spark RDD,DS401,DS401-M2,RDD
+spark-dataframe,Spark DataFrame,DS401,DS401-M2,dataframe
+streaming-data,Streaming Data,DS401,DS401-M3,stream
+event-time,Event Time,DS401,DS401-M3,
+windowing,Windowing,DS401,DS401-M3,tumbling window|sliding window
+message-queue,Message Queue,DS401,DS401-M3,Kafka|broker
+stream-processing,Stream Processing,DS401,DS401-M3,
+algorithmic-bias,Algorithmic Bias,DS402,DS402-M1,bias
+training-data-bias,Training Data Bias,DS402,DS402-M1,
+fairness-metric,Fairness Metric,DS402,DS402-M1,fairness
+disparate-impact,Disparate Impact,DS402,DS402-M1,
+bias-mitigation,Bias Mitigation,DS402,DS402-M1,debiasing
+personal-data,Personal Data,DS402,DS402-M2,PII
+consent,Consent,DS402,DS402-M2,
+anonymisation,Anonymisation,DS402,DS402-M2,anonymization|de-identification
+differential-privacy,Differential Privacy,DS402,DS402-M2,
+data-minimisation,Data Minimisation,DS402,DS402-M2,
+ai-regulation,AI Regulation,DS402,DS402-M3,regulation
+model-documentation,Model Documentation,DS402,DS402-M3,model cards|datasheets
+auditability,Auditability,DS402,DS402-M3,audit
+accountability,Accountability,DS402,DS402-M3,
+risk-assessment,Risk Assessment,DS402,DS402-M3,impact assessment

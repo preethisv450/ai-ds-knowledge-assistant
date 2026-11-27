@@ -1,0 +1,142 @@
+source,target,relation,weight,note
+rational-agent,task-environment,related-to,2,both introduced together when defining an agent
+peas,task-environment,prerequisite,2,PEAS is how a task environment is described
+rational-agent,state-space-search,prerequisite,1,an agent formulates its problem as a search
+state-space-search,breadth-first-search,prerequisite,3,BFS is a strategy over the state space
+state-space-search,depth-first-search,prerequisite,3,DFS is a strategy over the state space
+breadth-first-search,depth-first-search,related-to,2,the two uninformed strategies are compared
+breadth-first-search,a-star-search,prerequisite,2,uninformed search comes before informed search
+heuristic-function,a-star-search,prerequisite,3,A star is defined in terms of h(n)
+heuristic-function,admissibility,prerequisite,2,admissibility is a property of a heuristic
+admissibility,optimality,prerequisite,3,an admissible heuristic is what makes A star optimal
+a-star-search,optimality,related-to,2,optimality is discussed as a property of A star
+propositional-logic,first-order-logic,prerequisite,3,FOL extends propositional logic
+propositional-logic,horn-clause,prerequisite,2,horn clauses are a restricted propositional form
+inference,forward-chaining,prerequisite,2,chaining is one inference procedure
+inference,backward-chaining,prerequisite,2,chaining is one inference procedure
+inference,resolution,prerequisite,2,resolution is an inference procedure
+horn-clause,forward-chaining,prerequisite,3,forward chaining runs over horn clauses
+forward-chaining,backward-chaining,related-to,3,the two directions are taught as a pair
+first-order-logic,resolution,prerequisite,2,resolution works on first order clauses
+supervised-learning,linear-regression,prerequisite,3,regression is the first supervised method taught
+supervised-learning,overfitting,related-to,2,overfitting is introduced with supervised models
+overfitting,regularisation,prerequisite,3,regularisation is the answer to overfitting
+clustering,centroid,prerequisite,2,a cluster is summarised by its centroid
+centroid,k-means,prerequisite,3,k means moves centroids until they settle
+clustering,k-means,prerequisite,3,k means is the first clustering algorithm
+supervised-learning,train-test-split,prerequisite,2,held out data assumes a supervised setting
+train-test-split,cross-validation,prerequisite,3,cross validation generalises a single split
+confusion-matrix,precision-recall,prerequisite,3,precision and recall are read off the matrix
+confusion-matrix,roc-curve,prerequisite,2,the ROC curve is built from matrix rates
+precision-recall,roc-curve,related-to,2,both summarise classifier behaviour
+cross-validation,bias-variance,related-to,2,both are about generalisation
+overfitting,bias-variance,prerequisite,2,the tradeoff explains why overfitting happens
+linear-regression,principal-component-analysis,related-to,1,both are linear methods taught in different modules
+limit,derivative,prerequisite,3,a derivative is defined as a limit
+derivative,chain-rule,prerequisite,3,the chain rule is a rule for derivatives
+derivative,definite-integral,prerequisite,2,integration is introduced as the inverse of differentiation
+derivative,taylor-series,prerequisite,3,the series is built from repeated derivatives
+vector-space,matrix-operations,prerequisite,3,matrices act on vectors
+matrix-operations,determinant,prerequisite,3,the determinant is computed from the matrix
+determinant,matrix-inverse,prerequisite,3,a matrix is invertible when its determinant is non zero
+determinant,eigenvalue,prerequisite,3,eigenvalues come from the characteristic determinant
+differential-equation,separable-equation,prerequisite,3,the simplest solvable form
+separable-equation,linear-first-order,prerequisite,2,the next family of first order equations
+linear-first-order,second-order-linear,prerequisite,3,second order builds on first order methods
+second-order-linear,laplace-transform,prerequisite,2,transforms give another route to the same solutions
+variable,data-type,prerequisite,3,every variable has a type
+data-type,operator,prerequisite,2,operators act on typed values
+operator,conditional-statement,prerequisite,3,conditions are built from comparison operators
+conditional-statement,loop,prerequisite,3,a loop repeats while a condition holds
+array,array-indexing,prerequisite,3,elements are reached by index
+array-indexing,multidimensional-array,prerequisite,3,two indices instead of one
+array,c-string,prerequisite,3,a string is an array of characters
+c-string,string-function,prerequisite,3,the library functions operate on char arrays
+pointer,pointer-arithmetic,prerequisite,3,arithmetic is defined on addresses
+pointer-arithmetic,pointer-to-array,prerequisite,3,array access is pointer arithmetic
+pointer,dynamic-memory,prerequisite,3,allocated memory is reached through a pointer
+pointer,function-pointer,prerequisite,2,a function also has an address
+abstract-data-type,static-array,prerequisite,2,the array is the first concrete structure
+static-array,singly-linked-list,prerequisite,3,the list fixes the array's fixed size
+singly-linked-list,doubly-linked-list,prerequisite,3,a second link per node
+singly-linked-list,circular-linked-list,prerequisite,2,the tail links back to the head
+stack,stack-application,prerequisite,3,applications follow the operations
+stack,queue,prerequisite,2,the two orders are taught as a pair
+queue,circular-queue,prerequisite,3,the circular form reuses freed slots
+queue,priority-queue,prerequisite,2,ordering by priority instead of arrival
+binary-tree,tree-traversal,prerequisite,3,traversal is defined over the tree
+binary-tree,binary-search-tree,prerequisite,3,the BST adds an ordering rule
+tree-traversal,graph-traversal,prerequisite,2,traversal generalises from trees to graphs
+graph-representation,graph-traversal,prerequisite,3,traversal walks the stored representation
+entity,attribute,prerequisite,3,entities are described by attributes
+entity,relationship,prerequisite,3,relationships join entities
+relationship,cardinality,prerequisite,3,cardinality constrains a relationship
+cardinality,er-diagram,prerequisite,2,the diagram records entities relationships and cardinality
+relational-model,select-query,prerequisite,3,queries run over relations
+select-query,join,prerequisite,3,a join combines two selects
+select-query,aggregate-function,prerequisite,2,aggregates summarise selected rows
+select-query,subquery,prerequisite,2,a query nested inside another
+functional-dependency,first-normal-form,prerequisite,3,normalisation is defined through dependencies
+first-normal-form,second-normal-form,prerequisite,3,each form assumes the previous one
+second-normal-form,third-normal-form,prerequisite,3,each form assumes the previous one
+third-normal-form,boyce-codd-normal-form,prerequisite,3,BCNF is a stricter 3NF
+perceptron,activation-function,prerequisite,3,the unit needs a non linearity
+activation-function,feedforward-network,prerequisite,3,layers of activated units
+feedforward-network,loss-function,prerequisite,3,the network's output is scored
+loss-function,backpropagation,prerequisite,3,gradients of the loss train the weights
+convolution,filter-kernel,prerequisite,3,the kernel is what convolves
+filter-kernel,pooling,prerequisite,2,pooling follows the convolution layer
+pooling,cnn-architecture,prerequisite,3,the stack of layers forms the architecture
+cnn-architecture,transfer-learning,prerequisite,2,a trained architecture is reused
+sequence-data,recurrent-network,prerequisite,3,recurrence handles ordered input
+recurrent-network,lstm,prerequisite,3,LSTM fixes the vanishing gradient
+lstm,attention-mechanism,prerequisite,2,attention replaces carrying state along
+attention-mechanism,transformer,prerequisite,3,the transformer is built from attention
+tokenization,stopword-removal,prerequisite,3,stopwords are removed from tokens
+stopword-removal,stemming,prerequisite,2,the remaining tokens are reduced
+stemming,lemmatization,prerequisite,2,lemmatisation is the dictionary aware version
+tokenization,bag-of-words,prerequisite,3,counts are taken over tokens
+n-gram-model,word-embedding,prerequisite,2,embeddings replace sparse counts
+word-embedding,word2vec,prerequisite,3,word2vec is the first embedding method taught
+word2vec,contextual-embedding,prerequisite,3,context dependent vectors follow static ones
+contextual-embedding,pretrained-language-model,prerequisite,3,the model that produces the vectors
+text-classification,named-entity-recognition,prerequisite,2,tagging follows whole document labelling
+named-entity-recognition,machine-translation,prerequisite,1,sequence to sequence tasks build on tagging
+machine-translation,question-answering,prerequisite,2,both generate text conditioned on input
+question-answering,text-summarisation,prerequisite,2,both select and rewrite source content
+distributed-file-system,hdfs,prerequisite,3,HDFS is the worked example
+hdfs,data-replication,prerequisite,3,blocks are replicated across nodes
+data-replication,partitioning,prerequisite,2,data is split as well as copied
+partitioning,cap-theorem,prerequisite,2,the trade off the design faces
+mapreduce,mapper-reducer,prerequisite,3,the two halves of the model
+mapper-reducer,shuffle-sort,prerequisite,3,the stage between map and reduce
+mapreduce,spark-rdd,prerequisite,2,Spark generalises the model
+spark-rdd,spark-dataframe,prerequisite,3,the typed API over RDDs
+streaming-data,event-time,prerequisite,3,records carry the time they happened
+event-time,windowing,prerequisite,3,windows are cut on event time
+streaming-data,message-queue,prerequisite,2,the stream arrives through a broker
+message-queue,stream-processing,prerequisite,3,the engine consumes from the queue
+algorithmic-bias,training-data-bias,prerequisite,3,most bias enters through the data
+training-data-bias,fairness-metric,prerequisite,3,metrics are needed to measure it
+fairness-metric,disparate-impact,prerequisite,3,one such measure
+fairness-metric,bias-mitigation,prerequisite,2,you mitigate against a measure
+personal-data,consent,prerequisite,3,consent governs personal data
+personal-data,anonymisation,prerequisite,3,anonymisation is applied to personal data
+anonymisation,differential-privacy,prerequisite,3,a formal guarantee where anonymisation is weak
+consent,data-minimisation,prerequisite,2,collect only what consent covers
+ai-regulation,model-documentation,prerequisite,3,regulation asks for documentation
+model-documentation,auditability,prerequisite,3,documentation is what makes an audit possible
+auditability,accountability,prerequisite,3,audits are how accountability is enforced
+ai-regulation,risk-assessment,prerequisite,2,risk tiers drive the obligations
+derivative,backpropagation,prerequisite,2,backpropagation is the chain rule applied to a network
+eigenvalue,principal-component-analysis,prerequisite,3,PCA is an eigenvalue problem
+array,static-array,prerequisite,3,the C array is the structure studied here
+pointer,singly-linked-list,prerequisite,3,nodes are joined by pointers
+graph-traversal,state-space-search,prerequisite,2,search is traversal over a state graph
+supervised-learning,perceptron,prerequisite,3,a neural network is a supervised model
+backpropagation,convolution,prerequisite,1,convolutional layers are trained the same way
+transformer,pretrained-language-model,prerequisite,3,modern language models are transformers
+bag-of-words,text-classification,prerequisite,2,the first classifiers run on bag of words
+relational-model,partitioning,related-to,1,tables are partitioned across nodes
+train-test-split,fairness-metric,related-to,1,both are measured on held out data
+overfitting,training-data-bias,related-to,1,both are faults that come from the data
