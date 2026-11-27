@@ -272,6 +272,17 @@ hr{border-color:var(--line) !important;}
 .dt-head{display:flex; justify-content:space-between; background:var(--blue-100); color:var(--navy); font-weight:700; font-size:.88rem;
   padding:7px 10px; border-radius:6px;}
 .dt-empty{color:var(--muted); font-size:.88rem; padding:10px 4px 2px;}
+.dt-row{display:flex; justify-content:space-between; align-items:center; gap:10px; font-size:.88rem;
+  color:var(--text); padding:7px 10px; border-bottom:1px solid var(--line);}
+.dt-row:last-of-type{border-bottom:none;}
+.dt-n{font-weight:700; color:var(--navy); font-variant-numeric:tabular-nums;}
+.side-title.sm{font-size:.92rem; margin-bottom:2px;}
+.br-note{font-size:.78rem; color:var(--muted); margin:0 0 10px;}
+.br-row{margin:0 0 10px;}
+.br-top{font-size:.86rem; color:var(--text); margin-bottom:4px;}
+.br-bar{height:7px; border-radius:4px; background:var(--blue-50); overflow:hidden;}
+.br-bar i{display:block; height:100%; border-radius:4px; background:var(--navy);}
+.br-where{font-size:.74rem; color:var(--muted); margin-top:3px;}
 
 /* Tablet and below */
 @media (max-width: 900px){
@@ -419,9 +430,23 @@ def network_side_panels():
         rows.append('<div class="lg-row"><span class="lg-key"><span class="lg-dash"></span></span>Taught alongside</div>')
         st.markdown("".join(rows), unsafe_allow_html=True)
     with st.container(key="details_panel"):
-        st.markdown(
-            '<div class="side-title">Concept Details</div>'
-            '<div class="dt-head"><span>Concept</span><span>Connections</span></div>'
-            '<div class="dt-empty">Concept details will appear here once the graph is available.</div>',
-            unsafe_allow_html=True,
-        )
+        table = st.session_state.get("network_table", [])
+        bridges = st.session_state.get("network_bridges", [])
+        rows = ['<div class="side-title">Concept Details</div>',
+                '<div class="dt-head"><span>Concept</span><span>Connections</span></div>']
+        if table:
+            for name, links in table:
+                rows.append(f'<div class="dt-row"><span>{name}</span><span class="dt-n">{links}</span></div>')
+        else:
+            rows.append('<div class="dt-empty">Concept details will appear here once the graph is available.</div>')
+        if bridges:
+            rows.append('<div class="lg-sep"></div>')
+            rows.append('<div class="side-title sm">Top bridge concepts</div>')
+            rows.append('<div class="br-note">Concepts the most other topics depend on</div>')
+            for name, where, pct in bridges:
+                rows.append(
+                    f'<div class="br-row"><div class="br-top"><span>{name}</span></div>'
+                    f'<div class="br-bar"><i style="width:{max(pct, 6)}%"></i></div>'
+                    f'<div class="br-where">{where}</div></div>'
+                )
+        st.markdown("".join(rows), unsafe_allow_html=True)
