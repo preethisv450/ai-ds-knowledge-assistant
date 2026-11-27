@@ -8,6 +8,7 @@ in "summary" and "sources" is []. Reuses retrieval scoping (D8), marker citation
 and Gemini error handling (D5).
 """
 import random
+import re
 
 from src.backend import config
 from src.backend.cache import AUTO, index_fingerprint, make_key, resolve
@@ -53,6 +54,28 @@ def _cache_key(selection, kind, *params):
                     params, index_fingerprint())
 
 
+_HEADING = re.compile(r"^\s*(#{1,6}\s+\S|\*\*[^*]+\*\*\s*:?\s*$|(key points|definitions|things to remember)\s*:?\s*$)", re.I)
+_FORMULAS = re.compile(r"^\s*(#{1,6}\s*)?\**\s*formulas?\s*:?\s*\**\s*$", re.I)
+_PLACEHOLDERS = {"", "omit if none", "none", "n/a", "na", "-", "not applicable", "no formulas"}
+
+
+def clean_summary(text):
+    """Remove a Formulas section that holds only a placeholder such as "(Omit if none)"; keep real ones."""
+    lines, out, i = (text or "").splitlines(), [], 0
+    while i < len(lines):
+        if _FORMULAS.match(lines[i]):
+            j = i + 1
+            while j < len(lines) and not _HEADING.match(lines[j]):
+                j += 1
+            body = [re.sub(r"[()*_.\s]+$|^[()*_.\s]+", "", l).lower() for l in lines[i + 1:j]]
+            if all(b in _PLACEHOLDERS for b in body):
+                i = j
+                continue
+        out.append(lines[i])
+        i += 1
+    return re.sub(r"\n{3,}", "\n\n", "\n".join(out)).strip()
+
+
 def generate_summary(selection, k=SUMMARY_K, min_score=None, retrieve_fn=None, generate_fn=None,
                      refresh=False, cache=AUTO, fallback=True):
     cache = resolve(cache, retrieve_fn, generate_fn)
@@ -83,7 +106,7 @@ def generate_summary(selection, k=SUMMARY_K, min_score=None, retrieve_fn=None, g
         return {"summary": fallback_text(e.user_message, chunks, 3), "sources": to_sources(chunks[:3])}
     if text.strip().startswith(NOT_FOUND):
         return {"summary": NOT_FOUND_MSG, "sources": []}
-    result = {"summary": render_citations(text, chunks), "sources": to_sources(select_sources(text, chunks))}
+    result = {"summary": clean_summary(render_citations(text, chunks)), "sources": to_sources(select_sources(text, chunks))}
     if cache and key:
         cache.put("summary", key, result)
     return result

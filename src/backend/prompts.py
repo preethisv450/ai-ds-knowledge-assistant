@@ -36,8 +36,9 @@ def answer_prompt(question, chunks, mode="Syllabus", scope=None):
 def summary_prompt(subject, module, chunks):
     system = (
         "You are a study assistant. Write a structured revision summary using ONLY the context. "
-        "Use these markdown sections: Key points, Definitions, Formulas (omit if none), "
-        "Things to remember. Be accurate and brief. Do not invent content. "
+        "Use these markdown sections: Key points, Definitions, Formulas, Things to remember. "
+        "Write the Formulas section only if the context contains a formula; otherwise leave that section out completely "
+        "and never write a placeholder such as 'none' or 'omit'. Be accurate and brief. Do not invent content. "
         "End each bullet with the marker of the context passage it came from, like [S2]. "
         "Use only markers that appear in the context; never write file names or page numbers yourself. "
         "If the context has nothing useful about the module, reply with exactly: " + NOT_FOUND
