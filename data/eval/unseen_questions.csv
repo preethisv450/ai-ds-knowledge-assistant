@@ -1,0 +1,11 @@
+id,question,mode,subject_code,module_id,expected_keywords,expected_doc,expected_page,answerable
+1,What is a rational agent?,Syllabus,AI201,AI201-M1,maximise|performance,AI201_syllabus.pdf,1,yes
+2,Which search expands the shallowest node first?,Syllabus,AI201,AI201-M2,breadth-first,AI201_syllabus.pdf,2,yes
+3,What programming language is built from Horn clauses?,Syllabus,AI201,AI201-M3,Prolog,AI201_syllabus.pdf,3,yes
+4,What does the ROC curve plot?,Syllabus,DS202,DS202-M3,true positive rate|false positive rate,DS202_syllabus.pdf,3,yes
+5,How does PCA reduce dimensions?,Syllabus,DS202,DS202-M2,eigenvectors|covariance,DS202_syllabus.pdf,2,yes
+6,What value of k is common in k-fold cross-validation?,Syllabus,DS202,DS202-M3,10,DS202_syllabus.pdf,3,yes
+7,What happens to a student whose attendance is below 65 percent?,Regulation,,,detained|repeat,Academic_Regulations.pdf,1,yes
+8,Within how many days of the result can I apply for re-evaluation?,Regulation,,,7,Academic_Regulations.pdf,2,yes
+9,How many marks are internal assessment in each subject?,Regulation,,,40,Academic_Regulations.pdf,1,yes
+10,What is the hostel fee per semester?,Regulation,,,,,,no
