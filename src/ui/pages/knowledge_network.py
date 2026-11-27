@@ -45,6 +45,10 @@ ZOOM_BAR = """
   function knZoom(f){ if(!window.network) return;
     network.moveTo({scale: network.getScale()*f, animation:{duration:200}}); }
   function knFit(){ if(!window.network) return; network.fit({animation:{duration:250}}); }
+  // Start at a size the labels are readable at; Fit is one click away.
+  setTimeout(function(){
+    if(window.network && network.getScale() < 0.72){ network.moveTo({scale:0.72}); }
+  }, 400);
 </script>
 """
 
@@ -193,7 +197,29 @@ def show_knowledge_network():
 
     if graph.number_of_nodes() == 0:
         st.info("No concepts recorded for this subject yet.")
+        st.session_state["network_table"] = []
+        st.session_state["network_bridges"] = []
         return
+
+    # D15: what the side panels show. The table ranks what is on screen by how
+    # many links each concept has; bridges use betweenness over the whole
+    # curriculum, so a concept scores for what it unlocks in other modules too.
+    ranked = sorted(graph.degree, key=lambda kv: (-kv[1], graph.nodes[kv[0]]["label"]))
+    st.session_state["network_table"] = [
+        (graph.nodes[n]["label"], d) for n, d in ranked[:8]
+    ]
+
+    whole, scores = bundle["graph"], bundle["betweenness"]
+    on_screen = [(n, scores.get(n, 0.0)) for n in graph.nodes if scores.get(n, 0.0) > 0]
+    on_screen.sort(key=lambda kv: -kv[1])
+    top = on_screen[:5]
+    highest = top[0][1] if top else 0
+    st.session_state["network_bridges"] = [
+        (whole.nodes[n]["label"],
+         module_names.get(whole.nodes[n]["module_id"], whole.nodes[n]["module_id"]),
+         round(100 * score / highest) if highest else 0)
+        for n, score in top
+    ]
 
     components.html(build_html(graph, colour_of), height=540, scrolling=False)
     st.caption(
