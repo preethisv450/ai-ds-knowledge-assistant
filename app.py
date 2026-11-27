@@ -3,6 +3,7 @@ from src.ui.sidebar import render_sidebar
 from src.ui.theme import (
     apply_theme,
     feature_card,
+    help_section,
     home_hero,
     network_side_panels,
     page_header,
@@ -13,6 +14,7 @@ from src.ui.theme import (
 
 st.set_page_config(
     page_title="AI & DS Knowledge Assistant",
+    page_icon="🎓",
     layout="wide",
     initial_sidebar_state="collapsed",
 )
@@ -63,6 +65,8 @@ if page == "Home":
         for col, (slug, icon, title, description) in zip(cols, row):
             with col:
                 feature_card(slug, icon, title, description, target=title)
+
+    help_section()
 
 elif page == "Module Assistant":
     page_marker("module")

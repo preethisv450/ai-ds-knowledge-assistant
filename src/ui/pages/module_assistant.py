@@ -2,6 +2,16 @@ import streamlit as st
 from src.ui.answer_service import get_answer
 
 
+def _service_error(what, exc):
+    """D16: a clear message instead of a raw traceback when the AI service fails."""
+    st.error(
+        f"Couldn't generate the {what} just now. The AI service may be unavailable "
+        "or out of quota for today — try again in a few minutes."
+    )
+    with st.expander("Technical details"):
+        st.caption(f"{type(exc).__name__}: {exc}")
+
+
 def show_module_assistant():
 
     selection = st.session_state.get("selection")
@@ -28,8 +38,12 @@ def show_module_assistant():
         if st.button("Generate summary", key="btn_summary"):
             from src.backend.study import generate_summary  # imported here so the page loads without backend deps
 
-            with st.spinner("Writing the summary..."):
-                st.session_state[cache_key] = generate_summary(selection, refresh=sum_new)
+            try:
+                with st.spinner("Writing the summary..."):
+                    st.session_state[cache_key] = generate_summary(selection, refresh=sum_new)
+            except Exception as exc:
+                st.session_state[cache_key] = None
+                _service_error("summary", exc)
         result = st.session_state.get(cache_key)
         if result:
             st.markdown(result["summary"])
@@ -116,8 +130,12 @@ def show_module_assistant():
         if st.button("Generate questions", key="btn_questions"):
             from src.backend.study import generate_questions  # imported here so the page loads without backend deps
 
-            with st.spinner("Writing questions..."):
-                st.session_state[q_key] = generate_questions(selection, q_type, int(q_count), refresh=q_new)
+            try:
+                with st.spinner("Writing questions..."):
+                    st.session_state[q_key] = generate_questions(selection, q_type, int(q_count), refresh=q_new)
+            except Exception as exc:
+                st.session_state[q_key] = None
+                _service_error("practice questions", exc)
         q_result = st.session_state.get(q_key)
         if q_result:
             if not q_result["questions"]:
@@ -139,8 +157,12 @@ def show_module_assistant():
         if st.button("Start quiz", key="btn_quiz"):
             from src.backend.study import generate_quiz  # imported here so the page loads without backend deps
 
-            with st.spinner("Writing the quiz..."):
-                st.session_state[quiz_key] = generate_quiz(selection, int(quiz_n), refresh=quiz_new)
+            try:
+                with st.spinner("Writing the quiz..."):
+                    st.session_state[quiz_key] = generate_quiz(selection, int(quiz_n), refresh=quiz_new)
+            except Exception as exc:
+                st.session_state[quiz_key] = None
+                _service_error("quiz", exc)
             st.session_state[quiz_key + "_done"] = False
             for i in range(15):
                 st.session_state.pop(f"{quiz_key}_a{i}", None)
