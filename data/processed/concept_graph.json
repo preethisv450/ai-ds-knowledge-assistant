@@ -1,0 +1,2053 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "name": "Rational Agent",
+      "subject_code": "AI201",
+      "module_id": "AI201-M1",
+      "aliases": "agent|intelligent agent",
+      "id": "rational-agent"
+    },
+    {
+      "name": "PEAS Description",
+      "subject_code": "AI201",
+      "module_id": "AI201-M1",
+      "aliases": "PEAS",
+      "id": "peas"
+    },
+    {
+      "name": "Task Environment",
+      "subject_code": "AI201",
+      "module_id": "AI201-M1",
+      "aliases": "environment types",
+      "id": "task-environment"
+    },
+    {
+      "name": "State Space Search",
+      "subject_code": "AI201",
+      "module_id": "AI201-M2",
+      "aliases": "search problem|search space",
+      "id": "state-space-search"
+    },
+    {
+      "name": "Breadth First Search",
+      "subject_code": "AI201",
+      "module_id": "AI201-M2",
+      "aliases": "BFS",
+      "id": "breadth-first-search"
+    },
+    {
+      "name": "Depth First Search",
+      "subject_code": "AI201",
+      "module_id": "AI201-M2",
+      "aliases": "DFS",
+      "id": "depth-first-search"
+    },
+    {
+      "name": "Heuristic Function",
+      "subject_code": "AI201",
+      "module_id": "AI201-M2",
+      "aliases": "heuristic|h(n)",
+      "id": "heuristic-function"
+    },
+    {
+      "name": "Admissibility",
+      "subject_code": "AI201",
+      "module_id": "AI201-M2",
+      "aliases": "admissible heuristic",
+      "id": "admissibility"
+    },
+    {
+      "name": "A Star Search",
+      "subject_code": "AI201",
+      "module_id": "AI201-M2",
+      "aliases": "A*|A star",
+      "id": "a-star-search"
+    },
+    {
+      "name": "Optimality",
+      "subject_code": "AI201",
+      "module_id": "AI201-M2",
+      "aliases": "optimal solution",
+      "id": "optimality"
+    },
+    {
+      "name": "Propositional Logic",
+      "subject_code": "AI201",
+      "module_id": "AI201-M3",
+      "aliases": "",
+      "id": "propositional-logic"
+    },
+    {
+      "name": "First Order Logic",
+      "subject_code": "AI201",
+      "module_id": "AI201-M3",
+      "aliases": "FOL|predicate logic",
+      "id": "first-order-logic"
+    },
+    {
+      "name": "Horn Clause",
+      "subject_code": "AI201",
+      "module_id": "AI201-M3",
+      "aliases": "horn clauses|clauses",
+      "id": "horn-clause"
+    },
+    {
+      "name": "Inference",
+      "subject_code": "AI201",
+      "module_id": "AI201-M3",
+      "aliases": "inference procedure",
+      "id": "inference"
+    },
+    {
+      "name": "Forward Chaining",
+      "subject_code": "AI201",
+      "module_id": "AI201-M3",
+      "aliases": "",
+      "id": "forward-chaining"
+    },
+    {
+      "name": "Backward Chaining",
+      "subject_code": "AI201",
+      "module_id": "AI201-M3",
+      "aliases": "",
+      "id": "backward-chaining"
+    },
+    {
+      "name": "Resolution",
+      "subject_code": "AI201",
+      "module_id": "AI201-M3",
+      "aliases": "",
+      "id": "resolution"
+    },
+    {
+      "name": "Supervised Learning",
+      "subject_code": "DS202",
+      "module_id": "DS202-M1",
+      "aliases": "",
+      "id": "supervised-learning"
+    },
+    {
+      "name": "Linear Regression",
+      "subject_code": "DS202",
+      "module_id": "DS202-M1",
+      "aliases": "least squares|regression",
+      "id": "linear-regression"
+    },
+    {
+      "name": "Overfitting",
+      "subject_code": "DS202",
+      "module_id": "DS202-M1",
+      "aliases": "",
+      "id": "overfitting"
+    },
+    {
+      "name": "Regularisation",
+      "subject_code": "DS202",
+      "module_id": "DS202-M1",
+      "aliases": "L1|L2|ridge|lasso",
+      "id": "regularisation"
+    },
+    {
+      "name": "Clustering",
+      "subject_code": "DS202",
+      "module_id": "DS202-M2",
+      "aliases": "",
+      "id": "clustering"
+    },
+    {
+      "name": "Centroid",
+      "subject_code": "DS202",
+      "module_id": "DS202-M2",
+      "aliases": "cluster centre",
+      "id": "centroid"
+    },
+    {
+      "name": "K Means",
+      "subject_code": "DS202",
+      "module_id": "DS202-M2",
+      "aliases": "k-means clustering",
+      "id": "k-means"
+    },
+    {
+      "name": "Principal Component Analysis",
+      "subject_code": "DS202",
+      "module_id": "DS202-M2",
+      "aliases": "PCA",
+      "id": "principal-component-analysis"
+    },
+    {
+      "name": "Train Test Split",
+      "subject_code": "DS202",
+      "module_id": "DS202-M3",
+      "aliases": "training and test data",
+      "id": "train-test-split"
+    },
+    {
+      "name": "Cross Validation",
+      "subject_code": "DS202",
+      "module_id": "DS202-M3",
+      "aliases": "k-fold",
+      "id": "cross-validation"
+    },
+    {
+      "name": "Confusion Matrix",
+      "subject_code": "DS202",
+      "module_id": "DS202-M3",
+      "aliases": "",
+      "id": "confusion-matrix"
+    },
+    {
+      "name": "Precision and Recall",
+      "subject_code": "DS202",
+      "module_id": "DS202-M3",
+      "aliases": "precision|recall|F1",
+      "id": "precision-recall"
+    },
+    {
+      "name": "ROC Curve",
+      "subject_code": "DS202",
+      "module_id": "DS202-M3",
+      "aliases": "true positive rate|AUC",
+      "id": "roc-curve"
+    },
+    {
+      "name": "Bias Variance Tradeoff",
+      "subject_code": "DS202",
+      "module_id": "DS202-M3",
+      "aliases": "bias-variance",
+      "id": "bias-variance"
+    },
+    {
+      "name": "Limit",
+      "subject_code": "MA101",
+      "module_id": "MA101-M1",
+      "aliases": "",
+      "id": "limit"
+    },
+    {
+      "name": "Derivative",
+      "subject_code": "MA101",
+      "module_id": "MA101-M1",
+      "aliases": "differentiation",
+      "id": "derivative"
+    },
+    {
+      "name": "Chain Rule",
+      "subject_code": "MA101",
+      "module_id": "MA101-M1",
+      "aliases": "",
+      "id": "chain-rule"
+    },
+    {
+      "name": "Definite Integral",
+      "subject_code": "MA101",
+      "module_id": "MA101-M1",
+      "aliases": "integration",
+      "id": "definite-integral"
+    },
+    {
+      "name": "Taylor Series",
+      "subject_code": "MA101",
+      "module_id": "MA101-M1",
+      "aliases": "series expansion",
+      "id": "taylor-series"
+    },
+    {
+      "name": "Vector Space",
+      "subject_code": "MA101",
+      "module_id": "MA101-M2",
+      "aliases": "",
+      "id": "vector-space"
+    },
+    {
+      "name": "Matrix Operations",
+      "subject_code": "MA101",
+      "module_id": "MA101-M2",
+      "aliases": "matrix algebra",
+      "id": "matrix-operations"
+    },
+    {
+      "name": "Determinant",
+      "subject_code": "MA101",
+      "module_id": "MA101-M2",
+      "aliases": "",
+      "id": "determinant"
+    },
+    {
+      "name": "Matrix Inverse",
+      "subject_code": "MA101",
+      "module_id": "MA101-M2",
+      "aliases": "inverse",
+      "id": "matrix-inverse"
+    },
+    {
+      "name": "Eigenvalue",
+      "subject_code": "MA101",
+      "module_id": "MA101-M2",
+      "aliases": "eigenvector|eigenvalues",
+      "id": "eigenvalue"
+    },
+    {
+      "name": "Differential Equation",
+      "subject_code": "MA101",
+      "module_id": "MA101-M3",
+      "aliases": "ODE",
+      "id": "differential-equation"
+    },
+    {
+      "name": "Separable Equation",
+      "subject_code": "MA101",
+      "module_id": "MA101-M3",
+      "aliases": "",
+      "id": "separable-equation"
+    },
+    {
+      "name": "Linear First Order Equation",
+      "subject_code": "MA101",
+      "module_id": "MA101-M3",
+      "aliases": "",
+      "id": "linear-first-order"
+    },
+    {
+      "name": "Second Order Linear Equation",
+      "subject_code": "MA101",
+      "module_id": "MA101-M3",
+      "aliases": "",
+      "id": "second-order-linear"
+    },
+    {
+      "name": "Laplace Transform",
+      "subject_code": "MA101",
+      "module_id": "MA101-M3",
+      "aliases": "",
+      "id": "laplace-transform"
+    },
+    {
+      "name": "Variable",
+      "subject_code": "CS101",
+      "module_id": "CS101-M1",
+      "aliases": "",
+      "id": "variable"
+    },
+    {
+      "name": "Data Type",
+      "subject_code": "CS101",
+      "module_id": "CS101-M1",
+      "aliases": "types",
+      "id": "data-type"
+    },
+    {
+      "name": "Operator",
+      "subject_code": "CS101",
+      "module_id": "CS101-M1",
+      "aliases": "operators",
+      "id": "operator"
+    },
+    {
+      "name": "Conditional Statement",
+      "subject_code": "CS101",
+      "module_id": "CS101-M1",
+      "aliases": "if else",
+      "id": "conditional-statement"
+    },
+    {
+      "name": "Loop",
+      "subject_code": "CS101",
+      "module_id": "CS101-M1",
+      "aliases": "for loop|while loop",
+      "id": "loop"
+    },
+    {
+      "name": "Array",
+      "subject_code": "CS101",
+      "module_id": "CS101-M2",
+      "aliases": "arrays",
+      "id": "array"
+    },
+    {
+      "name": "Array Indexing",
+      "subject_code": "CS101",
+      "module_id": "CS101-M2",
+      "aliases": "index",
+      "id": "array-indexing"
+    },
+    {
+      "name": "Multidimensional Array",
+      "subject_code": "CS101",
+      "module_id": "CS101-M2",
+      "aliases": "2D array",
+      "id": "multidimensional-array"
+    },
+    {
+      "name": "String",
+      "subject_code": "CS101",
+      "module_id": "CS101-M2",
+      "aliases": "char array",
+      "id": "c-string"
+    },
+    {
+      "name": "String Function",
+      "subject_code": "CS101",
+      "module_id": "CS101-M2",
+      "aliases": "strlen|strcpy",
+      "id": "string-function"
+    },
+    {
+      "name": "Pointer",
+      "subject_code": "CS101",
+      "module_id": "CS101-M3",
+      "aliases": "pointers",
+      "id": "pointer"
+    },
+    {
+      "name": "Pointer Arithmetic",
+      "subject_code": "CS101",
+      "module_id": "CS101-M3",
+      "aliases": "",
+      "id": "pointer-arithmetic"
+    },
+    {
+      "name": "Pointer to Array",
+      "subject_code": "CS101",
+      "module_id": "CS101-M3",
+      "aliases": "",
+      "id": "pointer-to-array"
+    },
+    {
+      "name": "Dynamic Memory",
+      "subject_code": "CS101",
+      "module_id": "CS101-M3",
+      "aliases": "malloc|free",
+      "id": "dynamic-memory"
+    },
+    {
+      "name": "Function Pointer",
+      "subject_code": "CS101",
+      "module_id": "CS101-M3",
+      "aliases": "",
+      "id": "function-pointer"
+    },
+    {
+      "name": "Abstract Data Type",
+      "subject_code": "CS102",
+      "module_id": "CS102-M1",
+      "aliases": "ADT",
+      "id": "abstract-data-type"
+    },
+    {
+      "name": "Static Array",
+      "subject_code": "CS102",
+      "module_id": "CS102-M1",
+      "aliases": "",
+      "id": "static-array"
+    },
+    {
+      "name": "Singly Linked List",
+      "subject_code": "CS102",
+      "module_id": "CS102-M1",
+      "aliases": "linked list",
+      "id": "singly-linked-list"
+    },
+    {
+      "name": "Doubly Linked List",
+      "subject_code": "CS102",
+      "module_id": "CS102-M1",
+      "aliases": "",
+      "id": "doubly-linked-list"
+    },
+    {
+      "name": "Circular Linked List",
+      "subject_code": "CS102",
+      "module_id": "CS102-M1",
+      "aliases": "",
+      "id": "circular-linked-list"
+    },
+    {
+      "name": "Stack",
+      "subject_code": "CS102",
+      "module_id": "CS102-M2",
+      "aliases": "LIFO",
+      "id": "stack"
+    },
+    {
+      "name": "Stack Application",
+      "subject_code": "CS102",
+      "module_id": "CS102-M2",
+      "aliases": "expression evaluation",
+      "id": "stack-application"
+    },
+    {
+      "name": "Queue",
+      "subject_code": "CS102",
+      "module_id": "CS102-M2",
+      "aliases": "FIFO",
+      "id": "queue"
+    },
+    {
+      "name": "Circular Queue",
+      "subject_code": "CS102",
+      "module_id": "CS102-M2",
+      "aliases": "",
+      "id": "circular-queue"
+    },
+    {
+      "name": "Priority Queue",
+      "subject_code": "CS102",
+      "module_id": "CS102-M2",
+      "aliases": "heap",
+      "id": "priority-queue"
+    },
+    {
+      "name": "Binary Tree",
+      "subject_code": "CS102",
+      "module_id": "CS102-M3",
+      "aliases": "tree",
+      "id": "binary-tree"
+    },
+    {
+      "name": "Tree Traversal",
+      "subject_code": "CS102",
+      "module_id": "CS102-M3",
+      "aliases": "inorder|preorder|postorder",
+      "id": "tree-traversal"
+    },
+    {
+      "name": "Binary Search Tree",
+      "subject_code": "CS102",
+      "module_id": "CS102-M3",
+      "aliases": "BST",
+      "id": "binary-search-tree"
+    },
+    {
+      "name": "Graph Representation",
+      "subject_code": "CS102",
+      "module_id": "CS102-M3",
+      "aliases": "adjacency list|adjacency matrix",
+      "id": "graph-representation"
+    },
+    {
+      "name": "Graph Traversal",
+      "subject_code": "CS102",
+      "module_id": "CS102-M3",
+      "aliases": "BFS|DFS",
+      "id": "graph-traversal"
+    },
+    {
+      "name": "Entity",
+      "subject_code": "CS201",
+      "module_id": "CS201-M1",
+      "aliases": "entity set",
+      "id": "entity"
+    },
+    {
+      "name": "Attribute",
+      "subject_code": "CS201",
+      "module_id": "CS201-M1",
+      "aliases": "",
+      "id": "attribute"
+    },
+    {
+      "name": "Relationship",
+      "subject_code": "CS201",
+      "module_id": "CS201-M1",
+      "aliases": "relationship set",
+      "id": "relationship"
+    },
+    {
+      "name": "Cardinality",
+      "subject_code": "CS201",
+      "module_id": "CS201-M1",
+      "aliases": "one to many",
+      "id": "cardinality"
+    },
+    {
+      "name": "ER Diagram",
+      "subject_code": "CS201",
+      "module_id": "CS201-M1",
+      "aliases": "entity relationship diagram",
+      "id": "er-diagram"
+    },
+    {
+      "name": "Relational Model",
+      "subject_code": "CS201",
+      "module_id": "CS201-M2",
+      "aliases": "relations|tables",
+      "id": "relational-model"
+    },
+    {
+      "name": "Select Query",
+      "subject_code": "CS201",
+      "module_id": "CS201-M2",
+      "aliases": "SELECT",
+      "id": "select-query"
+    },
+    {
+      "name": "Join",
+      "subject_code": "CS201",
+      "module_id": "CS201-M2",
+      "aliases": "inner join|outer join",
+      "id": "join"
+    },
+    {
+      "name": "Aggregate Function",
+      "subject_code": "CS201",
+      "module_id": "CS201-M2",
+      "aliases": "GROUP BY|COUNT|SUM",
+      "id": "aggregate-function"
+    },
+    {
+      "name": "Subquery",
+      "subject_code": "CS201",
+      "module_id": "CS201-M2",
+      "aliases": "nested query",
+      "id": "subquery"
+    },
+    {
+      "name": "Functional Dependency",
+      "subject_code": "CS201",
+      "module_id": "CS201-M3",
+      "aliases": "FD",
+      "id": "functional-dependency"
+    },
+    {
+      "name": "First Normal Form",
+      "subject_code": "CS201",
+      "module_id": "CS201-M3",
+      "aliases": "1NF",
+      "id": "first-normal-form"
+    },
+    {
+      "name": "Second Normal Form",
+      "subject_code": "CS201",
+      "module_id": "CS201-M3",
+      "aliases": "2NF",
+      "id": "second-normal-form"
+    },
+    {
+      "name": "Third Normal Form",
+      "subject_code": "CS201",
+      "module_id": "CS201-M3",
+      "aliases": "3NF",
+      "id": "third-normal-form"
+    },
+    {
+      "name": "Boyce Codd Normal Form",
+      "subject_code": "CS201",
+      "module_id": "CS201-M3",
+      "aliases": "BCNF",
+      "id": "boyce-codd-normal-form"
+    },
+    {
+      "name": "Perceptron",
+      "subject_code": "DS301",
+      "module_id": "DS301-M1",
+      "aliases": "",
+      "id": "perceptron"
+    },
+    {
+      "name": "Activation Function",
+      "subject_code": "DS301",
+      "module_id": "DS301-M1",
+      "aliases": "ReLU|sigmoid",
+      "id": "activation-function"
+    },
+    {
+      "name": "Feedforward Network",
+      "subject_code": "DS301",
+      "module_id": "DS301-M1",
+      "aliases": "MLP",
+      "id": "feedforward-network"
+    },
+    {
+      "name": "Loss Function",
+      "subject_code": "DS301",
+      "module_id": "DS301-M1",
+      "aliases": "cost function",
+      "id": "loss-function"
+    },
+    {
+      "name": "Backpropagation",
+      "subject_code": "DS301",
+      "module_id": "DS301-M1",
+      "aliases": "backprop|gradient descent",
+      "id": "backpropagation"
+    },
+    {
+      "name": "Convolution",
+      "subject_code": "DS301",
+      "module_id": "DS301-M2",
+      "aliases": "",
+      "id": "convolution"
+    },
+    {
+      "name": "Filter Kernel",
+      "subject_code": "DS301",
+      "module_id": "DS301-M2",
+      "aliases": "kernel|filter",
+      "id": "filter-kernel"
+    },
+    {
+      "name": "Pooling",
+      "subject_code": "DS301",
+      "module_id": "DS301-M2",
+      "aliases": "max pooling",
+      "id": "pooling"
+    },
+    {
+      "name": "CNN Architecture",
+      "subject_code": "DS301",
+      "module_id": "DS301-M2",
+      "aliases": "convolutional network",
+      "id": "cnn-architecture"
+    },
+    {
+      "name": "Transfer Learning",
+      "subject_code": "DS301",
+      "module_id": "DS301-M2",
+      "aliases": "fine tuning",
+      "id": "transfer-learning"
+    },
+    {
+      "name": "Sequence Data",
+      "subject_code": "DS301",
+      "module_id": "DS301-M3",
+      "aliases": "time series|sequences",
+      "id": "sequence-data"
+    },
+    {
+      "name": "Recurrent Network",
+      "subject_code": "DS301",
+      "module_id": "DS301-M3",
+      "aliases": "RNN",
+      "id": "recurrent-network"
+    },
+    {
+      "name": "LSTM",
+      "subject_code": "DS301",
+      "module_id": "DS301-M3",
+      "aliases": "long short term memory",
+      "id": "lstm"
+    },
+    {
+      "name": "Attention Mechanism",
+      "subject_code": "DS301",
+      "module_id": "DS301-M3",
+      "aliases": "attention",
+      "id": "attention-mechanism"
+    },
+    {
+      "name": "Transformer",
+      "subject_code": "DS301",
+      "module_id": "DS301-M3",
+      "aliases": "",
+      "id": "transformer"
+    },
+    {
+      "name": "Tokenization",
+      "subject_code": "DS302",
+      "module_id": "DS302-M1",
+      "aliases": "tokens",
+      "id": "tokenization"
+    },
+    {
+      "name": "Stopword Removal",
+      "subject_code": "DS302",
+      "module_id": "DS302-M1",
+      "aliases": "stopwords",
+      "id": "stopword-removal"
+    },
+    {
+      "name": "Stemming",
+      "subject_code": "DS302",
+      "module_id": "DS302-M1",
+      "aliases": "",
+      "id": "stemming"
+    },
+    {
+      "name": "Lemmatization",
+      "subject_code": "DS302",
+      "module_id": "DS302-M1",
+      "aliases": "",
+      "id": "lemmatization"
+    },
+    {
+      "name": "Bag of Words",
+      "subject_code": "DS302",
+      "module_id": "DS302-M1",
+      "aliases": "BoW|TF-IDF",
+      "id": "bag-of-words"
+    },
+    {
+      "name": "N Gram Model",
+      "subject_code": "DS302",
+      "module_id": "DS302-M2",
+      "aliases": "ngram",
+      "id": "n-gram-model"
+    },
+    {
+      "name": "Word Embedding",
+      "subject_code": "DS302",
+      "module_id": "DS302-M2",
+      "aliases": "embeddings",
+      "id": "word-embedding"
+    },
+    {
+      "name": "Word2Vec",
+      "subject_code": "DS302",
+      "module_id": "DS302-M2",
+      "aliases": "",
+      "id": "word2vec"
+    },
+    {
+      "name": "Contextual Embedding",
+      "subject_code": "DS302",
+      "module_id": "DS302-M2",
+      "aliases": "ELMo|BERT embeddings",
+      "id": "contextual-embedding"
+    },
+    {
+      "name": "Pretrained Language Model",
+      "subject_code": "DS302",
+      "module_id": "DS302-M2",
+      "aliases": "LLM|BERT",
+      "id": "pretrained-language-model"
+    },
+    {
+      "name": "Text Classification",
+      "subject_code": "DS302",
+      "module_id": "DS302-M3",
+      "aliases": "sentiment analysis",
+      "id": "text-classification"
+    },
+    {
+      "name": "Named Entity Recognition",
+      "subject_code": "DS302",
+      "module_id": "DS302-M3",
+      "aliases": "NER",
+      "id": "named-entity-recognition"
+    },
+    {
+      "name": "Machine Translation",
+      "subject_code": "DS302",
+      "module_id": "DS302-M3",
+      "aliases": "",
+      "id": "machine-translation"
+    },
+    {
+      "name": "Question Answering",
+      "subject_code": "DS302",
+      "module_id": "DS302-M3",
+      "aliases": "QA",
+      "id": "question-answering"
+    },
+    {
+      "name": "Text Summarisation",
+      "subject_code": "DS302",
+      "module_id": "DS302-M3",
+      "aliases": "summarization",
+      "id": "text-summarisation"
+    },
+    {
+      "name": "Distributed File System",
+      "subject_code": "DS401",
+      "module_id": "DS401-M1",
+      "aliases": "",
+      "id": "distributed-file-system"
+    },
+    {
+      "name": "HDFS",
+      "subject_code": "DS401",
+      "module_id": "DS401-M1",
+      "aliases": "hadoop file system",
+      "id": "hdfs"
+    },
+    {
+      "name": "Data Replication",
+      "subject_code": "DS401",
+      "module_id": "DS401-M1",
+      "aliases": "replication",
+      "id": "data-replication"
+    },
+    {
+      "name": "Partitioning",
+      "subject_code": "DS401",
+      "module_id": "DS401-M1",
+      "aliases": "sharding",
+      "id": "partitioning"
+    },
+    {
+      "name": "CAP Theorem",
+      "subject_code": "DS401",
+      "module_id": "DS401-M1",
+      "aliases": "",
+      "id": "cap-theorem"
+    },
+    {
+      "name": "MapReduce",
+      "subject_code": "DS401",
+      "module_id": "DS401-M2",
+      "aliases": "",
+      "id": "mapreduce"
+    },
+    {
+      "name": "Mapper and Reducer",
+      "subject_code": "DS401",
+      "module_id": "DS401-M2",
+      "aliases": "map|reduce",
+      "id": "mapper-reducer"
+    },
+    {
+      "name": "Shuffle and Sort",
+      "subject_code": "DS401",
+      "module_id": "DS401-M2",
+      "aliases": "",
+      "id": "shuffle-sort"
+    },
+    {
+      "name": "Spark RDD",
+      "subject_code": "DS401",
+      "module_id": "DS401-M2",
+      "aliases": "RDD",
+      "id": "spark-rdd"
+    },
+    {
+      "name": "Spark DataFrame",
+      "subject_code": "DS401",
+      "module_id": "DS401-M2",
+      "aliases": "dataframe",
+      "id": "spark-dataframe"
+    },
+    {
+      "name": "Streaming Data",
+      "subject_code": "DS401",
+      "module_id": "DS401-M3",
+      "aliases": "stream",
+      "id": "streaming-data"
+    },
+    {
+      "name": "Event Time",
+      "subject_code": "DS401",
+      "module_id": "DS401-M3",
+      "aliases": "",
+      "id": "event-time"
+    },
+    {
+      "name": "Windowing",
+      "subject_code": "DS401",
+      "module_id": "DS401-M3",
+      "aliases": "tumbling window|sliding window",
+      "id": "windowing"
+    },
+    {
+      "name": "Message Queue",
+      "subject_code": "DS401",
+      "module_id": "DS401-M3",
+      "aliases": "Kafka|broker",
+      "id": "message-queue"
+    },
+    {
+      "name": "Stream Processing",
+      "subject_code": "DS401",
+      "module_id": "DS401-M3",
+      "aliases": "",
+      "id": "stream-processing"
+    },
+    {
+      "name": "Algorithmic Bias",
+      "subject_code": "DS402",
+      "module_id": "DS402-M1",
+      "aliases": "bias",
+      "id": "algorithmic-bias"
+    },
+    {
+      "name": "Training Data Bias",
+      "subject_code": "DS402",
+      "module_id": "DS402-M1",
+      "aliases": "",
+      "id": "training-data-bias"
+    },
+    {
+      "name": "Fairness Metric",
+      "subject_code": "DS402",
+      "module_id": "DS402-M1",
+      "aliases": "fairness",
+      "id": "fairness-metric"
+    },
+    {
+      "name": "Disparate Impact",
+      "subject_code": "DS402",
+      "module_id": "DS402-M1",
+      "aliases": "",
+      "id": "disparate-impact"
+    },
+    {
+      "name": "Bias Mitigation",
+      "subject_code": "DS402",
+      "module_id": "DS402-M1",
+      "aliases": "debiasing",
+      "id": "bias-mitigation"
+    },
+    {
+      "name": "Personal Data",
+      "subject_code": "DS402",
+      "module_id": "DS402-M2",
+      "aliases": "PII",
+      "id": "personal-data"
+    },
+    {
+      "name": "Consent",
+      "subject_code": "DS402",
+      "module_id": "DS402-M2",
+      "aliases": "",
+      "id": "consent"
+    },
+    {
+      "name": "Anonymisation",
+      "subject_code": "DS402",
+      "module_id": "DS402-M2",
+      "aliases": "anonymization|de-identification",
+      "id": "anonymisation"
+    },
+    {
+      "name": "Differential Privacy",
+      "subject_code": "DS402",
+      "module_id": "DS402-M2",
+      "aliases": "",
+      "id": "differential-privacy"
+    },
+    {
+      "name": "Data Minimisation",
+      "subject_code": "DS402",
+      "module_id": "DS402-M2",
+      "aliases": "",
+      "id": "data-minimisation"
+    },
+    {
+      "name": "AI Regulation",
+      "subject_code": "DS402",
+      "module_id": "DS402-M3",
+      "aliases": "regulation",
+      "id": "ai-regulation"
+    },
+    {
+      "name": "Model Documentation",
+      "subject_code": "DS402",
+      "module_id": "DS402-M3",
+      "aliases": "model cards|datasheets",
+      "id": "model-documentation"
+    },
+    {
+      "name": "Auditability",
+      "subject_code": "DS402",
+      "module_id": "DS402-M3",
+      "aliases": "audit",
+      "id": "auditability"
+    },
+    {
+      "name": "Accountability",
+      "subject_code": "DS402",
+      "module_id": "DS402-M3",
+      "aliases": "",
+      "id": "accountability"
+    },
+    {
+      "name": "Risk Assessment",
+      "subject_code": "DS402",
+      "module_id": "DS402-M3",
+      "aliases": "impact assessment",
+      "id": "risk-assessment"
+    }
+  ],
+  "links": [
+    {
+      "relation": "related-to",
+      "weight": 2.0,
+      "note": "both introduced together when defining an agent",
+      "source": "rational-agent",
+      "target": "task-environment"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 1.0,
+      "note": "an agent formulates its problem as a search",
+      "source": "rational-agent",
+      "target": "state-space-search"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "PEAS is how a task environment is described",
+      "source": "peas",
+      "target": "task-environment"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "BFS is a strategy over the state space",
+      "source": "state-space-search",
+      "target": "breadth-first-search"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "DFS is a strategy over the state space",
+      "source": "state-space-search",
+      "target": "depth-first-search"
+    },
+    {
+      "relation": "related-to",
+      "weight": 2.0,
+      "note": "the two uninformed strategies are compared",
+      "source": "breadth-first-search",
+      "target": "depth-first-search"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "uninformed search comes before informed search",
+      "source": "breadth-first-search",
+      "target": "a-star-search"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "A star is defined in terms of h(n)",
+      "source": "heuristic-function",
+      "target": "a-star-search"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "admissibility is a property of a heuristic",
+      "source": "heuristic-function",
+      "target": "admissibility"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "an admissible heuristic is what makes A star optimal",
+      "source": "admissibility",
+      "target": "optimality"
+    },
+    {
+      "relation": "related-to",
+      "weight": 2.0,
+      "note": "optimality is discussed as a property of A star",
+      "source": "a-star-search",
+      "target": "optimality"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "FOL extends propositional logic",
+      "source": "propositional-logic",
+      "target": "first-order-logic"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "horn clauses are a restricted propositional form",
+      "source": "propositional-logic",
+      "target": "horn-clause"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "resolution works on first order clauses",
+      "source": "first-order-logic",
+      "target": "resolution"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "forward chaining runs over horn clauses",
+      "source": "horn-clause",
+      "target": "forward-chaining"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "chaining is one inference procedure",
+      "source": "inference",
+      "target": "forward-chaining"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "chaining is one inference procedure",
+      "source": "inference",
+      "target": "backward-chaining"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "resolution is an inference procedure",
+      "source": "inference",
+      "target": "resolution"
+    },
+    {
+      "relation": "related-to",
+      "weight": 3.0,
+      "note": "the two directions are taught as a pair",
+      "source": "forward-chaining",
+      "target": "backward-chaining"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "regression is the first supervised method taught",
+      "source": "supervised-learning",
+      "target": "linear-regression"
+    },
+    {
+      "relation": "related-to",
+      "weight": 2.0,
+      "note": "overfitting is introduced with supervised models",
+      "source": "supervised-learning",
+      "target": "overfitting"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "held out data assumes a supervised setting",
+      "source": "supervised-learning",
+      "target": "train-test-split"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "a neural network is a supervised model",
+      "source": "supervised-learning",
+      "target": "perceptron"
+    },
+    {
+      "relation": "related-to",
+      "weight": 1.0,
+      "note": "both are linear methods taught in different modules",
+      "source": "linear-regression",
+      "target": "principal-component-analysis"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "regularisation is the answer to overfitting",
+      "source": "overfitting",
+      "target": "regularisation"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "the tradeoff explains why overfitting happens",
+      "source": "overfitting",
+      "target": "bias-variance"
+    },
+    {
+      "relation": "related-to",
+      "weight": 1.0,
+      "note": "both are faults that come from the data",
+      "source": "overfitting",
+      "target": "training-data-bias"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "a cluster is summarised by its centroid",
+      "source": "clustering",
+      "target": "centroid"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "k means is the first clustering algorithm",
+      "source": "clustering",
+      "target": "k-means"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "k means moves centroids until they settle",
+      "source": "centroid",
+      "target": "k-means"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "cross validation generalises a single split",
+      "source": "train-test-split",
+      "target": "cross-validation"
+    },
+    {
+      "relation": "related-to",
+      "weight": 1.0,
+      "note": "both are measured on held out data",
+      "source": "train-test-split",
+      "target": "fairness-metric"
+    },
+    {
+      "relation": "related-to",
+      "weight": 2.0,
+      "note": "both are about generalisation",
+      "source": "cross-validation",
+      "target": "bias-variance"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "precision and recall are read off the matrix",
+      "source": "confusion-matrix",
+      "target": "precision-recall"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "the ROC curve is built from matrix rates",
+      "source": "confusion-matrix",
+      "target": "roc-curve"
+    },
+    {
+      "relation": "related-to",
+      "weight": 2.0,
+      "note": "both summarise classifier behaviour",
+      "source": "precision-recall",
+      "target": "roc-curve"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "a derivative is defined as a limit",
+      "source": "limit",
+      "target": "derivative"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "the chain rule is a rule for derivatives",
+      "source": "derivative",
+      "target": "chain-rule"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "integration is introduced as the inverse of differentiation",
+      "source": "derivative",
+      "target": "definite-integral"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "the series is built from repeated derivatives",
+      "source": "derivative",
+      "target": "taylor-series"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "backpropagation is the chain rule applied to a network",
+      "source": "derivative",
+      "target": "backpropagation"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "matrices act on vectors",
+      "source": "vector-space",
+      "target": "matrix-operations"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "the determinant is computed from the matrix",
+      "source": "matrix-operations",
+      "target": "determinant"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "a matrix is invertible when its determinant is non zero",
+      "source": "determinant",
+      "target": "matrix-inverse"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "eigenvalues come from the characteristic determinant",
+      "source": "determinant",
+      "target": "eigenvalue"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "PCA is an eigenvalue problem",
+      "source": "eigenvalue",
+      "target": "principal-component-analysis"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "the simplest solvable form",
+      "source": "differential-equation",
+      "target": "separable-equation"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "the next family of first order equations",
+      "source": "separable-equation",
+      "target": "linear-first-order"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "second order builds on first order methods",
+      "source": "linear-first-order",
+      "target": "second-order-linear"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "transforms give another route to the same solutions",
+      "source": "second-order-linear",
+      "target": "laplace-transform"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "every variable has a type",
+      "source": "variable",
+      "target": "data-type"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "operators act on typed values",
+      "source": "data-type",
+      "target": "operator"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "conditions are built from comparison operators",
+      "source": "operator",
+      "target": "conditional-statement"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "a loop repeats while a condition holds",
+      "source": "conditional-statement",
+      "target": "loop"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "elements are reached by index",
+      "source": "array",
+      "target": "array-indexing"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "a string is an array of characters",
+      "source": "array",
+      "target": "c-string"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "the C array is the structure studied here",
+      "source": "array",
+      "target": "static-array"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "two indices instead of one",
+      "source": "array-indexing",
+      "target": "multidimensional-array"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "the library functions operate on char arrays",
+      "source": "c-string",
+      "target": "string-function"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "arithmetic is defined on addresses",
+      "source": "pointer",
+      "target": "pointer-arithmetic"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "allocated memory is reached through a pointer",
+      "source": "pointer",
+      "target": "dynamic-memory"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "a function also has an address",
+      "source": "pointer",
+      "target": "function-pointer"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "nodes are joined by pointers",
+      "source": "pointer",
+      "target": "singly-linked-list"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "array access is pointer arithmetic",
+      "source": "pointer-arithmetic",
+      "target": "pointer-to-array"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "the array is the first concrete structure",
+      "source": "abstract-data-type",
+      "target": "static-array"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "the list fixes the array's fixed size",
+      "source": "static-array",
+      "target": "singly-linked-list"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "a second link per node",
+      "source": "singly-linked-list",
+      "target": "doubly-linked-list"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "the tail links back to the head",
+      "source": "singly-linked-list",
+      "target": "circular-linked-list"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "applications follow the operations",
+      "source": "stack",
+      "target": "stack-application"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "the two orders are taught as a pair",
+      "source": "stack",
+      "target": "queue"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "the circular form reuses freed slots",
+      "source": "queue",
+      "target": "circular-queue"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "ordering by priority instead of arrival",
+      "source": "queue",
+      "target": "priority-queue"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "traversal is defined over the tree",
+      "source": "binary-tree",
+      "target": "tree-traversal"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "the BST adds an ordering rule",
+      "source": "binary-tree",
+      "target": "binary-search-tree"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "traversal generalises from trees to graphs",
+      "source": "tree-traversal",
+      "target": "graph-traversal"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "traversal walks the stored representation",
+      "source": "graph-representation",
+      "target": "graph-traversal"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "search is traversal over a state graph",
+      "source": "graph-traversal",
+      "target": "state-space-search"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "entities are described by attributes",
+      "source": "entity",
+      "target": "attribute"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "relationships join entities",
+      "source": "entity",
+      "target": "relationship"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "cardinality constrains a relationship",
+      "source": "relationship",
+      "target": "cardinality"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "the diagram records entities relationships and cardinality",
+      "source": "cardinality",
+      "target": "er-diagram"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "queries run over relations",
+      "source": "relational-model",
+      "target": "select-query"
+    },
+    {
+      "relation": "related-to",
+      "weight": 1.0,
+      "note": "tables are partitioned across nodes",
+      "source": "relational-model",
+      "target": "partitioning"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "a join combines two selects",
+      "source": "select-query",
+      "target": "join"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "aggregates summarise selected rows",
+      "source": "select-query",
+      "target": "aggregate-function"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "a query nested inside another",
+      "source": "select-query",
+      "target": "subquery"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "normalisation is defined through dependencies",
+      "source": "functional-dependency",
+      "target": "first-normal-form"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "each form assumes the previous one",
+      "source": "first-normal-form",
+      "target": "second-normal-form"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "each form assumes the previous one",
+      "source": "second-normal-form",
+      "target": "third-normal-form"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "BCNF is a stricter 3NF",
+      "source": "third-normal-form",
+      "target": "boyce-codd-normal-form"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "the unit needs a non linearity",
+      "source": "perceptron",
+      "target": "activation-function"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "layers of activated units",
+      "source": "activation-function",
+      "target": "feedforward-network"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "the network's output is scored",
+      "source": "feedforward-network",
+      "target": "loss-function"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "gradients of the loss train the weights",
+      "source": "loss-function",
+      "target": "backpropagation"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 1.0,
+      "note": "convolutional layers are trained the same way",
+      "source": "backpropagation",
+      "target": "convolution"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "the kernel is what convolves",
+      "source": "convolution",
+      "target": "filter-kernel"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "pooling follows the convolution layer",
+      "source": "filter-kernel",
+      "target": "pooling"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "the stack of layers forms the architecture",
+      "source": "pooling",
+      "target": "cnn-architecture"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "a trained architecture is reused",
+      "source": "cnn-architecture",
+      "target": "transfer-learning"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "recurrence handles ordered input",
+      "source": "sequence-data",
+      "target": "recurrent-network"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "LSTM fixes the vanishing gradient",
+      "source": "recurrent-network",
+      "target": "lstm"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "attention replaces carrying state along",
+      "source": "lstm",
+      "target": "attention-mechanism"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "the transformer is built from attention",
+      "source": "attention-mechanism",
+      "target": "transformer"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "modern language models are transformers",
+      "source": "transformer",
+      "target": "pretrained-language-model"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "stopwords are removed from tokens",
+      "source": "tokenization",
+      "target": "stopword-removal"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "counts are taken over tokens",
+      "source": "tokenization",
+      "target": "bag-of-words"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "the remaining tokens are reduced",
+      "source": "stopword-removal",
+      "target": "stemming"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "lemmatisation is the dictionary aware version",
+      "source": "stemming",
+      "target": "lemmatization"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "the first classifiers run on bag of words",
+      "source": "bag-of-words",
+      "target": "text-classification"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "embeddings replace sparse counts",
+      "source": "n-gram-model",
+      "target": "word-embedding"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "word2vec is the first embedding method taught",
+      "source": "word-embedding",
+      "target": "word2vec"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "context dependent vectors follow static ones",
+      "source": "word2vec",
+      "target": "contextual-embedding"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "the model that produces the vectors",
+      "source": "contextual-embedding",
+      "target": "pretrained-language-model"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "tagging follows whole document labelling",
+      "source": "text-classification",
+      "target": "named-entity-recognition"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 1.0,
+      "note": "sequence to sequence tasks build on tagging",
+      "source": "named-entity-recognition",
+      "target": "machine-translation"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "both generate text conditioned on input",
+      "source": "machine-translation",
+      "target": "question-answering"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "both select and rewrite source content",
+      "source": "question-answering",
+      "target": "text-summarisation"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "HDFS is the worked example",
+      "source": "distributed-file-system",
+      "target": "hdfs"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "blocks are replicated across nodes",
+      "source": "hdfs",
+      "target": "data-replication"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "data is split as well as copied",
+      "source": "data-replication",
+      "target": "partitioning"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "the trade off the design faces",
+      "source": "partitioning",
+      "target": "cap-theorem"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "the two halves of the model",
+      "source": "mapreduce",
+      "target": "mapper-reducer"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "Spark generalises the model",
+      "source": "mapreduce",
+      "target": "spark-rdd"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "the stage between map and reduce",
+      "source": "mapper-reducer",
+      "target": "shuffle-sort"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "the typed API over RDDs",
+      "source": "spark-rdd",
+      "target": "spark-dataframe"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "records carry the time they happened",
+      "source": "streaming-data",
+      "target": "event-time"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "the stream arrives through a broker",
+      "source": "streaming-data",
+      "target": "message-queue"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "windows are cut on event time",
+      "source": "event-time",
+      "target": "windowing"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "the engine consumes from the queue",
+      "source": "message-queue",
+      "target": "stream-processing"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "most bias enters through the data",
+      "source": "algorithmic-bias",
+      "target": "training-data-bias"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "metrics are needed to measure it",
+      "source": "training-data-bias",
+      "target": "fairness-metric"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "one such measure",
+      "source": "fairness-metric",
+      "target": "disparate-impact"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "you mitigate against a measure",
+      "source": "fairness-metric",
+      "target": "bias-mitigation"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "consent governs personal data",
+      "source": "personal-data",
+      "target": "consent"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "anonymisation is applied to personal data",
+      "source": "personal-data",
+      "target": "anonymisation"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "collect only what consent covers",
+      "source": "consent",
+      "target": "data-minimisation"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "a formal guarantee where anonymisation is weak",
+      "source": "anonymisation",
+      "target": "differential-privacy"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "regulation asks for documentation",
+      "source": "ai-regulation",
+      "target": "model-documentation"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "risk tiers drive the obligations",
+      "source": "ai-regulation",
+      "target": "risk-assessment"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "documentation is what makes an audit possible",
+      "source": "model-documentation",
+      "target": "auditability"
+    },
+    {
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "audits are how accountability is enforced",
+      "source": "auditability",
+      "target": "accountability"
+    }
+  ]
+}
