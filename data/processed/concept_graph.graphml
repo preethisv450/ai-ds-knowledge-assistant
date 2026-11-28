@@ -1,0 +1,1623 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d6" for="edge" attr.name="note" attr.type="string" />
+  <key id="d5" for="edge" attr.name="weight" attr.type="double" />
+  <key id="d4" for="edge" attr.name="relation" attr.type="string" />
+  <key id="d3" for="node" attr.name="aliases" attr.type="string" />
+  <key id="d2" for="node" attr.name="module_id" attr.type="string" />
+  <key id="d1" for="node" attr.name="subject_code" attr.type="string" />
+  <key id="d0" for="node" attr.name="name" attr.type="string" />
+  <graph edgedefault="directed">
+    <node id="rational-agent">
+      <data key="d0">Rational Agent</data>
+      <data key="d1">AI201</data>
+      <data key="d2">AI201-M1</data>
+      <data key="d3">agent|intelligent agent</data>
+    </node>
+    <node id="peas">
+      <data key="d0">PEAS Description</data>
+      <data key="d1">AI201</data>
+      <data key="d2">AI201-M1</data>
+      <data key="d3">PEAS</data>
+    </node>
+    <node id="task-environment">
+      <data key="d0">Task Environment</data>
+      <data key="d1">AI201</data>
+      <data key="d2">AI201-M1</data>
+      <data key="d3">environment types</data>
+    </node>
+    <node id="state-space-search">
+      <data key="d0">State Space Search</data>
+      <data key="d1">AI201</data>
+      <data key="d2">AI201-M2</data>
+      <data key="d3">search problem|search space</data>
+    </node>
+    <node id="breadth-first-search">
+      <data key="d0">Breadth First Search</data>
+      <data key="d1">AI201</data>
+      <data key="d2">AI201-M2</data>
+      <data key="d3">BFS</data>
+    </node>
+    <node id="depth-first-search">
+      <data key="d0">Depth First Search</data>
+      <data key="d1">AI201</data>
+      <data key="d2">AI201-M2</data>
+      <data key="d3">DFS</data>
+    </node>
+    <node id="heuristic-function">
+      <data key="d0">Heuristic Function</data>
+      <data key="d1">AI201</data>
+      <data key="d2">AI201-M2</data>
+      <data key="d3">heuristic|h(n)</data>
+    </node>
+    <node id="admissibility">
+      <data key="d0">Admissibility</data>
+      <data key="d1">AI201</data>
+      <data key="d2">AI201-M2</data>
+      <data key="d3">admissible heuristic</data>
+    </node>
+    <node id="a-star-search">
+      <data key="d0">A Star Search</data>
+      <data key="d1">AI201</data>
+      <data key="d2">AI201-M2</data>
+      <data key="d3">A*|A star</data>
+    </node>
+    <node id="optimality">
+      <data key="d0">Optimality</data>
+      <data key="d1">AI201</data>
+      <data key="d2">AI201-M2</data>
+      <data key="d3">optimal solution</data>
+    </node>
+    <node id="propositional-logic">
+      <data key="d0">Propositional Logic</data>
+      <data key="d1">AI201</data>
+      <data key="d2">AI201-M3</data>
+      <data key="d3" />
+    </node>
+    <node id="first-order-logic">
+      <data key="d0">First Order Logic</data>
+      <data key="d1">AI201</data>
+      <data key="d2">AI201-M3</data>
+      <data key="d3">FOL|predicate logic</data>
+    </node>
+    <node id="horn-clause">
+      <data key="d0">Horn Clause</data>
+      <data key="d1">AI201</data>
+      <data key="d2">AI201-M3</data>
+      <data key="d3">horn clauses|clauses</data>
+    </node>
+    <node id="inference">
+      <data key="d0">Inference</data>
+      <data key="d1">AI201</data>
+      <data key="d2">AI201-M3</data>
+      <data key="d3">inference procedure</data>
+    </node>
+    <node id="forward-chaining">
+      <data key="d0">Forward Chaining</data>
+      <data key="d1">AI201</data>
+      <data key="d2">AI201-M3</data>
+      <data key="d3" />
+    </node>
+    <node id="backward-chaining">
+      <data key="d0">Backward Chaining</data>
+      <data key="d1">AI201</data>
+      <data key="d2">AI201-M3</data>
+      <data key="d3" />
+    </node>
+    <node id="resolution">
+      <data key="d0">Resolution</data>
+      <data key="d1">AI201</data>
+      <data key="d2">AI201-M3</data>
+      <data key="d3" />
+    </node>
+    <node id="supervised-learning">
+      <data key="d0">Supervised Learning</data>
+      <data key="d1">DS202</data>
+      <data key="d2">DS202-M1</data>
+      <data key="d3" />
+    </node>
+    <node id="linear-regression">
+      <data key="d0">Linear Regression</data>
+      <data key="d1">DS202</data>
+      <data key="d2">DS202-M1</data>
+      <data key="d3">least squares|regression</data>
+    </node>
+    <node id="overfitting">
+      <data key="d0">Overfitting</data>
+      <data key="d1">DS202</data>
+      <data key="d2">DS202-M1</data>
+      <data key="d3" />
+    </node>
+    <node id="regularisation">
+      <data key="d0">Regularisation</data>
+      <data key="d1">DS202</data>
+      <data key="d2">DS202-M1</data>
+      <data key="d3">L1|L2|ridge|lasso</data>
+    </node>
+    <node id="clustering">
+      <data key="d0">Clustering</data>
+      <data key="d1">DS202</data>
+      <data key="d2">DS202-M2</data>
+      <data key="d3" />
+    </node>
+    <node id="centroid">
+      <data key="d0">Centroid</data>
+      <data key="d1">DS202</data>
+      <data key="d2">DS202-M2</data>
+      <data key="d3">cluster centre</data>
+    </node>
+    <node id="k-means">
+      <data key="d0">K Means</data>
+      <data key="d1">DS202</data>
+      <data key="d2">DS202-M2</data>
+      <data key="d3">k-means clustering</data>
+    </node>
+    <node id="principal-component-analysis">
+      <data key="d0">Principal Component Analysis</data>
+      <data key="d1">DS202</data>
+      <data key="d2">DS202-M2</data>
+      <data key="d3">PCA</data>
+    </node>
+    <node id="train-test-split">
+      <data key="d0">Train Test Split</data>
+      <data key="d1">DS202</data>
+      <data key="d2">DS202-M3</data>
+      <data key="d3">training and test data</data>
+    </node>
+    <node id="cross-validation">
+      <data key="d0">Cross Validation</data>
+      <data key="d1">DS202</data>
+      <data key="d2">DS202-M3</data>
+      <data key="d3">k-fold</data>
+    </node>
+    <node id="confusion-matrix">
+      <data key="d0">Confusion Matrix</data>
+      <data key="d1">DS202</data>
+      <data key="d2">DS202-M3</data>
+      <data key="d3" />
+    </node>
+    <node id="precision-recall">
+      <data key="d0">Precision and Recall</data>
+      <data key="d1">DS202</data>
+      <data key="d2">DS202-M3</data>
+      <data key="d3">precision|recall|F1</data>
+    </node>
+    <node id="roc-curve">
+      <data key="d0">ROC Curve</data>
+      <data key="d1">DS202</data>
+      <data key="d2">DS202-M3</data>
+      <data key="d3">true positive rate|AUC</data>
+    </node>
+    <node id="bias-variance">
+      <data key="d0">Bias Variance Tradeoff</data>
+      <data key="d1">DS202</data>
+      <data key="d2">DS202-M3</data>
+      <data key="d3">bias-variance</data>
+    </node>
+    <node id="limit">
+      <data key="d0">Limit</data>
+      <data key="d1">MA101</data>
+      <data key="d2">MA101-M1</data>
+      <data key="d3" />
+    </node>
+    <node id="derivative">
+      <data key="d0">Derivative</data>
+      <data key="d1">MA101</data>
+      <data key="d2">MA101-M1</data>
+      <data key="d3">differentiation</data>
+    </node>
+    <node id="chain-rule">
+      <data key="d0">Chain Rule</data>
+      <data key="d1">MA101</data>
+      <data key="d2">MA101-M1</data>
+      <data key="d3" />
+    </node>
+    <node id="definite-integral">
+      <data key="d0">Definite Integral</data>
+      <data key="d1">MA101</data>
+      <data key="d2">MA101-M1</data>
+      <data key="d3">integration</data>
+    </node>
+    <node id="taylor-series">
+      <data key="d0">Taylor Series</data>
+      <data key="d1">MA101</data>
+      <data key="d2">MA101-M1</data>
+      <data key="d3">series expansion</data>
+    </node>
+    <node id="vector-space">
+      <data key="d0">Vector Space</data>
+      <data key="d1">MA101</data>
+      <data key="d2">MA101-M2</data>
+      <data key="d3" />
+    </node>
+    <node id="matrix-operations">
+      <data key="d0">Matrix Operations</data>
+      <data key="d1">MA101</data>
+      <data key="d2">MA101-M2</data>
+      <data key="d3">matrix algebra</data>
+    </node>
+    <node id="determinant">
+      <data key="d0">Determinant</data>
+      <data key="d1">MA101</data>
+      <data key="d2">MA101-M2</data>
+      <data key="d3" />
+    </node>
+    <node id="matrix-inverse">
+      <data key="d0">Matrix Inverse</data>
+      <data key="d1">MA101</data>
+      <data key="d2">MA101-M2</data>
+      <data key="d3">inverse</data>
+    </node>
+    <node id="eigenvalue">
+      <data key="d0">Eigenvalue</data>
+      <data key="d1">MA101</data>
+      <data key="d2">MA101-M2</data>
+      <data key="d3">eigenvector|eigenvalues</data>
+    </node>
+    <node id="differential-equation">
+      <data key="d0">Differential Equation</data>
+      <data key="d1">MA101</data>
+      <data key="d2">MA101-M3</data>
+      <data key="d3">ODE</data>
+    </node>
+    <node id="separable-equation">
+      <data key="d0">Separable Equation</data>
+      <data key="d1">MA101</data>
+      <data key="d2">MA101-M3</data>
+      <data key="d3" />
+    </node>
+    <node id="linear-first-order">
+      <data key="d0">Linear First Order Equation</data>
+      <data key="d1">MA101</data>
+      <data key="d2">MA101-M3</data>
+      <data key="d3" />
+    </node>
+    <node id="second-order-linear">
+      <data key="d0">Second Order Linear Equation</data>
+      <data key="d1">MA101</data>
+      <data key="d2">MA101-M3</data>
+      <data key="d3" />
+    </node>
+    <node id="laplace-transform">
+      <data key="d0">Laplace Transform</data>
+      <data key="d1">MA101</data>
+      <data key="d2">MA101-M3</data>
+      <data key="d3" />
+    </node>
+    <node id="variable">
+      <data key="d0">Variable</data>
+      <data key="d1">CS101</data>
+      <data key="d2">CS101-M1</data>
+      <data key="d3" />
+    </node>
+    <node id="data-type">
+      <data key="d0">Data Type</data>
+      <data key="d1">CS101</data>
+      <data key="d2">CS101-M1</data>
+      <data key="d3">types</data>
+    </node>
+    <node id="operator">
+      <data key="d0">Operator</data>
+      <data key="d1">CS101</data>
+      <data key="d2">CS101-M1</data>
+      <data key="d3">operators</data>
+    </node>
+    <node id="conditional-statement">
+      <data key="d0">Conditional Statement</data>
+      <data key="d1">CS101</data>
+      <data key="d2">CS101-M1</data>
+      <data key="d3">if else</data>
+    </node>
+    <node id="loop">
+      <data key="d0">Loop</data>
+      <data key="d1">CS101</data>
+      <data key="d2">CS101-M1</data>
+      <data key="d3">for loop|while loop</data>
+    </node>
+    <node id="array">
+      <data key="d0">Array</data>
+      <data key="d1">CS101</data>
+      <data key="d2">CS101-M2</data>
+      <data key="d3">arrays</data>
+    </node>
+    <node id="array-indexing">
+      <data key="d0">Array Indexing</data>
+      <data key="d1">CS101</data>
+      <data key="d2">CS101-M2</data>
+      <data key="d3">index</data>
+    </node>
+    <node id="multidimensional-array">
+      <data key="d0">Multidimensional Array</data>
+      <data key="d1">CS101</data>
+      <data key="d2">CS101-M2</data>
+      <data key="d3">2D array</data>
+    </node>
+    <node id="c-string">
+      <data key="d0">String</data>
+      <data key="d1">CS101</data>
+      <data key="d2">CS101-M2</data>
+      <data key="d3">char array</data>
+    </node>
+    <node id="string-function">
+      <data key="d0">String Function</data>
+      <data key="d1">CS101</data>
+      <data key="d2">CS101-M2</data>
+      <data key="d3">strlen|strcpy</data>
+    </node>
+    <node id="pointer">
+      <data key="d0">Pointer</data>
+      <data key="d1">CS101</data>
+      <data key="d2">CS101-M3</data>
+      <data key="d3">pointers</data>
+    </node>
+    <node id="pointer-arithmetic">
+      <data key="d0">Pointer Arithmetic</data>
+      <data key="d1">CS101</data>
+      <data key="d2">CS101-M3</data>
+      <data key="d3" />
+    </node>
+    <node id="pointer-to-array">
+      <data key="d0">Pointer to Array</data>
+      <data key="d1">CS101</data>
+      <data key="d2">CS101-M3</data>
+      <data key="d3" />
+    </node>
+    <node id="dynamic-memory">
+      <data key="d0">Dynamic Memory</data>
+      <data key="d1">CS101</data>
+      <data key="d2">CS101-M3</data>
+      <data key="d3">malloc|free</data>
+    </node>
+    <node id="function-pointer">
+      <data key="d0">Function Pointer</data>
+      <data key="d1">CS101</data>
+      <data key="d2">CS101-M3</data>
+      <data key="d3" />
+    </node>
+    <node id="abstract-data-type">
+      <data key="d0">Abstract Data Type</data>
+      <data key="d1">CS102</data>
+      <data key="d2">CS102-M1</data>
+      <data key="d3">ADT</data>
+    </node>
+    <node id="static-array">
+      <data key="d0">Static Array</data>
+      <data key="d1">CS102</data>
+      <data key="d2">CS102-M1</data>
+      <data key="d3" />
+    </node>
+    <node id="singly-linked-list">
+      <data key="d0">Singly Linked List</data>
+      <data key="d1">CS102</data>
+      <data key="d2">CS102-M1</data>
+      <data key="d3">linked list</data>
+    </node>
+    <node id="doubly-linked-list">
+      <data key="d0">Doubly Linked List</data>
+      <data key="d1">CS102</data>
+      <data key="d2">CS102-M1</data>
+      <data key="d3" />
+    </node>
+    <node id="circular-linked-list">
+      <data key="d0">Circular Linked List</data>
+      <data key="d1">CS102</data>
+      <data key="d2">CS102-M1</data>
+      <data key="d3" />
+    </node>
+    <node id="stack">
+      <data key="d0">Stack</data>
+      <data key="d1">CS102</data>
+      <data key="d2">CS102-M2</data>
+      <data key="d3">LIFO</data>
+    </node>
+    <node id="stack-application">
+      <data key="d0">Stack Application</data>
+      <data key="d1">CS102</data>
+      <data key="d2">CS102-M2</data>
+      <data key="d3">expression evaluation</data>
+    </node>
+    <node id="queue">
+      <data key="d0">Queue</data>
+      <data key="d1">CS102</data>
+      <data key="d2">CS102-M2</data>
+      <data key="d3">FIFO</data>
+    </node>
+    <node id="circular-queue">
+      <data key="d0">Circular Queue</data>
+      <data key="d1">CS102</data>
+      <data key="d2">CS102-M2</data>
+      <data key="d3" />
+    </node>
+    <node id="priority-queue">
+      <data key="d0">Priority Queue</data>
+      <data key="d1">CS102</data>
+      <data key="d2">CS102-M2</data>
+      <data key="d3">heap</data>
+    </node>
+    <node id="binary-tree">
+      <data key="d0">Binary Tree</data>
+      <data key="d1">CS102</data>
+      <data key="d2">CS102-M3</data>
+      <data key="d3">tree</data>
+    </node>
+    <node id="tree-traversal">
+      <data key="d0">Tree Traversal</data>
+      <data key="d1">CS102</data>
+      <data key="d2">CS102-M3</data>
+      <data key="d3">inorder|preorder|postorder</data>
+    </node>
+    <node id="binary-search-tree">
+      <data key="d0">Binary Search Tree</data>
+      <data key="d1">CS102</data>
+      <data key="d2">CS102-M3</data>
+      <data key="d3">BST</data>
+    </node>
+    <node id="graph-representation">
+      <data key="d0">Graph Representation</data>
+      <data key="d1">CS102</data>
+      <data key="d2">CS102-M3</data>
+      <data key="d3">adjacency list|adjacency matrix</data>
+    </node>
+    <node id="graph-traversal">
+      <data key="d0">Graph Traversal</data>
+      <data key="d1">CS102</data>
+      <data key="d2">CS102-M3</data>
+      <data key="d3">BFS|DFS</data>
+    </node>
+    <node id="entity">
+      <data key="d0">Entity</data>
+      <data key="d1">CS201</data>
+      <data key="d2">CS201-M1</data>
+      <data key="d3">entity set</data>
+    </node>
+    <node id="attribute">
+      <data key="d0">Attribute</data>
+      <data key="d1">CS201</data>
+      <data key="d2">CS201-M1</data>
+      <data key="d3" />
+    </node>
+    <node id="relationship">
+      <data key="d0">Relationship</data>
+      <data key="d1">CS201</data>
+      <data key="d2">CS201-M1</data>
+      <data key="d3">relationship set</data>
+    </node>
+    <node id="cardinality">
+      <data key="d0">Cardinality</data>
+      <data key="d1">CS201</data>
+      <data key="d2">CS201-M1</data>
+      <data key="d3">one to many</data>
+    </node>
+    <node id="er-diagram">
+      <data key="d0">ER Diagram</data>
+      <data key="d1">CS201</data>
+      <data key="d2">CS201-M1</data>
+      <data key="d3">entity relationship diagram</data>
+    </node>
+    <node id="relational-model">
+      <data key="d0">Relational Model</data>
+      <data key="d1">CS201</data>
+      <data key="d2">CS201-M2</data>
+      <data key="d3">relations|tables</data>
+    </node>
+    <node id="select-query">
+      <data key="d0">Select Query</data>
+      <data key="d1">CS201</data>
+      <data key="d2">CS201-M2</data>
+      <data key="d3">SELECT</data>
+    </node>
+    <node id="join">
+      <data key="d0">Join</data>
+      <data key="d1">CS201</data>
+      <data key="d2">CS201-M2</data>
+      <data key="d3">inner join|outer join</data>
+    </node>
+    <node id="aggregate-function">
+      <data key="d0">Aggregate Function</data>
+      <data key="d1">CS201</data>
+      <data key="d2">CS201-M2</data>
+      <data key="d3">GROUP BY|COUNT|SUM</data>
+    </node>
+    <node id="subquery">
+      <data key="d0">Subquery</data>
+      <data key="d1">CS201</data>
+      <data key="d2">CS201-M2</data>
+      <data key="d3">nested query</data>
+    </node>
+    <node id="functional-dependency">
+      <data key="d0">Functional Dependency</data>
+      <data key="d1">CS201</data>
+      <data key="d2">CS201-M3</data>
+      <data key="d3">FD</data>
+    </node>
+    <node id="first-normal-form">
+      <data key="d0">First Normal Form</data>
+      <data key="d1">CS201</data>
+      <data key="d2">CS201-M3</data>
+      <data key="d3">1NF</data>
+    </node>
+    <node id="second-normal-form">
+      <data key="d0">Second Normal Form</data>
+      <data key="d1">CS201</data>
+      <data key="d2">CS201-M3</data>
+      <data key="d3">2NF</data>
+    </node>
+    <node id="third-normal-form">
+      <data key="d0">Third Normal Form</data>
+      <data key="d1">CS201</data>
+      <data key="d2">CS201-M3</data>
+      <data key="d3">3NF</data>
+    </node>
+    <node id="boyce-codd-normal-form">
+      <data key="d0">Boyce Codd Normal Form</data>
+      <data key="d1">CS201</data>
+      <data key="d2">CS201-M3</data>
+      <data key="d3">BCNF</data>
+    </node>
+    <node id="perceptron">
+      <data key="d0">Perceptron</data>
+      <data key="d1">DS301</data>
+      <data key="d2">DS301-M1</data>
+      <data key="d3" />
+    </node>
+    <node id="activation-function">
+      <data key="d0">Activation Function</data>
+      <data key="d1">DS301</data>
+      <data key="d2">DS301-M1</data>
+      <data key="d3">ReLU|sigmoid</data>
+    </node>
+    <node id="feedforward-network">
+      <data key="d0">Feedforward Network</data>
+      <data key="d1">DS301</data>
+      <data key="d2">DS301-M1</data>
+      <data key="d3">MLP</data>
+    </node>
+    <node id="loss-function">
+      <data key="d0">Loss Function</data>
+      <data key="d1">DS301</data>
+      <data key="d2">DS301-M1</data>
+      <data key="d3">cost function</data>
+    </node>
+    <node id="backpropagation">
+      <data key="d0">Backpropagation</data>
+      <data key="d1">DS301</data>
+      <data key="d2">DS301-M1</data>
+      <data key="d3">backprop|gradient descent</data>
+    </node>
+    <node id="convolution">
+      <data key="d0">Convolution</data>
+      <data key="d1">DS301</data>
+      <data key="d2">DS301-M2</data>
+      <data key="d3" />
+    </node>
+    <node id="filter-kernel">
+      <data key="d0">Filter Kernel</data>
+      <data key="d1">DS301</data>
+      <data key="d2">DS301-M2</data>
+      <data key="d3">kernel|filter</data>
+    </node>
+    <node id="pooling">
+      <data key="d0">Pooling</data>
+      <data key="d1">DS301</data>
+      <data key="d2">DS301-M2</data>
+      <data key="d3">max pooling</data>
+    </node>
+    <node id="cnn-architecture">
+      <data key="d0">CNN Architecture</data>
+      <data key="d1">DS301</data>
+      <data key="d2">DS301-M2</data>
+      <data key="d3">convolutional network</data>
+    </node>
+    <node id="transfer-learning">
+      <data key="d0">Transfer Learning</data>
+      <data key="d1">DS301</data>
+      <data key="d2">DS301-M2</data>
+      <data key="d3">fine tuning</data>
+    </node>
+    <node id="sequence-data">
+      <data key="d0">Sequence Data</data>
+      <data key="d1">DS301</data>
+      <data key="d2">DS301-M3</data>
+      <data key="d3">time series|sequences</data>
+    </node>
+    <node id="recurrent-network">
+      <data key="d0">Recurrent Network</data>
+      <data key="d1">DS301</data>
+      <data key="d2">DS301-M3</data>
+      <data key="d3">RNN</data>
+    </node>
+    <node id="lstm">
+      <data key="d0">LSTM</data>
+      <data key="d1">DS301</data>
+      <data key="d2">DS301-M3</data>
+      <data key="d3">long short term memory</data>
+    </node>
+    <node id="attention-mechanism">
+      <data key="d0">Attention Mechanism</data>
+      <data key="d1">DS301</data>
+      <data key="d2">DS301-M3</data>
+      <data key="d3">attention</data>
+    </node>
+    <node id="transformer">
+      <data key="d0">Transformer</data>
+      <data key="d1">DS301</data>
+      <data key="d2">DS301-M3</data>
+      <data key="d3" />
+    </node>
+    <node id="tokenization">
+      <data key="d0">Tokenization</data>
+      <data key="d1">DS302</data>
+      <data key="d2">DS302-M1</data>
+      <data key="d3">tokens</data>
+    </node>
+    <node id="stopword-removal">
+      <data key="d0">Stopword Removal</data>
+      <data key="d1">DS302</data>
+      <data key="d2">DS302-M1</data>
+      <data key="d3">stopwords</data>
+    </node>
+    <node id="stemming">
+      <data key="d0">Stemming</data>
+      <data key="d1">DS302</data>
+      <data key="d2">DS302-M1</data>
+      <data key="d3" />
+    </node>
+    <node id="lemmatization">
+      <data key="d0">Lemmatization</data>
+      <data key="d1">DS302</data>
+      <data key="d2">DS302-M1</data>
+      <data key="d3" />
+    </node>
+    <node id="bag-of-words">
+      <data key="d0">Bag of Words</data>
+      <data key="d1">DS302</data>
+      <data key="d2">DS302-M1</data>
+      <data key="d3">BoW|TF-IDF</data>
+    </node>
+    <node id="n-gram-model">
+      <data key="d0">N Gram Model</data>
+      <data key="d1">DS302</data>
+      <data key="d2">DS302-M2</data>
+      <data key="d3">ngram</data>
+    </node>
+    <node id="word-embedding">
+      <data key="d0">Word Embedding</data>
+      <data key="d1">DS302</data>
+      <data key="d2">DS302-M2</data>
+      <data key="d3">embeddings</data>
+    </node>
+    <node id="word2vec">
+      <data key="d0">Word2Vec</data>
+      <data key="d1">DS302</data>
+      <data key="d2">DS302-M2</data>
+      <data key="d3" />
+    </node>
+    <node id="contextual-embedding">
+      <data key="d0">Contextual Embedding</data>
+      <data key="d1">DS302</data>
+      <data key="d2">DS302-M2</data>
+      <data key="d3">ELMo|BERT embeddings</data>
+    </node>
+    <node id="pretrained-language-model">
+      <data key="d0">Pretrained Language Model</data>
+      <data key="d1">DS302</data>
+      <data key="d2">DS302-M2</data>
+      <data key="d3">LLM|BERT</data>
+    </node>
+    <node id="text-classification">
+      <data key="d0">Text Classification</data>
+      <data key="d1">DS302</data>
+      <data key="d2">DS302-M3</data>
+      <data key="d3">sentiment analysis</data>
+    </node>
+    <node id="named-entity-recognition">
+      <data key="d0">Named Entity Recognition</data>
+      <data key="d1">DS302</data>
+      <data key="d2">DS302-M3</data>
+      <data key="d3">NER</data>
+    </node>
+    <node id="machine-translation">
+      <data key="d0">Machine Translation</data>
+      <data key="d1">DS302</data>
+      <data key="d2">DS302-M3</data>
+      <data key="d3" />
+    </node>
+    <node id="question-answering">
+      <data key="d0">Question Answering</data>
+      <data key="d1">DS302</data>
+      <data key="d2">DS302-M3</data>
+      <data key="d3">QA</data>
+    </node>
+    <node id="text-summarisation">
+      <data key="d0">Text Summarisation</data>
+      <data key="d1">DS302</data>
+      <data key="d2">DS302-M3</data>
+      <data key="d3">summarization</data>
+    </node>
+    <node id="distributed-file-system">
+      <data key="d0">Distributed File System</data>
+      <data key="d1">DS401</data>
+      <data key="d2">DS401-M1</data>
+      <data key="d3" />
+    </node>
+    <node id="hdfs">
+      <data key="d0">HDFS</data>
+      <data key="d1">DS401</data>
+      <data key="d2">DS401-M1</data>
+      <data key="d3">hadoop file system</data>
+    </node>
+    <node id="data-replication">
+      <data key="d0">Data Replication</data>
+      <data key="d1">DS401</data>
+      <data key="d2">DS401-M1</data>
+      <data key="d3">replication</data>
+    </node>
+    <node id="partitioning">
+      <data key="d0">Partitioning</data>
+      <data key="d1">DS401</data>
+      <data key="d2">DS401-M1</data>
+      <data key="d3">sharding</data>
+    </node>
+    <node id="cap-theorem">
+      <data key="d0">CAP Theorem</data>
+      <data key="d1">DS401</data>
+      <data key="d2">DS401-M1</data>
+      <data key="d3" />
+    </node>
+    <node id="mapreduce">
+      <data key="d0">MapReduce</data>
+      <data key="d1">DS401</data>
+      <data key="d2">DS401-M2</data>
+      <data key="d3" />
+    </node>
+    <node id="mapper-reducer">
+      <data key="d0">Mapper and Reducer</data>
+      <data key="d1">DS401</data>
+      <data key="d2">DS401-M2</data>
+      <data key="d3">map|reduce</data>
+    </node>
+    <node id="shuffle-sort">
+      <data key="d0">Shuffle and Sort</data>
+      <data key="d1">DS401</data>
+      <data key="d2">DS401-M2</data>
+      <data key="d3" />
+    </node>
+    <node id="spark-rdd">
+      <data key="d0">Spark RDD</data>
+      <data key="d1">DS401</data>
+      <data key="d2">DS401-M2</data>
+      <data key="d3">RDD</data>
+    </node>
+    <node id="spark-dataframe">
+      <data key="d0">Spark DataFrame</data>
+      <data key="d1">DS401</data>
+      <data key="d2">DS401-M2</data>
+      <data key="d3">dataframe</data>
+    </node>
+    <node id="streaming-data">
+      <data key="d0">Streaming Data</data>
+      <data key="d1">DS401</data>
+      <data key="d2">DS401-M3</data>
+      <data key="d3">stream</data>
+    </node>
+    <node id="event-time">
+      <data key="d0">Event Time</data>
+      <data key="d1">DS401</data>
+      <data key="d2">DS401-M3</data>
+      <data key="d3" />
+    </node>
+    <node id="windowing">
+      <data key="d0">Windowing</data>
+      <data key="d1">DS401</data>
+      <data key="d2">DS401-M3</data>
+      <data key="d3">tumbling window|sliding window</data>
+    </node>
+    <node id="message-queue">
+      <data key="d0">Message Queue</data>
+      <data key="d1">DS401</data>
+      <data key="d2">DS401-M3</data>
+      <data key="d3">Kafka|broker</data>
+    </node>
+    <node id="stream-processing">
+      <data key="d0">Stream Processing</data>
+      <data key="d1">DS401</data>
+      <data key="d2">DS401-M3</data>
+      <data key="d3" />
+    </node>
+    <node id="algorithmic-bias">
+      <data key="d0">Algorithmic Bias</data>
+      <data key="d1">DS402</data>
+      <data key="d2">DS402-M1</data>
+      <data key="d3">bias</data>
+    </node>
+    <node id="training-data-bias">
+      <data key="d0">Training Data Bias</data>
+      <data key="d1">DS402</data>
+      <data key="d2">DS402-M1</data>
+      <data key="d3" />
+    </node>
+    <node id="fairness-metric">
+      <data key="d0">Fairness Metric</data>
+      <data key="d1">DS402</data>
+      <data key="d2">DS402-M1</data>
+      <data key="d3">fairness</data>
+    </node>
+    <node id="disparate-impact">
+      <data key="d0">Disparate Impact</data>
+      <data key="d1">DS402</data>
+      <data key="d2">DS402-M1</data>
+      <data key="d3" />
+    </node>
+    <node id="bias-mitigation">
+      <data key="d0">Bias Mitigation</data>
+      <data key="d1">DS402</data>
+      <data key="d2">DS402-M1</data>
+      <data key="d3">debiasing</data>
+    </node>
+    <node id="personal-data">
+      <data key="d0">Personal Data</data>
+      <data key="d1">DS402</data>
+      <data key="d2">DS402-M2</data>
+      <data key="d3">PII</data>
+    </node>
+    <node id="consent">
+      <data key="d0">Consent</data>
+      <data key="d1">DS402</data>
+      <data key="d2">DS402-M2</data>
+      <data key="d3" />
+    </node>
+    <node id="anonymisation">
+      <data key="d0">Anonymisation</data>
+      <data key="d1">DS402</data>
+      <data key="d2">DS402-M2</data>
+      <data key="d3">anonymization|de-identification</data>
+    </node>
+    <node id="differential-privacy">
+      <data key="d0">Differential Privacy</data>
+      <data key="d1">DS402</data>
+      <data key="d2">DS402-M2</data>
+      <data key="d3" />
+    </node>
+    <node id="data-minimisation">
+      <data key="d0">Data Minimisation</data>
+      <data key="d1">DS402</data>
+      <data key="d2">DS402-M2</data>
+      <data key="d3" />
+    </node>
+    <node id="ai-regulation">
+      <data key="d0">AI Regulation</data>
+      <data key="d1">DS402</data>
+      <data key="d2">DS402-M3</data>
+      <data key="d3">regulation</data>
+    </node>
+    <node id="model-documentation">
+      <data key="d0">Model Documentation</data>
+      <data key="d1">DS402</data>
+      <data key="d2">DS402-M3</data>
+      <data key="d3">model cards|datasheets</data>
+    </node>
+    <node id="auditability">
+      <data key="d0">Auditability</data>
+      <data key="d1">DS402</data>
+      <data key="d2">DS402-M3</data>
+      <data key="d3">audit</data>
+    </node>
+    <node id="accountability">
+      <data key="d0">Accountability</data>
+      <data key="d1">DS402</data>
+      <data key="d2">DS402-M3</data>
+      <data key="d3" />
+    </node>
+    <node id="risk-assessment">
+      <data key="d0">Risk Assessment</data>
+      <data key="d1">DS402</data>
+      <data key="d2">DS402-M3</data>
+      <data key="d3">impact assessment</data>
+    </node>
+    <edge source="rational-agent" target="task-environment">
+      <data key="d4">related-to</data>
+      <data key="d5">2.0</data>
+      <data key="d6">both introduced together when defining an agent</data>
+    </edge>
+    <edge source="rational-agent" target="state-space-search">
+      <data key="d4">prerequisite</data>
+      <data key="d5">1.0</data>
+      <data key="d6">an agent formulates its problem as a search</data>
+    </edge>
+    <edge source="peas" target="task-environment">
+      <data key="d4">prerequisite</data>
+      <data key="d5">2.0</data>
+      <data key="d6">PEAS is how a task environment is described</data>
+    </edge>
+    <edge source="state-space-search" target="breadth-first-search">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">BFS is a strategy over the state space</data>
+    </edge>
+    <edge source="state-space-search" target="depth-first-search">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">DFS is a strategy over the state space</data>
+    </edge>
+    <edge source="breadth-first-search" target="depth-first-search">
+      <data key="d4">related-to</data>
+      <data key="d5">2.0</data>
+      <data key="d6">the two uninformed strategies are compared</data>
+    </edge>
+    <edge source="breadth-first-search" target="a-star-search">
+      <data key="d4">prerequisite</data>
+      <data key="d5">2.0</data>
+      <data key="d6">uninformed search comes before informed search</data>
+    </edge>
+    <edge source="heuristic-function" target="a-star-search">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">A star is defined in terms of h(n)</data>
+    </edge>
+    <edge source="heuristic-function" target="admissibility">
+      <data key="d4">prerequisite</data>
+      <data key="d5">2.0</data>
+      <data key="d6">admissibility is a property of a heuristic</data>
+    </edge>
+    <edge source="admissibility" target="optimality">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">an admissible heuristic is what makes A star optimal</data>
+    </edge>
+    <edge source="a-star-search" target="optimality">
+      <data key="d4">related-to</data>
+      <data key="d5">2.0</data>
+      <data key="d6">optimality is discussed as a property of A star</data>
+    </edge>
+    <edge source="propositional-logic" target="first-order-logic">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">FOL extends propositional logic</data>
+    </edge>
+    <edge source="propositional-logic" target="horn-clause">
+      <data key="d4">prerequisite</data>
+      <data key="d5">2.0</data>
+      <data key="d6">horn clauses are a restricted propositional form</data>
+    </edge>
+    <edge source="first-order-logic" target="resolution">
+      <data key="d4">prerequisite</data>
+      <data key="d5">2.0</data>
+      <data key="d6">resolution works on first order clauses</data>
+    </edge>
+    <edge source="horn-clause" target="forward-chaining">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">forward chaining runs over horn clauses</data>
+    </edge>
+    <edge source="inference" target="forward-chaining">
+      <data key="d4">prerequisite</data>
+      <data key="d5">2.0</data>
+      <data key="d6">chaining is one inference procedure</data>
+    </edge>
+    <edge source="inference" target="backward-chaining">
+      <data key="d4">prerequisite</data>
+      <data key="d5">2.0</data>
+      <data key="d6">chaining is one inference procedure</data>
+    </edge>
+    <edge source="inference" target="resolution">
+      <data key="d4">prerequisite</data>
+      <data key="d5">2.0</data>
+      <data key="d6">resolution is an inference procedure</data>
+    </edge>
+    <edge source="forward-chaining" target="backward-chaining">
+      <data key="d4">related-to</data>
+      <data key="d5">3.0</data>
+      <data key="d6">the two directions are taught as a pair</data>
+    </edge>
+    <edge source="supervised-learning" target="linear-regression">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">regression is the first supervised method taught</data>
+    </edge>
+    <edge source="supervised-learning" target="overfitting">
+      <data key="d4">related-to</data>
+      <data key="d5">2.0</data>
+      <data key="d6">overfitting is introduced with supervised models</data>
+    </edge>
+    <edge source="supervised-learning" target="train-test-split">
+      <data key="d4">prerequisite</data>
+      <data key="d5">2.0</data>
+      <data key="d6">held out data assumes a supervised setting</data>
+    </edge>
+    <edge source="supervised-learning" target="perceptron">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">a neural network is a supervised model</data>
+    </edge>
+    <edge source="linear-regression" target="principal-component-analysis">
+      <data key="d4">related-to</data>
+      <data key="d5">1.0</data>
+      <data key="d6">both are linear methods taught in different modules</data>
+    </edge>
+    <edge source="overfitting" target="regularisation">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">regularisation is the answer to overfitting</data>
+    </edge>
+    <edge source="overfitting" target="bias-variance">
+      <data key="d4">prerequisite</data>
+      <data key="d5">2.0</data>
+      <data key="d6">the tradeoff explains why overfitting happens</data>
+    </edge>
+    <edge source="overfitting" target="training-data-bias">
+      <data key="d4">related-to</data>
+      <data key="d5">1.0</data>
+      <data key="d6">both are faults that come from the data</data>
+    </edge>
+    <edge source="clustering" target="centroid">
+      <data key="d4">prerequisite</data>
+      <data key="d5">2.0</data>
+      <data key="d6">a cluster is summarised by its centroid</data>
+    </edge>
+    <edge source="clustering" target="k-means">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">k means is the first clustering algorithm</data>
+    </edge>
+    <edge source="centroid" target="k-means">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">k means moves centroids until they settle</data>
+    </edge>
+    <edge source="train-test-split" target="cross-validation">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">cross validation generalises a single split</data>
+    </edge>
+    <edge source="train-test-split" target="fairness-metric">
+      <data key="d4">related-to</data>
+      <data key="d5">1.0</data>
+      <data key="d6">both are measured on held out data</data>
+    </edge>
+    <edge source="cross-validation" target="bias-variance">
+      <data key="d4">related-to</data>
+      <data key="d5">2.0</data>
+      <data key="d6">both are about generalisation</data>
+    </edge>
+    <edge source="confusion-matrix" target="precision-recall">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">precision and recall are read off the matrix</data>
+    </edge>
+    <edge source="confusion-matrix" target="roc-curve">
+      <data key="d4">prerequisite</data>
+      <data key="d5">2.0</data>
+      <data key="d6">the ROC curve is built from matrix rates</data>
+    </edge>
+    <edge source="precision-recall" target="roc-curve">
+      <data key="d4">related-to</data>
+      <data key="d5">2.0</data>
+      <data key="d6">both summarise classifier behaviour</data>
+    </edge>
+    <edge source="limit" target="derivative">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">a derivative is defined as a limit</data>
+    </edge>
+    <edge source="derivative" target="chain-rule">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">the chain rule is a rule for derivatives</data>
+    </edge>
+    <edge source="derivative" target="definite-integral">
+      <data key="d4">prerequisite</data>
+      <data key="d5">2.0</data>
+      <data key="d6">integration is introduced as the inverse of differentiation</data>
+    </edge>
+    <edge source="derivative" target="taylor-series">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">the series is built from repeated derivatives</data>
+    </edge>
+    <edge source="derivative" target="backpropagation">
+      <data key="d4">prerequisite</data>
+      <data key="d5">2.0</data>
+      <data key="d6">backpropagation is the chain rule applied to a network</data>
+    </edge>
+    <edge source="vector-space" target="matrix-operations">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">matrices act on vectors</data>
+    </edge>
+    <edge source="matrix-operations" target="determinant">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">the determinant is computed from the matrix</data>
+    </edge>
+    <edge source="determinant" target="matrix-inverse">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">a matrix is invertible when its determinant is non zero</data>
+    </edge>
+    <edge source="determinant" target="eigenvalue">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">eigenvalues come from the characteristic determinant</data>
+    </edge>
+    <edge source="eigenvalue" target="principal-component-analysis">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">PCA is an eigenvalue problem</data>
+    </edge>
+    <edge source="differential-equation" target="separable-equation">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">the simplest solvable form</data>
+    </edge>
+    <edge source="separable-equation" target="linear-first-order">
+      <data key="d4">prerequisite</data>
+      <data key="d5">2.0</data>
+      <data key="d6">the next family of first order equations</data>
+    </edge>
+    <edge source="linear-first-order" target="second-order-linear">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">second order builds on first order methods</data>
+    </edge>
+    <edge source="second-order-linear" target="laplace-transform">
+      <data key="d4">prerequisite</data>
+      <data key="d5">2.0</data>
+      <data key="d6">transforms give another route to the same solutions</data>
+    </edge>
+    <edge source="variable" target="data-type">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">every variable has a type</data>
+    </edge>
+    <edge source="data-type" target="operator">
+      <data key="d4">prerequisite</data>
+      <data key="d5">2.0</data>
+      <data key="d6">operators act on typed values</data>
+    </edge>
+    <edge source="operator" target="conditional-statement">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">conditions are built from comparison operators</data>
+    </edge>
+    <edge source="conditional-statement" target="loop">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">a loop repeats while a condition holds</data>
+    </edge>
+    <edge source="array" target="array-indexing">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">elements are reached by index</data>
+    </edge>
+    <edge source="array" target="c-string">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">a string is an array of characters</data>
+    </edge>
+    <edge source="array" target="static-array">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">the C array is the structure studied here</data>
+    </edge>
+    <edge source="array-indexing" target="multidimensional-array">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">two indices instead of one</data>
+    </edge>
+    <edge source="c-string" target="string-function">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">the library functions operate on char arrays</data>
+    </edge>
+    <edge source="pointer" target="pointer-arithmetic">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">arithmetic is defined on addresses</data>
+    </edge>
+    <edge source="pointer" target="dynamic-memory">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">allocated memory is reached through a pointer</data>
+    </edge>
+    <edge source="pointer" target="function-pointer">
+      <data key="d4">prerequisite</data>
+      <data key="d5">2.0</data>
+      <data key="d6">a function also has an address</data>
+    </edge>
+    <edge source="pointer" target="singly-linked-list">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">nodes are joined by pointers</data>
+    </edge>
+    <edge source="pointer-arithmetic" target="pointer-to-array">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">array access is pointer arithmetic</data>
+    </edge>
+    <edge source="abstract-data-type" target="static-array">
+      <data key="d4">prerequisite</data>
+      <data key="d5">2.0</data>
+      <data key="d6">the array is the first concrete structure</data>
+    </edge>
+    <edge source="static-array" target="singly-linked-list">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">the list fixes the array's fixed size</data>
+    </edge>
+    <edge source="singly-linked-list" target="doubly-linked-list">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">a second link per node</data>
+    </edge>
+    <edge source="singly-linked-list" target="circular-linked-list">
+      <data key="d4">prerequisite</data>
+      <data key="d5">2.0</data>
+      <data key="d6">the tail links back to the head</data>
+    </edge>
+    <edge source="stack" target="stack-application">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">applications follow the operations</data>
+    </edge>
+    <edge source="stack" target="queue">
+      <data key="d4">prerequisite</data>
+      <data key="d5">2.0</data>
+      <data key="d6">the two orders are taught as a pair</data>
+    </edge>
+    <edge source="queue" target="circular-queue">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">the circular form reuses freed slots</data>
+    </edge>
+    <edge source="queue" target="priority-queue">
+      <data key="d4">prerequisite</data>
+      <data key="d5">2.0</data>
+      <data key="d6">ordering by priority instead of arrival</data>
+    </edge>
+    <edge source="binary-tree" target="tree-traversal">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">traversal is defined over the tree</data>
+    </edge>
+    <edge source="binary-tree" target="binary-search-tree">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">the BST adds an ordering rule</data>
+    </edge>
+    <edge source="tree-traversal" target="graph-traversal">
+      <data key="d4">prerequisite</data>
+      <data key="d5">2.0</data>
+      <data key="d6">traversal generalises from trees to graphs</data>
+    </edge>
+    <edge source="graph-representation" target="graph-traversal">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">traversal walks the stored representation</data>
+    </edge>
+    <edge source="graph-traversal" target="state-space-search">
+      <data key="d4">prerequisite</data>
+      <data key="d5">2.0</data>
+      <data key="d6">search is traversal over a state graph</data>
+    </edge>
+    <edge source="entity" target="attribute">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">entities are described by attributes</data>
+    </edge>
+    <edge source="entity" target="relationship">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">relationships join entities</data>
+    </edge>
+    <edge source="relationship" target="cardinality">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">cardinality constrains a relationship</data>
+    </edge>
+    <edge source="cardinality" target="er-diagram">
+      <data key="d4">prerequisite</data>
+      <data key="d5">2.0</data>
+      <data key="d6">the diagram records entities relationships and cardinality</data>
+    </edge>
+    <edge source="relational-model" target="select-query">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">queries run over relations</data>
+    </edge>
+    <edge source="relational-model" target="partitioning">
+      <data key="d4">related-to</data>
+      <data key="d5">1.0</data>
+      <data key="d6">tables are partitioned across nodes</data>
+    </edge>
+    <edge source="select-query" target="join">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">a join combines two selects</data>
+    </edge>
+    <edge source="select-query" target="aggregate-function">
+      <data key="d4">prerequisite</data>
+      <data key="d5">2.0</data>
+      <data key="d6">aggregates summarise selected rows</data>
+    </edge>
+    <edge source="select-query" target="subquery">
+      <data key="d4">prerequisite</data>
+      <data key="d5">2.0</data>
+      <data key="d6">a query nested inside another</data>
+    </edge>
+    <edge source="functional-dependency" target="first-normal-form">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">normalisation is defined through dependencies</data>
+    </edge>
+    <edge source="first-normal-form" target="second-normal-form">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">each form assumes the previous one</data>
+    </edge>
+    <edge source="second-normal-form" target="third-normal-form">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">each form assumes the previous one</data>
+    </edge>
+    <edge source="third-normal-form" target="boyce-codd-normal-form">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">BCNF is a stricter 3NF</data>
+    </edge>
+    <edge source="perceptron" target="activation-function">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">the unit needs a non linearity</data>
+    </edge>
+    <edge source="activation-function" target="feedforward-network">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">layers of activated units</data>
+    </edge>
+    <edge source="feedforward-network" target="loss-function">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">the network's output is scored</data>
+    </edge>
+    <edge source="loss-function" target="backpropagation">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">gradients of the loss train the weights</data>
+    </edge>
+    <edge source="backpropagation" target="convolution">
+      <data key="d4">prerequisite</data>
+      <data key="d5">1.0</data>
+      <data key="d6">convolutional layers are trained the same way</data>
+    </edge>
+    <edge source="convolution" target="filter-kernel">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">the kernel is what convolves</data>
+    </edge>
+    <edge source="filter-kernel" target="pooling">
+      <data key="d4">prerequisite</data>
+      <data key="d5">2.0</data>
+      <data key="d6">pooling follows the convolution layer</data>
+    </edge>
+    <edge source="pooling" target="cnn-architecture">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">the stack of layers forms the architecture</data>
+    </edge>
+    <edge source="cnn-architecture" target="transfer-learning">
+      <data key="d4">prerequisite</data>
+      <data key="d5">2.0</data>
+      <data key="d6">a trained architecture is reused</data>
+    </edge>
+    <edge source="sequence-data" target="recurrent-network">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">recurrence handles ordered input</data>
+    </edge>
+    <edge source="recurrent-network" target="lstm">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">LSTM fixes the vanishing gradient</data>
+    </edge>
+    <edge source="lstm" target="attention-mechanism">
+      <data key="d4">prerequisite</data>
+      <data key="d5">2.0</data>
+      <data key="d6">attention replaces carrying state along</data>
+    </edge>
+    <edge source="attention-mechanism" target="transformer">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">the transformer is built from attention</data>
+    </edge>
+    <edge source="transformer" target="pretrained-language-model">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">modern language models are transformers</data>
+    </edge>
+    <edge source="tokenization" target="stopword-removal">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">stopwords are removed from tokens</data>
+    </edge>
+    <edge source="tokenization" target="bag-of-words">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">counts are taken over tokens</data>
+    </edge>
+    <edge source="stopword-removal" target="stemming">
+      <data key="d4">prerequisite</data>
+      <data key="d5">2.0</data>
+      <data key="d6">the remaining tokens are reduced</data>
+    </edge>
+    <edge source="stemming" target="lemmatization">
+      <data key="d4">prerequisite</data>
+      <data key="d5">2.0</data>
+      <data key="d6">lemmatisation is the dictionary aware version</data>
+    </edge>
+    <edge source="bag-of-words" target="text-classification">
+      <data key="d4">prerequisite</data>
+      <data key="d5">2.0</data>
+      <data key="d6">the first classifiers run on bag of words</data>
+    </edge>
+    <edge source="n-gram-model" target="word-embedding">
+      <data key="d4">prerequisite</data>
+      <data key="d5">2.0</data>
+      <data key="d6">embeddings replace sparse counts</data>
+    </edge>
+    <edge source="word-embedding" target="word2vec">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">word2vec is the first embedding method taught</data>
+    </edge>
+    <edge source="word2vec" target="contextual-embedding">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">context dependent vectors follow static ones</data>
+    </edge>
+    <edge source="contextual-embedding" target="pretrained-language-model">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">the model that produces the vectors</data>
+    </edge>
+    <edge source="text-classification" target="named-entity-recognition">
+      <data key="d4">prerequisite</data>
+      <data key="d5">2.0</data>
+      <data key="d6">tagging follows whole document labelling</data>
+    </edge>
+    <edge source="named-entity-recognition" target="machine-translation">
+      <data key="d4">prerequisite</data>
+      <data key="d5">1.0</data>
+      <data key="d6">sequence to sequence tasks build on tagging</data>
+    </edge>
+    <edge source="machine-translation" target="question-answering">
+      <data key="d4">prerequisite</data>
+      <data key="d5">2.0</data>
+      <data key="d6">both generate text conditioned on input</data>
+    </edge>
+    <edge source="question-answering" target="text-summarisation">
+      <data key="d4">prerequisite</data>
+      <data key="d5">2.0</data>
+      <data key="d6">both select and rewrite source content</data>
+    </edge>
+    <edge source="distributed-file-system" target="hdfs">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">HDFS is the worked example</data>
+    </edge>
+    <edge source="hdfs" target="data-replication">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">blocks are replicated across nodes</data>
+    </edge>
+    <edge source="data-replication" target="partitioning">
+      <data key="d4">prerequisite</data>
+      <data key="d5">2.0</data>
+      <data key="d6">data is split as well as copied</data>
+    </edge>
+    <edge source="partitioning" target="cap-theorem">
+      <data key="d4">prerequisite</data>
+      <data key="d5">2.0</data>
+      <data key="d6">the trade off the design faces</data>
+    </edge>
+    <edge source="mapreduce" target="mapper-reducer">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">the two halves of the model</data>
+    </edge>
+    <edge source="mapreduce" target="spark-rdd">
+      <data key="d4">prerequisite</data>
+      <data key="d5">2.0</data>
+      <data key="d6">Spark generalises the model</data>
+    </edge>
+    <edge source="mapper-reducer" target="shuffle-sort">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">the stage between map and reduce</data>
+    </edge>
+    <edge source="spark-rdd" target="spark-dataframe">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">the typed API over RDDs</data>
+    </edge>
+    <edge source="streaming-data" target="event-time">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">records carry the time they happened</data>
+    </edge>
+    <edge source="streaming-data" target="message-queue">
+      <data key="d4">prerequisite</data>
+      <data key="d5">2.0</data>
+      <data key="d6">the stream arrives through a broker</data>
+    </edge>
+    <edge source="event-time" target="windowing">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">windows are cut on event time</data>
+    </edge>
+    <edge source="message-queue" target="stream-processing">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">the engine consumes from the queue</data>
+    </edge>
+    <edge source="algorithmic-bias" target="training-data-bias">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">most bias enters through the data</data>
+    </edge>
+    <edge source="training-data-bias" target="fairness-metric">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">metrics are needed to measure it</data>
+    </edge>
+    <edge source="fairness-metric" target="disparate-impact">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">one such measure</data>
+    </edge>
+    <edge source="fairness-metric" target="bias-mitigation">
+      <data key="d4">prerequisite</data>
+      <data key="d5">2.0</data>
+      <data key="d6">you mitigate against a measure</data>
+    </edge>
+    <edge source="personal-data" target="consent">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">consent governs personal data</data>
+    </edge>
+    <edge source="personal-data" target="anonymisation">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">anonymisation is applied to personal data</data>
+    </edge>
+    <edge source="consent" target="data-minimisation">
+      <data key="d4">prerequisite</data>
+      <data key="d5">2.0</data>
+      <data key="d6">collect only what consent covers</data>
+    </edge>
+    <edge source="anonymisation" target="differential-privacy">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">a formal guarantee where anonymisation is weak</data>
+    </edge>
+    <edge source="ai-regulation" target="model-documentation">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">regulation asks for documentation</data>
+    </edge>
+    <edge source="ai-regulation" target="risk-assessment">
+      <data key="d4">prerequisite</data>
+      <data key="d5">2.0</data>
+      <data key="d6">risk tiers drive the obligations</data>
+    </edge>
+    <edge source="model-documentation" target="auditability">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">documentation is what makes an audit possible</data>
+    </edge>
+    <edge source="auditability" target="accountability">
+      <data key="d4">prerequisite</data>
+      <data key="d5">3.0</data>
+      <data key="d6">audits are how accountability is enforced</data>
+    </edge>
+  </graph>
+</graphml>
