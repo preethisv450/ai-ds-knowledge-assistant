@@ -1,0 +1,152 @@
+rank,concept_id,name,subject_code,module_id,prerequisites,leads_to,degree_centrality,betweenness
+1,backpropagation,Backpropagation,DS301,DS301-M1,2,1,0.02,0.00157
+2,convolution,Convolution,DS301,DS301-M2,1,1,0.01333,0.00143
+3,filter-kernel,Filter Kernel,DS301,DS301-M2,1,1,0.01333,0.00121
+4,loss-function,Loss Function,DS301,DS301-M1,1,1,0.01333,0.00107
+5,feedforward-network,Feedforward Network,DS301,DS301-M1,1,1,0.01333,0.00094
+6,state-space-search,State Space Search,AI201,AI201-M2,2,2,0.02667,0.00089
+7,pooling,Pooling,DS301,DS301-M2,1,1,0.01333,0.00089
+8,activation-function,Activation Function,DS301,DS301-M1,1,1,0.01333,0.00072
+9,graph-traversal,Graph Traversal,CS102,CS102-M3,2,1,0.02,0.00067
+10,breadth-first-search,Breadth First Search,AI201,AI201-M2,1,2,0.02,0.00054
+11,cnn-architecture,CNN Architecture,DS301,DS301-M2,1,1,0.01333,0.00049
+12,fairness-metric,Fairness Metric,DS402,DS402-M1,2,2,0.02667,0.00045
+13,derivative,Derivative,MA101,MA101-M1,1,4,0.03333,0.0004
+14,named-entity-recognition,Named Entity Recognition,DS302,DS302-M3,1,1,0.01333,0.0004
+15,perceptron,Perceptron,DS301,DS301-M1,1,1,0.01333,0.0004
+16,singly-linked-list,Singly Linked List,CS102,CS102-M1,2,2,0.02667,0.00036
+17,machine-translation,Machine Translation,DS302,DS302-M3,1,1,0.01333,0.00036
+18,text-classification,Text Classification,DS302,DS302-M3,1,1,0.01333,0.00036
+19,a-star-search,A Star Search,AI201,AI201-M2,2,1,0.02,0.00034
+20,determinant,Determinant,MA101,MA101-M2,1,2,0.02,0.00027
+21,static-array,Static Array,CS102,CS102-M1,2,1,0.02,0.00027
+22,training-data-bias,Training Data Bias,DS402,DS402-M1,2,1,0.02,0.00027
+23,attention-mechanism,Attention Mechanism,DS301,DS301-M3,1,1,0.01333,0.00027
+24,lstm,LSTM,DS301,DS301-M3,1,1,0.01333,0.00027
+25,tree-traversal,Tree Traversal,CS102,CS102-M3,1,1,0.01333,0.00027
+26,bag-of-words,Bag of Words,DS302,DS302-M1,1,1,0.01333,0.00022
+27,question-answering,Question Answering,DS302,DS302-M3,1,1,0.01333,0.00022
+28,partitioning,Partitioning,DS401,DS401-M1,2,1,0.02,0.00018
+29,train-test-split,Train Test Split,DS202,DS202-M3,1,2,0.02,0.00018
+30,data-replication,Data Replication,DS401,DS401-M1,1,1,0.01333,0.00018
+31,linear-first-order,Linear First Order Equation,MA101,MA101-M3,1,1,0.01333,0.00018
+32,matrix-operations,Matrix Operations,MA101,MA101-M2,1,1,0.01333,0.00018
+33,operator,Operator,CS101,CS101-M1,1,1,0.01333,0.00018
+34,recurrent-network,Recurrent Network,DS301,DS301-M3,1,1,0.01333,0.00018
+35,second-normal-form,Second Normal Form,CS201,CS201-M3,1,1,0.01333,0.00018
+36,transformer,Transformer,DS301,DS301-M3,1,1,0.01333,0.00018
+37,word2vec,Word2Vec,DS302,DS302-M2,1,1,0.01333,0.00018
+38,overfitting,Overfitting,DS202,DS202-M1,1,3,0.02667,0.00013
+39,select-query,Select Query,CS201,CS201-M2,1,3,0.02667,0.00013
+40,conditional-statement,Conditional Statement,CS101,CS101-M1,1,1,0.01333,0.00013
+41,contextual-embedding,Contextual Embedding,DS302,DS302-M2,1,1,0.01333,0.00013
+42,data-type,Data Type,CS101,CS101-M1,1,1,0.01333,0.00013
+43,eigenvalue,Eigenvalue,MA101,MA101-M2,1,1,0.01333,0.00013
+44,first-normal-form,First Normal Form,CS201,CS201-M3,1,1,0.01333,0.00013
+45,hdfs,HDFS,DS401,DS401-M1,1,1,0.01333,0.00013
+46,second-order-linear,Second Order Linear Equation,MA101,MA101-M3,1,1,0.01333,0.00013
+47,separable-equation,Separable Equation,MA101,MA101-M3,1,1,0.01333,0.00013
+48,third-normal-form,Third Normal Form,CS201,CS201-M3,1,1,0.01333,0.00013
+49,word-embedding,Word Embedding,DS302,DS302-M2,1,1,0.01333,0.00013
+50,forward-chaining,Forward Chaining,AI201,AI201-M3,2,1,0.02,9e-05
+51,queue,Queue,CS102,CS102-M2,1,2,0.02,9e-05
+52,auditability,Auditability,DS402,DS402-M3,1,1,0.01333,9e-05
+53,cardinality,Cardinality,CS201,CS201-M1,1,1,0.01333,9e-05
+54,horn-clause,Horn Clause,AI201,AI201-M3,1,1,0.01333,9e-05
+55,model-documentation,Model Documentation,DS402,DS402-M3,1,1,0.01333,9e-05
+56,relationship,Relationship,CS201,CS201-M1,1,1,0.01333,9e-05
+57,stemming,Stemming,DS302,DS302-M1,1,1,0.01333,9e-05
+58,stopword-removal,Stopword Removal,DS302,DS302-M1,1,1,0.01333,9e-05
+59,anonymisation,Anonymisation,DS402,DS402-M2,1,1,0.01333,4e-05
+60,array-indexing,Array Indexing,CS101,CS101-M2,1,1,0.01333,4e-05
+61,consent,Consent,DS402,DS402-M2,1,1,0.01333,4e-05
+62,cross-validation,Cross Validation,DS202,DS202-M3,1,1,0.01333,4e-05
+63,event-time,Event Time,DS401,DS401-M3,1,1,0.01333,4e-05
+64,first-order-logic,First Order Logic,AI201,AI201-M3,1,1,0.01333,4e-05
+65,linear-regression,Linear Regression,DS202,DS202-M1,1,1,0.01333,4e-05
+66,mapper-reducer,Mapper and Reducer,DS401,DS401-M2,1,1,0.01333,4e-05
+67,message-queue,Message Queue,DS401,DS401-M3,1,1,0.01333,4e-05
+68,pointer-arithmetic,Pointer Arithmetic,CS101,CS101-M3,1,1,0.01333,4e-05
+69,spark-rdd,Spark RDD,DS401,DS401-M2,1,1,0.01333,4e-05
+70,c-string,String,CS101,CS101-M2,1,1,0.01333,4e-05
+71,admissibility,Admissibility,AI201,AI201-M2,1,1,0.01333,2e-05
+72,pointer,Pointer,CS101,CS101-M3,0,4,0.02667,0.0
+73,supervised-learning,Supervised Learning,DS202,DS202-M1,0,4,0.02667,0.0
+74,array,Array,CS101,CS101-M2,0,3,0.02,0.0
+75,inference,Inference,AI201,AI201-M3,0,3,0.02,0.0
+76,ai-regulation,AI Regulation,DS402,DS402-M3,0,2,0.01333,0.0
+77,backward-chaining,Backward Chaining,AI201,AI201-M3,2,0,0.01333,0.0
+78,bias-variance,Bias Variance Tradeoff,DS202,DS202-M3,2,0,0.01333,0.0
+79,binary-tree,Binary Tree,CS102,CS102-M3,0,2,0.01333,0.0
+80,centroid,Centroid,DS202,DS202-M2,1,1,0.01333,0.0
+81,clustering,Clustering,DS202,DS202-M2,0,2,0.01333,0.0
+82,confusion-matrix,Confusion Matrix,DS202,DS202-M3,0,2,0.01333,0.0
+83,depth-first-search,Depth First Search,AI201,AI201-M2,2,0,0.01333,0.0
+84,entity,Entity,CS201,CS201-M1,0,2,0.01333,0.0
+85,heuristic-function,Heuristic Function,AI201,AI201-M2,0,2,0.01333,0.0
+86,k-means,K Means,DS202,DS202-M2,2,0,0.01333,0.0
+87,mapreduce,MapReduce,DS401,DS401-M2,0,2,0.01333,0.0
+88,optimality,Optimality,AI201,AI201-M2,2,0,0.01333,0.0
+89,personal-data,Personal Data,DS402,DS402-M2,0,2,0.01333,0.0
+90,precision-recall,Precision and Recall,DS202,DS202-M3,1,1,0.01333,0.0
+91,pretrained-language-model,Pretrained Language Model,DS302,DS302-M2,2,0,0.01333,0.0
+92,principal-component-analysis,Principal Component Analysis,DS202,DS202-M2,2,0,0.01333,0.0
+93,propositional-logic,Propositional Logic,AI201,AI201-M3,0,2,0.01333,0.0
+94,roc-curve,ROC Curve,DS202,DS202-M3,2,0,0.01333,0.0
+95,rational-agent,Rational Agent,AI201,AI201-M1,0,2,0.01333,0.0
+96,relational-model,Relational Model,CS201,CS201-M2,0,2,0.01333,0.0
+97,resolution,Resolution,AI201,AI201-M3,2,0,0.01333,0.0
+98,stack,Stack,CS102,CS102-M2,0,2,0.01333,0.0
+99,streaming-data,Streaming Data,DS401,DS401-M3,0,2,0.01333,0.0
+100,task-environment,Task Environment,AI201,AI201-M1,2,0,0.01333,0.0
+101,tokenization,Tokenization,DS302,DS302-M1,0,2,0.01333,0.0
+102,abstract-data-type,Abstract Data Type,CS102,CS102-M1,0,1,0.00667,0.0
+103,accountability,Accountability,DS402,DS402-M3,1,0,0.00667,0.0
+104,aggregate-function,Aggregate Function,CS201,CS201-M2,1,0,0.00667,0.0
+105,algorithmic-bias,Algorithmic Bias,DS402,DS402-M1,0,1,0.00667,0.0
+106,attribute,Attribute,CS201,CS201-M1,1,0,0.00667,0.0
+107,bias-mitigation,Bias Mitigation,DS402,DS402-M1,1,0,0.00667,0.0
+108,binary-search-tree,Binary Search Tree,CS102,CS102-M3,1,0,0.00667,0.0
+109,boyce-codd-normal-form,Boyce Codd Normal Form,CS201,CS201-M3,1,0,0.00667,0.0
+110,cap-theorem,CAP Theorem,DS401,DS401-M1,1,0,0.00667,0.0
+111,chain-rule,Chain Rule,MA101,MA101-M1,1,0,0.00667,0.0
+112,circular-linked-list,Circular Linked List,CS102,CS102-M1,1,0,0.00667,0.0
+113,circular-queue,Circular Queue,CS102,CS102-M2,1,0,0.00667,0.0
+114,data-minimisation,Data Minimisation,DS402,DS402-M2,1,0,0.00667,0.0
+115,definite-integral,Definite Integral,MA101,MA101-M1,1,0,0.00667,0.0
+116,differential-equation,Differential Equation,MA101,MA101-M3,0,1,0.00667,0.0
+117,differential-privacy,Differential Privacy,DS402,DS402-M2,1,0,0.00667,0.0
+118,disparate-impact,Disparate Impact,DS402,DS402-M1,1,0,0.00667,0.0
+119,distributed-file-system,Distributed File System,DS401,DS401-M1,0,1,0.00667,0.0
+120,doubly-linked-list,Doubly Linked List,CS102,CS102-M1,1,0,0.00667,0.0
+121,dynamic-memory,Dynamic Memory,CS101,CS101-M3,1,0,0.00667,0.0
+122,er-diagram,ER Diagram,CS201,CS201-M1,1,0,0.00667,0.0
+123,function-pointer,Function Pointer,CS101,CS101-M3,1,0,0.00667,0.0
+124,functional-dependency,Functional Dependency,CS201,CS201-M3,0,1,0.00667,0.0
+125,graph-representation,Graph Representation,CS102,CS102-M3,0,1,0.00667,0.0
+126,join,Join,CS201,CS201-M2,1,0,0.00667,0.0
+127,laplace-transform,Laplace Transform,MA101,MA101-M3,1,0,0.00667,0.0
+128,lemmatization,Lemmatization,DS302,DS302-M1,1,0,0.00667,0.0
+129,limit,Limit,MA101,MA101-M1,0,1,0.00667,0.0
+130,loop,Loop,CS101,CS101-M1,1,0,0.00667,0.0
+131,matrix-inverse,Matrix Inverse,MA101,MA101-M2,1,0,0.00667,0.0
+132,multidimensional-array,Multidimensional Array,CS101,CS101-M2,1,0,0.00667,0.0
+133,n-gram-model,N Gram Model,DS302,DS302-M2,0,1,0.00667,0.0
+134,peas,PEAS Description,AI201,AI201-M1,0,1,0.00667,0.0
+135,pointer-to-array,Pointer to Array,CS101,CS101-M3,1,0,0.00667,0.0
+136,priority-queue,Priority Queue,CS102,CS102-M2,1,0,0.00667,0.0
+137,regularisation,Regularisation,DS202,DS202-M1,1,0,0.00667,0.0
+138,risk-assessment,Risk Assessment,DS402,DS402-M3,1,0,0.00667,0.0
+139,sequence-data,Sequence Data,DS301,DS301-M3,0,1,0.00667,0.0
+140,shuffle-sort,Shuffle and Sort,DS401,DS401-M2,1,0,0.00667,0.0
+141,spark-dataframe,Spark DataFrame,DS401,DS401-M2,1,0,0.00667,0.0
+142,stack-application,Stack Application,CS102,CS102-M2,1,0,0.00667,0.0
+143,stream-processing,Stream Processing,DS401,DS401-M3,1,0,0.00667,0.0
+144,string-function,String Function,CS101,CS101-M2,1,0,0.00667,0.0
+145,subquery,Subquery,CS201,CS201-M2,1,0,0.00667,0.0
+146,taylor-series,Taylor Series,MA101,MA101-M1,1,0,0.00667,0.0
+147,text-summarisation,Text Summarisation,DS302,DS302-M3,1,0,0.00667,0.0
+148,transfer-learning,Transfer Learning,DS301,DS301-M2,1,0,0.00667,0.0
+149,variable,Variable,CS101,CS101-M1,0,1,0.00667,0.0
+150,vector-space,Vector Space,MA101,MA101-M2,0,1,0.00667,0.0
+151,windowing,Windowing,DS401,DS401-M3,1,0,0.00667,0.0
