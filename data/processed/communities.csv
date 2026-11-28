@@ -1,0 +1,152 @@
+community_id,community_label,concept_id,name,subject_code,module_id
+1,Artificial Intelligence — core,a-star-search,A Star Search,AI201,AI201-M2
+1,Artificial Intelligence — core,admissibility,Admissibility,AI201,AI201-M2
+1,Artificial Intelligence — core,binary-search-tree,Binary Search Tree,CS102,CS102-M3
+1,Artificial Intelligence — core,binary-tree,Binary Tree,CS102,CS102-M3
+1,Artificial Intelligence — core,breadth-first-search,Breadth First Search,AI201,AI201-M2
+1,Artificial Intelligence — core,depth-first-search,Depth First Search,AI201,AI201-M2
+1,Artificial Intelligence — core,graph-representation,Graph Representation,CS102,CS102-M3
+1,Artificial Intelligence — core,graph-traversal,Graph Traversal,CS102,CS102-M3
+1,Artificial Intelligence — core,heuristic-function,Heuristic Function,AI201,AI201-M2
+1,Artificial Intelligence — core,optimality,Optimality,AI201,AI201-M2
+1,Artificial Intelligence — core,peas,PEAS Description,AI201,AI201-M1
+1,Artificial Intelligence — core,rational-agent,Rational Agent,AI201,AI201-M1
+1,Artificial Intelligence — core,state-space-search,State Space Search,AI201,AI201-M2
+1,Artificial Intelligence — core,task-environment,Task Environment,AI201,AI201-M1
+1,Artificial Intelligence — core,tree-traversal,Tree Traversal,CS102,CS102-M3
+2,Programming in C — core,abstract-data-type,Abstract Data Type,CS102,CS102-M1
+2,Programming in C — core,array,Array,CS101,CS101-M2
+2,Programming in C — core,array-indexing,Array Indexing,CS101,CS101-M2
+2,Programming in C — core,circular-linked-list,Circular Linked List,CS102,CS102-M1
+2,Programming in C — core,doubly-linked-list,Doubly Linked List,CS102,CS102-M1
+2,Programming in C — core,dynamic-memory,Dynamic Memory,CS101,CS101-M3
+2,Programming in C — core,function-pointer,Function Pointer,CS101,CS101-M3
+2,Programming in C — core,multidimensional-array,Multidimensional Array,CS101,CS101-M2
+2,Programming in C — core,pointer,Pointer,CS101,CS101-M3
+2,Programming in C — core,pointer-arithmetic,Pointer Arithmetic,CS101,CS101-M3
+2,Programming in C — core,pointer-to-array,Pointer to Array,CS101,CS101-M3
+2,Programming in C — core,singly-linked-list,Singly Linked List,CS102,CS102-M1
+2,Programming in C — core,static-array,Static Array,CS102,CS102-M1
+2,Programming in C — core,c-string,String,CS101,CS101-M2
+2,Programming in C — core,string-function,String Function,CS101,CS101-M2
+3,"Across subjects: Machine Learning, AI Ethics and Governance",algorithmic-bias,Algorithmic Bias,DS402,DS402-M1
+3,"Across subjects: Machine Learning, AI Ethics and Governance",bias-mitigation,Bias Mitigation,DS402,DS402-M1
+3,"Across subjects: Machine Learning, AI Ethics and Governance",bias-variance,Bias Variance Tradeoff,DS202,DS202-M3
+3,"Across subjects: Machine Learning, AI Ethics and Governance",cross-validation,Cross Validation,DS202,DS202-M3
+3,"Across subjects: Machine Learning, AI Ethics and Governance",disparate-impact,Disparate Impact,DS402,DS402-M1
+3,"Across subjects: Machine Learning, AI Ethics and Governance",fairness-metric,Fairness Metric,DS402,DS402-M1
+3,"Across subjects: Machine Learning, AI Ethics and Governance",linear-regression,Linear Regression,DS202,DS202-M1
+3,"Across subjects: Machine Learning, AI Ethics and Governance",overfitting,Overfitting,DS202,DS202-M1
+3,"Across subjects: Machine Learning, AI Ethics and Governance",regularisation,Regularisation,DS202,DS202-M1
+3,"Across subjects: Machine Learning, AI Ethics and Governance",supervised-learning,Supervised Learning,DS202,DS202-M1
+3,"Across subjects: Machine Learning, AI Ethics and Governance",train-test-split,Train Test Split,DS202,DS202-M3
+3,"Across subjects: Machine Learning, AI Ethics and Governance",training-data-bias,Training Data Bias,DS402,DS402-M1
+4,"Across subjects: Engineering Mathematics I, Deep Learning",activation-function,Activation Function,DS301,DS301-M1
+4,"Across subjects: Engineering Mathematics I, Deep Learning",backpropagation,Backpropagation,DS301,DS301-M1
+4,"Across subjects: Engineering Mathematics I, Deep Learning",chain-rule,Chain Rule,MA101,MA101-M1
+4,"Across subjects: Engineering Mathematics I, Deep Learning",definite-integral,Definite Integral,MA101,MA101-M1
+4,"Across subjects: Engineering Mathematics I, Deep Learning",derivative,Derivative,MA101,MA101-M1
+4,"Across subjects: Engineering Mathematics I, Deep Learning",feedforward-network,Feedforward Network,DS301,DS301-M1
+4,"Across subjects: Engineering Mathematics I, Deep Learning",limit,Limit,MA101,MA101-M1
+4,"Across subjects: Engineering Mathematics I, Deep Learning",loss-function,Loss Function,DS301,DS301-M1
+4,"Across subjects: Engineering Mathematics I, Deep Learning",perceptron,Perceptron,DS301,DS301-M1
+4,"Across subjects: Engineering Mathematics I, Deep Learning",taylor-series,Taylor Series,MA101,MA101-M1
+5,Natural Language Processing — core,bag-of-words,Bag of Words,DS302,DS302-M1
+5,Natural Language Processing — core,lemmatization,Lemmatization,DS302,DS302-M1
+5,Natural Language Processing — core,machine-translation,Machine Translation,DS302,DS302-M3
+5,Natural Language Processing — core,named-entity-recognition,Named Entity Recognition,DS302,DS302-M3
+5,Natural Language Processing — core,question-answering,Question Answering,DS302,DS302-M3
+5,Natural Language Processing — core,stemming,Stemming,DS302,DS302-M1
+5,Natural Language Processing — core,stopword-removal,Stopword Removal,DS302,DS302-M1
+5,Natural Language Processing — core,text-classification,Text Classification,DS302,DS302-M3
+5,Natural Language Processing — core,text-summarisation,Text Summarisation,DS302,DS302-M3
+5,Natural Language Processing — core,tokenization,Tokenization,DS302,DS302-M1
+6,"Across subjects: Natural Language Processing, Deep Learning",attention-mechanism,Attention Mechanism,DS301,DS301-M3
+6,"Across subjects: Natural Language Processing, Deep Learning",contextual-embedding,Contextual Embedding,DS302,DS302-M2
+6,"Across subjects: Natural Language Processing, Deep Learning",lstm,LSTM,DS301,DS301-M3
+6,"Across subjects: Natural Language Processing, Deep Learning",n-gram-model,N Gram Model,DS302,DS302-M2
+6,"Across subjects: Natural Language Processing, Deep Learning",pretrained-language-model,Pretrained Language Model,DS302,DS302-M2
+6,"Across subjects: Natural Language Processing, Deep Learning",recurrent-network,Recurrent Network,DS301,DS301-M3
+6,"Across subjects: Natural Language Processing, Deep Learning",sequence-data,Sequence Data,DS301,DS301-M3
+6,"Across subjects: Natural Language Processing, Deep Learning",transformer,Transformer,DS301,DS301-M3
+6,"Across subjects: Natural Language Processing, Deep Learning",word-embedding,Word Embedding,DS302,DS302-M2
+6,"Across subjects: Natural Language Processing, Deep Learning",word2vec,Word2Vec,DS302,DS302-M2
+7,"Across subjects: Big Data Analytics, Database Systems",aggregate-function,Aggregate Function,CS201,CS201-M2
+7,"Across subjects: Big Data Analytics, Database Systems",cap-theorem,CAP Theorem,DS401,DS401-M1
+7,"Across subjects: Big Data Analytics, Database Systems",data-replication,Data Replication,DS401,DS401-M1
+7,"Across subjects: Big Data Analytics, Database Systems",distributed-file-system,Distributed File System,DS401,DS401-M1
+7,"Across subjects: Big Data Analytics, Database Systems",hdfs,HDFS,DS401,DS401-M1
+7,"Across subjects: Big Data Analytics, Database Systems",join,Join,CS201,CS201-M2
+7,"Across subjects: Big Data Analytics, Database Systems",partitioning,Partitioning,DS401,DS401-M1
+7,"Across subjects: Big Data Analytics, Database Systems",relational-model,Relational Model,CS201,CS201-M2
+7,"Across subjects: Big Data Analytics, Database Systems",select-query,Select Query,CS201,CS201-M2
+7,"Across subjects: Big Data Analytics, Database Systems",subquery,Subquery,CS201,CS201-M2
+8,Knowledge Representation,backward-chaining,Backward Chaining,AI201,AI201-M3
+8,Knowledge Representation,first-order-logic,First Order Logic,AI201,AI201-M3
+8,Knowledge Representation,forward-chaining,Forward Chaining,AI201,AI201-M3
+8,Knowledge Representation,horn-clause,Horn Clause,AI201,AI201-M3
+8,Knowledge Representation,inference,Inference,AI201,AI201-M3
+8,Knowledge Representation,propositional-logic,Propositional Logic,AI201,AI201-M3
+8,Knowledge Representation,resolution,Resolution,AI201,AI201-M3
+9,Linear Algebra,determinant,Determinant,MA101,MA101-M2
+9,Linear Algebra,eigenvalue,Eigenvalue,MA101,MA101-M2
+9,Linear Algebra,matrix-inverse,Matrix Inverse,MA101,MA101-M2
+9,Linear Algebra,matrix-operations,Matrix Operations,MA101,MA101-M2
+9,Linear Algebra,principal-component-analysis,Principal Component Analysis,DS202,DS202-M2
+9,Linear Algebra,vector-space,Vector Space,MA101,MA101-M2
+10,Differential Equations,differential-equation,Differential Equation,MA101,MA101-M3
+10,Differential Equations,laplace-transform,Laplace Transform,MA101,MA101-M3
+10,Differential Equations,linear-first-order,Linear First Order Equation,MA101,MA101-M3
+10,Differential Equations,second-order-linear,Second Order Linear Equation,MA101,MA101-M3
+10,Differential Equations,separable-equation,Separable Equation,MA101,MA101-M3
+11,Basics and Control Flow,conditional-statement,Conditional Statement,CS101,CS101-M1
+11,Basics and Control Flow,data-type,Data Type,CS101,CS101-M1
+11,Basics and Control Flow,loop,Loop,CS101,CS101-M1
+11,Basics and Control Flow,operator,Operator,CS101,CS101-M1
+11,Basics and Control Flow,variable,Variable,CS101,CS101-M1
+12,Stacks and Queues,circular-queue,Circular Queue,CS102,CS102-M2
+12,Stacks and Queues,priority-queue,Priority Queue,CS102,CS102-M2
+12,Stacks and Queues,queue,Queue,CS102,CS102-M2
+12,Stacks and Queues,stack,Stack,CS102,CS102-M2
+12,Stacks and Queues,stack-application,Stack Application,CS102,CS102-M2
+13,ER Modelling,attribute,Attribute,CS201,CS201-M1
+13,ER Modelling,cardinality,Cardinality,CS201,CS201-M1
+13,ER Modelling,er-diagram,ER Diagram,CS201,CS201-M1
+13,ER Modelling,entity,Entity,CS201,CS201-M1
+13,ER Modelling,relationship,Relationship,CS201,CS201-M1
+14,Normalization,boyce-codd-normal-form,Boyce Codd Normal Form,CS201,CS201-M3
+14,Normalization,first-normal-form,First Normal Form,CS201,CS201-M3
+14,Normalization,functional-dependency,Functional Dependency,CS201,CS201-M3
+14,Normalization,second-normal-form,Second Normal Form,CS201,CS201-M3
+14,Normalization,third-normal-form,Third Normal Form,CS201,CS201-M3
+15,Convolutional Networks,cnn-architecture,CNN Architecture,DS301,DS301-M2
+15,Convolutional Networks,convolution,Convolution,DS301,DS301-M2
+15,Convolutional Networks,filter-kernel,Filter Kernel,DS301,DS301-M2
+15,Convolutional Networks,pooling,Pooling,DS301,DS301-M2
+15,Convolutional Networks,transfer-learning,Transfer Learning,DS301,DS301-M2
+16,MapReduce and Spark,mapreduce,MapReduce,DS401,DS401-M2
+16,MapReduce and Spark,mapper-reducer,Mapper and Reducer,DS401,DS401-M2
+16,MapReduce and Spark,shuffle-sort,Shuffle and Sort,DS401,DS401-M2
+16,MapReduce and Spark,spark-dataframe,Spark DataFrame,DS401,DS401-M2
+16,MapReduce and Spark,spark-rdd,Spark RDD,DS401,DS401-M2
+17,Streaming Analytics,event-time,Event Time,DS401,DS401-M3
+17,Streaming Analytics,message-queue,Message Queue,DS401,DS401-M3
+17,Streaming Analytics,stream-processing,Stream Processing,DS401,DS401-M3
+17,Streaming Analytics,streaming-data,Streaming Data,DS401,DS401-M3
+17,Streaming Analytics,windowing,Windowing,DS401,DS401-M3
+18,Privacy and Data Protection,anonymisation,Anonymisation,DS402,DS402-M2
+18,Privacy and Data Protection,consent,Consent,DS402,DS402-M2
+18,Privacy and Data Protection,data-minimisation,Data Minimisation,DS402,DS402-M2
+18,Privacy and Data Protection,differential-privacy,Differential Privacy,DS402,DS402-M2
+18,Privacy and Data Protection,personal-data,Personal Data,DS402,DS402-M2
+19,Regulation and Accountability,ai-regulation,AI Regulation,DS402,DS402-M3
+19,Regulation and Accountability,accountability,Accountability,DS402,DS402-M3
+19,Regulation and Accountability,auditability,Auditability,DS402,DS402-M3
+19,Regulation and Accountability,model-documentation,Model Documentation,DS402,DS402-M3
+19,Regulation and Accountability,risk-assessment,Risk Assessment,DS402,DS402-M3
+20,Unsupervised Learning,centroid,Centroid,DS202,DS202-M2
+20,Unsupervised Learning,clustering,Clustering,DS202,DS202-M2
+20,Unsupervised Learning,k-means,K Means,DS202,DS202-M2
+21,Model Evaluation,confusion-matrix,Confusion Matrix,DS202,DS202-M3
+21,Model Evaluation,precision-recall,Precision and Recall,DS202,DS202-M3
+21,Model Evaluation,roc-curve,ROC Curve,DS202,DS202-M3
