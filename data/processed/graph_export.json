@@ -1,0 +1,3219 @@
+{
+  "generated_from": {
+    "graph": "data\\processed\\concept_graph.graphml",
+    "centrality": "data\\processed\\centrality.csv",
+    "communities": "data\\processed\\communities.csv"
+  },
+  "counts": {
+    "concepts": 151,
+    "relations": 141,
+    "subjects": 10,
+    "modules": 30,
+    "communities": 21
+  },
+  "nodes": [
+    {
+      "id": "backpropagation",
+      "name": "Backpropagation",
+      "subject_code": "DS301",
+      "module_id": "DS301-M1",
+      "aliases": [
+        "backprop",
+        "gradient descent"
+      ],
+      "prerequisites": 2,
+      "leads_to": 1,
+      "degree_centrality": 0.02,
+      "betweenness": 0.00157,
+      "community_id": 4,
+      "community_label": "Across subjects: Engineering Mathematics I, Deep Learning"
+    },
+    {
+      "id": "convolution",
+      "name": "Convolution",
+      "subject_code": "DS301",
+      "module_id": "DS301-M2",
+      "aliases": [],
+      "prerequisites": 1,
+      "leads_to": 1,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.00143,
+      "community_id": 15,
+      "community_label": "Convolutional Networks"
+    },
+    {
+      "id": "filter-kernel",
+      "name": "Filter Kernel",
+      "subject_code": "DS301",
+      "module_id": "DS301-M2",
+      "aliases": [
+        "kernel",
+        "filter"
+      ],
+      "prerequisites": 1,
+      "leads_to": 1,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.00121,
+      "community_id": 15,
+      "community_label": "Convolutional Networks"
+    },
+    {
+      "id": "loss-function",
+      "name": "Loss Function",
+      "subject_code": "DS301",
+      "module_id": "DS301-M1",
+      "aliases": [
+        "cost function"
+      ],
+      "prerequisites": 1,
+      "leads_to": 1,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.00107,
+      "community_id": 4,
+      "community_label": "Across subjects: Engineering Mathematics I, Deep Learning"
+    },
+    {
+      "id": "feedforward-network",
+      "name": "Feedforward Network",
+      "subject_code": "DS301",
+      "module_id": "DS301-M1",
+      "aliases": [
+        "MLP"
+      ],
+      "prerequisites": 1,
+      "leads_to": 1,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.00094,
+      "community_id": 4,
+      "community_label": "Across subjects: Engineering Mathematics I, Deep Learning"
+    },
+    {
+      "id": "pooling",
+      "name": "Pooling",
+      "subject_code": "DS301",
+      "module_id": "DS301-M2",
+      "aliases": [
+        "max pooling"
+      ],
+      "prerequisites": 1,
+      "leads_to": 1,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.00089,
+      "community_id": 15,
+      "community_label": "Convolutional Networks"
+    },
+    {
+      "id": "state-space-search",
+      "name": "State Space Search",
+      "subject_code": "AI201",
+      "module_id": "AI201-M2",
+      "aliases": [
+        "search problem",
+        "search space"
+      ],
+      "prerequisites": 2,
+      "leads_to": 2,
+      "degree_centrality": 0.02667,
+      "betweenness": 0.00089,
+      "community_id": 1,
+      "community_label": "Artificial Intelligence \u2014 core"
+    },
+    {
+      "id": "activation-function",
+      "name": "Activation Function",
+      "subject_code": "DS301",
+      "module_id": "DS301-M1",
+      "aliases": [
+        "ReLU",
+        "sigmoid"
+      ],
+      "prerequisites": 1,
+      "leads_to": 1,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.00072,
+      "community_id": 4,
+      "community_label": "Across subjects: Engineering Mathematics I, Deep Learning"
+    },
+    {
+      "id": "graph-traversal",
+      "name": "Graph Traversal",
+      "subject_code": "CS102",
+      "module_id": "CS102-M3",
+      "aliases": [
+        "BFS",
+        "DFS"
+      ],
+      "prerequisites": 2,
+      "leads_to": 1,
+      "degree_centrality": 0.02,
+      "betweenness": 0.00067,
+      "community_id": 1,
+      "community_label": "Artificial Intelligence \u2014 core"
+    },
+    {
+      "id": "breadth-first-search",
+      "name": "Breadth First Search",
+      "subject_code": "AI201",
+      "module_id": "AI201-M2",
+      "aliases": [
+        "BFS"
+      ],
+      "prerequisites": 1,
+      "leads_to": 2,
+      "degree_centrality": 0.02,
+      "betweenness": 0.00054,
+      "community_id": 1,
+      "community_label": "Artificial Intelligence \u2014 core"
+    },
+    {
+      "id": "cnn-architecture",
+      "name": "CNN Architecture",
+      "subject_code": "DS301",
+      "module_id": "DS301-M2",
+      "aliases": [
+        "convolutional network"
+      ],
+      "prerequisites": 1,
+      "leads_to": 1,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.00049,
+      "community_id": 15,
+      "community_label": "Convolutional Networks"
+    },
+    {
+      "id": "fairness-metric",
+      "name": "Fairness Metric",
+      "subject_code": "DS402",
+      "module_id": "DS402-M1",
+      "aliases": [
+        "fairness"
+      ],
+      "prerequisites": 2,
+      "leads_to": 2,
+      "degree_centrality": 0.02667,
+      "betweenness": 0.00045,
+      "community_id": 3,
+      "community_label": "Across subjects: Machine Learning, AI Ethics and Governance"
+    },
+    {
+      "id": "derivative",
+      "name": "Derivative",
+      "subject_code": "MA101",
+      "module_id": "MA101-M1",
+      "aliases": [
+        "differentiation"
+      ],
+      "prerequisites": 1,
+      "leads_to": 4,
+      "degree_centrality": 0.03333,
+      "betweenness": 0.0004,
+      "community_id": 4,
+      "community_label": "Across subjects: Engineering Mathematics I, Deep Learning"
+    },
+    {
+      "id": "named-entity-recognition",
+      "name": "Named Entity Recognition",
+      "subject_code": "DS302",
+      "module_id": "DS302-M3",
+      "aliases": [
+        "NER"
+      ],
+      "prerequisites": 1,
+      "leads_to": 1,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.0004,
+      "community_id": 5,
+      "community_label": "Natural Language Processing \u2014 core"
+    },
+    {
+      "id": "perceptron",
+      "name": "Perceptron",
+      "subject_code": "DS301",
+      "module_id": "DS301-M1",
+      "aliases": [],
+      "prerequisites": 1,
+      "leads_to": 1,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.0004,
+      "community_id": 4,
+      "community_label": "Across subjects: Engineering Mathematics I, Deep Learning"
+    },
+    {
+      "id": "machine-translation",
+      "name": "Machine Translation",
+      "subject_code": "DS302",
+      "module_id": "DS302-M3",
+      "aliases": [],
+      "prerequisites": 1,
+      "leads_to": 1,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.00036,
+      "community_id": 5,
+      "community_label": "Natural Language Processing \u2014 core"
+    },
+    {
+      "id": "singly-linked-list",
+      "name": "Singly Linked List",
+      "subject_code": "CS102",
+      "module_id": "CS102-M1",
+      "aliases": [
+        "linked list"
+      ],
+      "prerequisites": 2,
+      "leads_to": 2,
+      "degree_centrality": 0.02667,
+      "betweenness": 0.00036,
+      "community_id": 2,
+      "community_label": "Programming in C \u2014 core"
+    },
+    {
+      "id": "text-classification",
+      "name": "Text Classification",
+      "subject_code": "DS302",
+      "module_id": "DS302-M3",
+      "aliases": [
+        "sentiment analysis"
+      ],
+      "prerequisites": 1,
+      "leads_to": 1,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.00036,
+      "community_id": 5,
+      "community_label": "Natural Language Processing \u2014 core"
+    },
+    {
+      "id": "a-star-search",
+      "name": "A Star Search",
+      "subject_code": "AI201",
+      "module_id": "AI201-M2",
+      "aliases": [
+        "A*",
+        "A star"
+      ],
+      "prerequisites": 2,
+      "leads_to": 1,
+      "degree_centrality": 0.02,
+      "betweenness": 0.00034,
+      "community_id": 1,
+      "community_label": "Artificial Intelligence \u2014 core"
+    },
+    {
+      "id": "attention-mechanism",
+      "name": "Attention Mechanism",
+      "subject_code": "DS301",
+      "module_id": "DS301-M3",
+      "aliases": [
+        "attention"
+      ],
+      "prerequisites": 1,
+      "leads_to": 1,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.00027,
+      "community_id": 6,
+      "community_label": "Across subjects: Natural Language Processing, Deep Learning"
+    },
+    {
+      "id": "determinant",
+      "name": "Determinant",
+      "subject_code": "MA101",
+      "module_id": "MA101-M2",
+      "aliases": [],
+      "prerequisites": 1,
+      "leads_to": 2,
+      "degree_centrality": 0.02,
+      "betweenness": 0.00027,
+      "community_id": 9,
+      "community_label": "Linear Algebra"
+    },
+    {
+      "id": "lstm",
+      "name": "LSTM",
+      "subject_code": "DS301",
+      "module_id": "DS301-M3",
+      "aliases": [
+        "long short term memory"
+      ],
+      "prerequisites": 1,
+      "leads_to": 1,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.00027,
+      "community_id": 6,
+      "community_label": "Across subjects: Natural Language Processing, Deep Learning"
+    },
+    {
+      "id": "static-array",
+      "name": "Static Array",
+      "subject_code": "CS102",
+      "module_id": "CS102-M1",
+      "aliases": [],
+      "prerequisites": 2,
+      "leads_to": 1,
+      "degree_centrality": 0.02,
+      "betweenness": 0.00027,
+      "community_id": 2,
+      "community_label": "Programming in C \u2014 core"
+    },
+    {
+      "id": "training-data-bias",
+      "name": "Training Data Bias",
+      "subject_code": "DS402",
+      "module_id": "DS402-M1",
+      "aliases": [],
+      "prerequisites": 2,
+      "leads_to": 1,
+      "degree_centrality": 0.02,
+      "betweenness": 0.00027,
+      "community_id": 3,
+      "community_label": "Across subjects: Machine Learning, AI Ethics and Governance"
+    },
+    {
+      "id": "tree-traversal",
+      "name": "Tree Traversal",
+      "subject_code": "CS102",
+      "module_id": "CS102-M3",
+      "aliases": [
+        "inorder",
+        "preorder",
+        "postorder"
+      ],
+      "prerequisites": 1,
+      "leads_to": 1,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.00027,
+      "community_id": 1,
+      "community_label": "Artificial Intelligence \u2014 core"
+    },
+    {
+      "id": "bag-of-words",
+      "name": "Bag of Words",
+      "subject_code": "DS302",
+      "module_id": "DS302-M1",
+      "aliases": [
+        "BoW",
+        "TF-IDF"
+      ],
+      "prerequisites": 1,
+      "leads_to": 1,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.00022,
+      "community_id": 5,
+      "community_label": "Natural Language Processing \u2014 core"
+    },
+    {
+      "id": "question-answering",
+      "name": "Question Answering",
+      "subject_code": "DS302",
+      "module_id": "DS302-M3",
+      "aliases": [
+        "QA"
+      ],
+      "prerequisites": 1,
+      "leads_to": 1,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.00022,
+      "community_id": 5,
+      "community_label": "Natural Language Processing \u2014 core"
+    },
+    {
+      "id": "data-replication",
+      "name": "Data Replication",
+      "subject_code": "DS401",
+      "module_id": "DS401-M1",
+      "aliases": [
+        "replication"
+      ],
+      "prerequisites": 1,
+      "leads_to": 1,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.00018,
+      "community_id": 7,
+      "community_label": "Across subjects: Big Data Analytics, Database Systems"
+    },
+    {
+      "id": "linear-first-order",
+      "name": "Linear First Order Equation",
+      "subject_code": "MA101",
+      "module_id": "MA101-M3",
+      "aliases": [],
+      "prerequisites": 1,
+      "leads_to": 1,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.00018,
+      "community_id": 10,
+      "community_label": "Differential Equations"
+    },
+    {
+      "id": "matrix-operations",
+      "name": "Matrix Operations",
+      "subject_code": "MA101",
+      "module_id": "MA101-M2",
+      "aliases": [
+        "matrix algebra"
+      ],
+      "prerequisites": 1,
+      "leads_to": 1,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.00018,
+      "community_id": 9,
+      "community_label": "Linear Algebra"
+    },
+    {
+      "id": "operator",
+      "name": "Operator",
+      "subject_code": "CS101",
+      "module_id": "CS101-M1",
+      "aliases": [
+        "operators"
+      ],
+      "prerequisites": 1,
+      "leads_to": 1,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.00018,
+      "community_id": 11,
+      "community_label": "Basics and Control Flow"
+    },
+    {
+      "id": "partitioning",
+      "name": "Partitioning",
+      "subject_code": "DS401",
+      "module_id": "DS401-M1",
+      "aliases": [
+        "sharding"
+      ],
+      "prerequisites": 2,
+      "leads_to": 1,
+      "degree_centrality": 0.02,
+      "betweenness": 0.00018,
+      "community_id": 7,
+      "community_label": "Across subjects: Big Data Analytics, Database Systems"
+    },
+    {
+      "id": "recurrent-network",
+      "name": "Recurrent Network",
+      "subject_code": "DS301",
+      "module_id": "DS301-M3",
+      "aliases": [
+        "RNN"
+      ],
+      "prerequisites": 1,
+      "leads_to": 1,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.00018,
+      "community_id": 6,
+      "community_label": "Across subjects: Natural Language Processing, Deep Learning"
+    },
+    {
+      "id": "second-normal-form",
+      "name": "Second Normal Form",
+      "subject_code": "CS201",
+      "module_id": "CS201-M3",
+      "aliases": [
+        "2NF"
+      ],
+      "prerequisites": 1,
+      "leads_to": 1,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.00018,
+      "community_id": 14,
+      "community_label": "Normalization"
+    },
+    {
+      "id": "train-test-split",
+      "name": "Train Test Split",
+      "subject_code": "DS202",
+      "module_id": "DS202-M3",
+      "aliases": [
+        "training and test data"
+      ],
+      "prerequisites": 1,
+      "leads_to": 2,
+      "degree_centrality": 0.02,
+      "betweenness": 0.00018,
+      "community_id": 3,
+      "community_label": "Across subjects: Machine Learning, AI Ethics and Governance"
+    },
+    {
+      "id": "transformer",
+      "name": "Transformer",
+      "subject_code": "DS301",
+      "module_id": "DS301-M3",
+      "aliases": [],
+      "prerequisites": 1,
+      "leads_to": 1,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.00018,
+      "community_id": 6,
+      "community_label": "Across subjects: Natural Language Processing, Deep Learning"
+    },
+    {
+      "id": "word2vec",
+      "name": "Word2Vec",
+      "subject_code": "DS302",
+      "module_id": "DS302-M2",
+      "aliases": [],
+      "prerequisites": 1,
+      "leads_to": 1,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.00018,
+      "community_id": 6,
+      "community_label": "Across subjects: Natural Language Processing, Deep Learning"
+    },
+    {
+      "id": "conditional-statement",
+      "name": "Conditional Statement",
+      "subject_code": "CS101",
+      "module_id": "CS101-M1",
+      "aliases": [
+        "if else"
+      ],
+      "prerequisites": 1,
+      "leads_to": 1,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.00013,
+      "community_id": 11,
+      "community_label": "Basics and Control Flow"
+    },
+    {
+      "id": "contextual-embedding",
+      "name": "Contextual Embedding",
+      "subject_code": "DS302",
+      "module_id": "DS302-M2",
+      "aliases": [
+        "ELMo",
+        "BERT embeddings"
+      ],
+      "prerequisites": 1,
+      "leads_to": 1,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.00013,
+      "community_id": 6,
+      "community_label": "Across subjects: Natural Language Processing, Deep Learning"
+    },
+    {
+      "id": "data-type",
+      "name": "Data Type",
+      "subject_code": "CS101",
+      "module_id": "CS101-M1",
+      "aliases": [
+        "types"
+      ],
+      "prerequisites": 1,
+      "leads_to": 1,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.00013,
+      "community_id": 11,
+      "community_label": "Basics and Control Flow"
+    },
+    {
+      "id": "eigenvalue",
+      "name": "Eigenvalue",
+      "subject_code": "MA101",
+      "module_id": "MA101-M2",
+      "aliases": [
+        "eigenvector",
+        "eigenvalues"
+      ],
+      "prerequisites": 1,
+      "leads_to": 1,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.00013,
+      "community_id": 9,
+      "community_label": "Linear Algebra"
+    },
+    {
+      "id": "first-normal-form",
+      "name": "First Normal Form",
+      "subject_code": "CS201",
+      "module_id": "CS201-M3",
+      "aliases": [
+        "1NF"
+      ],
+      "prerequisites": 1,
+      "leads_to": 1,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.00013,
+      "community_id": 14,
+      "community_label": "Normalization"
+    },
+    {
+      "id": "hdfs",
+      "name": "HDFS",
+      "subject_code": "DS401",
+      "module_id": "DS401-M1",
+      "aliases": [
+        "hadoop file system"
+      ],
+      "prerequisites": 1,
+      "leads_to": 1,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.00013,
+      "community_id": 7,
+      "community_label": "Across subjects: Big Data Analytics, Database Systems"
+    },
+    {
+      "id": "overfitting",
+      "name": "Overfitting",
+      "subject_code": "DS202",
+      "module_id": "DS202-M1",
+      "aliases": [],
+      "prerequisites": 1,
+      "leads_to": 3,
+      "degree_centrality": 0.02667,
+      "betweenness": 0.00013,
+      "community_id": 3,
+      "community_label": "Across subjects: Machine Learning, AI Ethics and Governance"
+    },
+    {
+      "id": "second-order-linear",
+      "name": "Second Order Linear Equation",
+      "subject_code": "MA101",
+      "module_id": "MA101-M3",
+      "aliases": [],
+      "prerequisites": 1,
+      "leads_to": 1,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.00013,
+      "community_id": 10,
+      "community_label": "Differential Equations"
+    },
+    {
+      "id": "select-query",
+      "name": "Select Query",
+      "subject_code": "CS201",
+      "module_id": "CS201-M2",
+      "aliases": [
+        "SELECT"
+      ],
+      "prerequisites": 1,
+      "leads_to": 3,
+      "degree_centrality": 0.02667,
+      "betweenness": 0.00013,
+      "community_id": 7,
+      "community_label": "Across subjects: Big Data Analytics, Database Systems"
+    },
+    {
+      "id": "separable-equation",
+      "name": "Separable Equation",
+      "subject_code": "MA101",
+      "module_id": "MA101-M3",
+      "aliases": [],
+      "prerequisites": 1,
+      "leads_to": 1,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.00013,
+      "community_id": 10,
+      "community_label": "Differential Equations"
+    },
+    {
+      "id": "third-normal-form",
+      "name": "Third Normal Form",
+      "subject_code": "CS201",
+      "module_id": "CS201-M3",
+      "aliases": [
+        "3NF"
+      ],
+      "prerequisites": 1,
+      "leads_to": 1,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.00013,
+      "community_id": 14,
+      "community_label": "Normalization"
+    },
+    {
+      "id": "word-embedding",
+      "name": "Word Embedding",
+      "subject_code": "DS302",
+      "module_id": "DS302-M2",
+      "aliases": [
+        "embeddings"
+      ],
+      "prerequisites": 1,
+      "leads_to": 1,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.00013,
+      "community_id": 6,
+      "community_label": "Across subjects: Natural Language Processing, Deep Learning"
+    },
+    {
+      "id": "auditability",
+      "name": "Auditability",
+      "subject_code": "DS402",
+      "module_id": "DS402-M3",
+      "aliases": [
+        "audit"
+      ],
+      "prerequisites": 1,
+      "leads_to": 1,
+      "degree_centrality": 0.01333,
+      "betweenness": 9e-05,
+      "community_id": 19,
+      "community_label": "Regulation and Accountability"
+    },
+    {
+      "id": "cardinality",
+      "name": "Cardinality",
+      "subject_code": "CS201",
+      "module_id": "CS201-M1",
+      "aliases": [
+        "one to many"
+      ],
+      "prerequisites": 1,
+      "leads_to": 1,
+      "degree_centrality": 0.01333,
+      "betweenness": 9e-05,
+      "community_id": 13,
+      "community_label": "ER Modelling"
+    },
+    {
+      "id": "forward-chaining",
+      "name": "Forward Chaining",
+      "subject_code": "AI201",
+      "module_id": "AI201-M3",
+      "aliases": [],
+      "prerequisites": 2,
+      "leads_to": 1,
+      "degree_centrality": 0.02,
+      "betweenness": 9e-05,
+      "community_id": 8,
+      "community_label": "Knowledge Representation"
+    },
+    {
+      "id": "horn-clause",
+      "name": "Horn Clause",
+      "subject_code": "AI201",
+      "module_id": "AI201-M3",
+      "aliases": [
+        "horn clauses",
+        "clauses"
+      ],
+      "prerequisites": 1,
+      "leads_to": 1,
+      "degree_centrality": 0.01333,
+      "betweenness": 9e-05,
+      "community_id": 8,
+      "community_label": "Knowledge Representation"
+    },
+    {
+      "id": "model-documentation",
+      "name": "Model Documentation",
+      "subject_code": "DS402",
+      "module_id": "DS402-M3",
+      "aliases": [
+        "model cards",
+        "datasheets"
+      ],
+      "prerequisites": 1,
+      "leads_to": 1,
+      "degree_centrality": 0.01333,
+      "betweenness": 9e-05,
+      "community_id": 19,
+      "community_label": "Regulation and Accountability"
+    },
+    {
+      "id": "queue",
+      "name": "Queue",
+      "subject_code": "CS102",
+      "module_id": "CS102-M2",
+      "aliases": [
+        "FIFO"
+      ],
+      "prerequisites": 1,
+      "leads_to": 2,
+      "degree_centrality": 0.02,
+      "betweenness": 9e-05,
+      "community_id": 12,
+      "community_label": "Stacks and Queues"
+    },
+    {
+      "id": "relationship",
+      "name": "Relationship",
+      "subject_code": "CS201",
+      "module_id": "CS201-M1",
+      "aliases": [
+        "relationship set"
+      ],
+      "prerequisites": 1,
+      "leads_to": 1,
+      "degree_centrality": 0.01333,
+      "betweenness": 9e-05,
+      "community_id": 13,
+      "community_label": "ER Modelling"
+    },
+    {
+      "id": "stemming",
+      "name": "Stemming",
+      "subject_code": "DS302",
+      "module_id": "DS302-M1",
+      "aliases": [],
+      "prerequisites": 1,
+      "leads_to": 1,
+      "degree_centrality": 0.01333,
+      "betweenness": 9e-05,
+      "community_id": 5,
+      "community_label": "Natural Language Processing \u2014 core"
+    },
+    {
+      "id": "stopword-removal",
+      "name": "Stopword Removal",
+      "subject_code": "DS302",
+      "module_id": "DS302-M1",
+      "aliases": [
+        "stopwords"
+      ],
+      "prerequisites": 1,
+      "leads_to": 1,
+      "degree_centrality": 0.01333,
+      "betweenness": 9e-05,
+      "community_id": 5,
+      "community_label": "Natural Language Processing \u2014 core"
+    },
+    {
+      "id": "anonymisation",
+      "name": "Anonymisation",
+      "subject_code": "DS402",
+      "module_id": "DS402-M2",
+      "aliases": [
+        "anonymization",
+        "de-identification"
+      ],
+      "prerequisites": 1,
+      "leads_to": 1,
+      "degree_centrality": 0.01333,
+      "betweenness": 4e-05,
+      "community_id": 18,
+      "community_label": "Privacy and Data Protection"
+    },
+    {
+      "id": "array-indexing",
+      "name": "Array Indexing",
+      "subject_code": "CS101",
+      "module_id": "CS101-M2",
+      "aliases": [
+        "index"
+      ],
+      "prerequisites": 1,
+      "leads_to": 1,
+      "degree_centrality": 0.01333,
+      "betweenness": 4e-05,
+      "community_id": 2,
+      "community_label": "Programming in C \u2014 core"
+    },
+    {
+      "id": "consent",
+      "name": "Consent",
+      "subject_code": "DS402",
+      "module_id": "DS402-M2",
+      "aliases": [],
+      "prerequisites": 1,
+      "leads_to": 1,
+      "degree_centrality": 0.01333,
+      "betweenness": 4e-05,
+      "community_id": 18,
+      "community_label": "Privacy and Data Protection"
+    },
+    {
+      "id": "cross-validation",
+      "name": "Cross Validation",
+      "subject_code": "DS202",
+      "module_id": "DS202-M3",
+      "aliases": [
+        "k-fold"
+      ],
+      "prerequisites": 1,
+      "leads_to": 1,
+      "degree_centrality": 0.01333,
+      "betweenness": 4e-05,
+      "community_id": 3,
+      "community_label": "Across subjects: Machine Learning, AI Ethics and Governance"
+    },
+    {
+      "id": "event-time",
+      "name": "Event Time",
+      "subject_code": "DS401",
+      "module_id": "DS401-M3",
+      "aliases": [],
+      "prerequisites": 1,
+      "leads_to": 1,
+      "degree_centrality": 0.01333,
+      "betweenness": 4e-05,
+      "community_id": 17,
+      "community_label": "Streaming Analytics"
+    },
+    {
+      "id": "first-order-logic",
+      "name": "First Order Logic",
+      "subject_code": "AI201",
+      "module_id": "AI201-M3",
+      "aliases": [
+        "FOL",
+        "predicate logic"
+      ],
+      "prerequisites": 1,
+      "leads_to": 1,
+      "degree_centrality": 0.01333,
+      "betweenness": 4e-05,
+      "community_id": 8,
+      "community_label": "Knowledge Representation"
+    },
+    {
+      "id": "linear-regression",
+      "name": "Linear Regression",
+      "subject_code": "DS202",
+      "module_id": "DS202-M1",
+      "aliases": [
+        "least squares",
+        "regression"
+      ],
+      "prerequisites": 1,
+      "leads_to": 1,
+      "degree_centrality": 0.01333,
+      "betweenness": 4e-05,
+      "community_id": 3,
+      "community_label": "Across subjects: Machine Learning, AI Ethics and Governance"
+    },
+    {
+      "id": "mapper-reducer",
+      "name": "Mapper and Reducer",
+      "subject_code": "DS401",
+      "module_id": "DS401-M2",
+      "aliases": [
+        "map",
+        "reduce"
+      ],
+      "prerequisites": 1,
+      "leads_to": 1,
+      "degree_centrality": 0.01333,
+      "betweenness": 4e-05,
+      "community_id": 16,
+      "community_label": "MapReduce and Spark"
+    },
+    {
+      "id": "message-queue",
+      "name": "Message Queue",
+      "subject_code": "DS401",
+      "module_id": "DS401-M3",
+      "aliases": [
+        "Kafka",
+        "broker"
+      ],
+      "prerequisites": 1,
+      "leads_to": 1,
+      "degree_centrality": 0.01333,
+      "betweenness": 4e-05,
+      "community_id": 17,
+      "community_label": "Streaming Analytics"
+    },
+    {
+      "id": "pointer-arithmetic",
+      "name": "Pointer Arithmetic",
+      "subject_code": "CS101",
+      "module_id": "CS101-M3",
+      "aliases": [],
+      "prerequisites": 1,
+      "leads_to": 1,
+      "degree_centrality": 0.01333,
+      "betweenness": 4e-05,
+      "community_id": 2,
+      "community_label": "Programming in C \u2014 core"
+    },
+    {
+      "id": "spark-rdd",
+      "name": "Spark RDD",
+      "subject_code": "DS401",
+      "module_id": "DS401-M2",
+      "aliases": [
+        "RDD"
+      ],
+      "prerequisites": 1,
+      "leads_to": 1,
+      "degree_centrality": 0.01333,
+      "betweenness": 4e-05,
+      "community_id": 16,
+      "community_label": "MapReduce and Spark"
+    },
+    {
+      "id": "c-string",
+      "name": "String",
+      "subject_code": "CS101",
+      "module_id": "CS101-M2",
+      "aliases": [
+        "char array"
+      ],
+      "prerequisites": 1,
+      "leads_to": 1,
+      "degree_centrality": 0.01333,
+      "betweenness": 4e-05,
+      "community_id": 2,
+      "community_label": "Programming in C \u2014 core"
+    },
+    {
+      "id": "admissibility",
+      "name": "Admissibility",
+      "subject_code": "AI201",
+      "module_id": "AI201-M2",
+      "aliases": [
+        "admissible heuristic"
+      ],
+      "prerequisites": 1,
+      "leads_to": 1,
+      "degree_centrality": 0.01333,
+      "betweenness": 2e-05,
+      "community_id": 1,
+      "community_label": "Artificial Intelligence \u2014 core"
+    },
+    {
+      "id": "ai-regulation",
+      "name": "AI Regulation",
+      "subject_code": "DS402",
+      "module_id": "DS402-M3",
+      "aliases": [
+        "regulation"
+      ],
+      "prerequisites": 0,
+      "leads_to": 2,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.0,
+      "community_id": 19,
+      "community_label": "Regulation and Accountability"
+    },
+    {
+      "id": "abstract-data-type",
+      "name": "Abstract Data Type",
+      "subject_code": "CS102",
+      "module_id": "CS102-M1",
+      "aliases": [
+        "ADT"
+      ],
+      "prerequisites": 0,
+      "leads_to": 1,
+      "degree_centrality": 0.00667,
+      "betweenness": 0.0,
+      "community_id": 2,
+      "community_label": "Programming in C \u2014 core"
+    },
+    {
+      "id": "accountability",
+      "name": "Accountability",
+      "subject_code": "DS402",
+      "module_id": "DS402-M3",
+      "aliases": [],
+      "prerequisites": 1,
+      "leads_to": 0,
+      "degree_centrality": 0.00667,
+      "betweenness": 0.0,
+      "community_id": 19,
+      "community_label": "Regulation and Accountability"
+    },
+    {
+      "id": "aggregate-function",
+      "name": "Aggregate Function",
+      "subject_code": "CS201",
+      "module_id": "CS201-M2",
+      "aliases": [
+        "GROUP BY",
+        "COUNT",
+        "SUM"
+      ],
+      "prerequisites": 1,
+      "leads_to": 0,
+      "degree_centrality": 0.00667,
+      "betweenness": 0.0,
+      "community_id": 7,
+      "community_label": "Across subjects: Big Data Analytics, Database Systems"
+    },
+    {
+      "id": "algorithmic-bias",
+      "name": "Algorithmic Bias",
+      "subject_code": "DS402",
+      "module_id": "DS402-M1",
+      "aliases": [
+        "bias"
+      ],
+      "prerequisites": 0,
+      "leads_to": 1,
+      "degree_centrality": 0.00667,
+      "betweenness": 0.0,
+      "community_id": 3,
+      "community_label": "Across subjects: Machine Learning, AI Ethics and Governance"
+    },
+    {
+      "id": "array",
+      "name": "Array",
+      "subject_code": "CS101",
+      "module_id": "CS101-M2",
+      "aliases": [
+        "arrays"
+      ],
+      "prerequisites": 0,
+      "leads_to": 3,
+      "degree_centrality": 0.02,
+      "betweenness": 0.0,
+      "community_id": 2,
+      "community_label": "Programming in C \u2014 core"
+    },
+    {
+      "id": "attribute",
+      "name": "Attribute",
+      "subject_code": "CS201",
+      "module_id": "CS201-M1",
+      "aliases": [],
+      "prerequisites": 1,
+      "leads_to": 0,
+      "degree_centrality": 0.00667,
+      "betweenness": 0.0,
+      "community_id": 13,
+      "community_label": "ER Modelling"
+    },
+    {
+      "id": "backward-chaining",
+      "name": "Backward Chaining",
+      "subject_code": "AI201",
+      "module_id": "AI201-M3",
+      "aliases": [],
+      "prerequisites": 2,
+      "leads_to": 0,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.0,
+      "community_id": 8,
+      "community_label": "Knowledge Representation"
+    },
+    {
+      "id": "bias-mitigation",
+      "name": "Bias Mitigation",
+      "subject_code": "DS402",
+      "module_id": "DS402-M1",
+      "aliases": [
+        "debiasing"
+      ],
+      "prerequisites": 1,
+      "leads_to": 0,
+      "degree_centrality": 0.00667,
+      "betweenness": 0.0,
+      "community_id": 3,
+      "community_label": "Across subjects: Machine Learning, AI Ethics and Governance"
+    },
+    {
+      "id": "bias-variance",
+      "name": "Bias Variance Tradeoff",
+      "subject_code": "DS202",
+      "module_id": "DS202-M3",
+      "aliases": [
+        "bias-variance"
+      ],
+      "prerequisites": 2,
+      "leads_to": 0,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.0,
+      "community_id": 3,
+      "community_label": "Across subjects: Machine Learning, AI Ethics and Governance"
+    },
+    {
+      "id": "binary-search-tree",
+      "name": "Binary Search Tree",
+      "subject_code": "CS102",
+      "module_id": "CS102-M3",
+      "aliases": [
+        "BST"
+      ],
+      "prerequisites": 1,
+      "leads_to": 0,
+      "degree_centrality": 0.00667,
+      "betweenness": 0.0,
+      "community_id": 1,
+      "community_label": "Artificial Intelligence \u2014 core"
+    },
+    {
+      "id": "binary-tree",
+      "name": "Binary Tree",
+      "subject_code": "CS102",
+      "module_id": "CS102-M3",
+      "aliases": [
+        "tree"
+      ],
+      "prerequisites": 0,
+      "leads_to": 2,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.0,
+      "community_id": 1,
+      "community_label": "Artificial Intelligence \u2014 core"
+    },
+    {
+      "id": "boyce-codd-normal-form",
+      "name": "Boyce Codd Normal Form",
+      "subject_code": "CS201",
+      "module_id": "CS201-M3",
+      "aliases": [
+        "BCNF"
+      ],
+      "prerequisites": 1,
+      "leads_to": 0,
+      "degree_centrality": 0.00667,
+      "betweenness": 0.0,
+      "community_id": 14,
+      "community_label": "Normalization"
+    },
+    {
+      "id": "cap-theorem",
+      "name": "CAP Theorem",
+      "subject_code": "DS401",
+      "module_id": "DS401-M1",
+      "aliases": [],
+      "prerequisites": 1,
+      "leads_to": 0,
+      "degree_centrality": 0.00667,
+      "betweenness": 0.0,
+      "community_id": 7,
+      "community_label": "Across subjects: Big Data Analytics, Database Systems"
+    },
+    {
+      "id": "centroid",
+      "name": "Centroid",
+      "subject_code": "DS202",
+      "module_id": "DS202-M2",
+      "aliases": [
+        "cluster centre"
+      ],
+      "prerequisites": 1,
+      "leads_to": 1,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.0,
+      "community_id": 20,
+      "community_label": "Unsupervised Learning"
+    },
+    {
+      "id": "chain-rule",
+      "name": "Chain Rule",
+      "subject_code": "MA101",
+      "module_id": "MA101-M1",
+      "aliases": [],
+      "prerequisites": 1,
+      "leads_to": 0,
+      "degree_centrality": 0.00667,
+      "betweenness": 0.0,
+      "community_id": 4,
+      "community_label": "Across subjects: Engineering Mathematics I, Deep Learning"
+    },
+    {
+      "id": "circular-linked-list",
+      "name": "Circular Linked List",
+      "subject_code": "CS102",
+      "module_id": "CS102-M1",
+      "aliases": [],
+      "prerequisites": 1,
+      "leads_to": 0,
+      "degree_centrality": 0.00667,
+      "betweenness": 0.0,
+      "community_id": 2,
+      "community_label": "Programming in C \u2014 core"
+    },
+    {
+      "id": "circular-queue",
+      "name": "Circular Queue",
+      "subject_code": "CS102",
+      "module_id": "CS102-M2",
+      "aliases": [],
+      "prerequisites": 1,
+      "leads_to": 0,
+      "degree_centrality": 0.00667,
+      "betweenness": 0.0,
+      "community_id": 12,
+      "community_label": "Stacks and Queues"
+    },
+    {
+      "id": "clustering",
+      "name": "Clustering",
+      "subject_code": "DS202",
+      "module_id": "DS202-M2",
+      "aliases": [],
+      "prerequisites": 0,
+      "leads_to": 2,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.0,
+      "community_id": 20,
+      "community_label": "Unsupervised Learning"
+    },
+    {
+      "id": "confusion-matrix",
+      "name": "Confusion Matrix",
+      "subject_code": "DS202",
+      "module_id": "DS202-M3",
+      "aliases": [],
+      "prerequisites": 0,
+      "leads_to": 2,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.0,
+      "community_id": 21,
+      "community_label": "Model Evaluation"
+    },
+    {
+      "id": "data-minimisation",
+      "name": "Data Minimisation",
+      "subject_code": "DS402",
+      "module_id": "DS402-M2",
+      "aliases": [],
+      "prerequisites": 1,
+      "leads_to": 0,
+      "degree_centrality": 0.00667,
+      "betweenness": 0.0,
+      "community_id": 18,
+      "community_label": "Privacy and Data Protection"
+    },
+    {
+      "id": "definite-integral",
+      "name": "Definite Integral",
+      "subject_code": "MA101",
+      "module_id": "MA101-M1",
+      "aliases": [
+        "integration"
+      ],
+      "prerequisites": 1,
+      "leads_to": 0,
+      "degree_centrality": 0.00667,
+      "betweenness": 0.0,
+      "community_id": 4,
+      "community_label": "Across subjects: Engineering Mathematics I, Deep Learning"
+    },
+    {
+      "id": "depth-first-search",
+      "name": "Depth First Search",
+      "subject_code": "AI201",
+      "module_id": "AI201-M2",
+      "aliases": [
+        "DFS"
+      ],
+      "prerequisites": 2,
+      "leads_to": 0,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.0,
+      "community_id": 1,
+      "community_label": "Artificial Intelligence \u2014 core"
+    },
+    {
+      "id": "differential-equation",
+      "name": "Differential Equation",
+      "subject_code": "MA101",
+      "module_id": "MA101-M3",
+      "aliases": [
+        "ODE"
+      ],
+      "prerequisites": 0,
+      "leads_to": 1,
+      "degree_centrality": 0.00667,
+      "betweenness": 0.0,
+      "community_id": 10,
+      "community_label": "Differential Equations"
+    },
+    {
+      "id": "differential-privacy",
+      "name": "Differential Privacy",
+      "subject_code": "DS402",
+      "module_id": "DS402-M2",
+      "aliases": [],
+      "prerequisites": 1,
+      "leads_to": 0,
+      "degree_centrality": 0.00667,
+      "betweenness": 0.0,
+      "community_id": 18,
+      "community_label": "Privacy and Data Protection"
+    },
+    {
+      "id": "disparate-impact",
+      "name": "Disparate Impact",
+      "subject_code": "DS402",
+      "module_id": "DS402-M1",
+      "aliases": [],
+      "prerequisites": 1,
+      "leads_to": 0,
+      "degree_centrality": 0.00667,
+      "betweenness": 0.0,
+      "community_id": 3,
+      "community_label": "Across subjects: Machine Learning, AI Ethics and Governance"
+    },
+    {
+      "id": "distributed-file-system",
+      "name": "Distributed File System",
+      "subject_code": "DS401",
+      "module_id": "DS401-M1",
+      "aliases": [],
+      "prerequisites": 0,
+      "leads_to": 1,
+      "degree_centrality": 0.00667,
+      "betweenness": 0.0,
+      "community_id": 7,
+      "community_label": "Across subjects: Big Data Analytics, Database Systems"
+    },
+    {
+      "id": "doubly-linked-list",
+      "name": "Doubly Linked List",
+      "subject_code": "CS102",
+      "module_id": "CS102-M1",
+      "aliases": [],
+      "prerequisites": 1,
+      "leads_to": 0,
+      "degree_centrality": 0.00667,
+      "betweenness": 0.0,
+      "community_id": 2,
+      "community_label": "Programming in C \u2014 core"
+    },
+    {
+      "id": "dynamic-memory",
+      "name": "Dynamic Memory",
+      "subject_code": "CS101",
+      "module_id": "CS101-M3",
+      "aliases": [
+        "malloc",
+        "free"
+      ],
+      "prerequisites": 1,
+      "leads_to": 0,
+      "degree_centrality": 0.00667,
+      "betweenness": 0.0,
+      "community_id": 2,
+      "community_label": "Programming in C \u2014 core"
+    },
+    {
+      "id": "er-diagram",
+      "name": "ER Diagram",
+      "subject_code": "CS201",
+      "module_id": "CS201-M1",
+      "aliases": [
+        "entity relationship diagram"
+      ],
+      "prerequisites": 1,
+      "leads_to": 0,
+      "degree_centrality": 0.00667,
+      "betweenness": 0.0,
+      "community_id": 13,
+      "community_label": "ER Modelling"
+    },
+    {
+      "id": "entity",
+      "name": "Entity",
+      "subject_code": "CS201",
+      "module_id": "CS201-M1",
+      "aliases": [
+        "entity set"
+      ],
+      "prerequisites": 0,
+      "leads_to": 2,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.0,
+      "community_id": 13,
+      "community_label": "ER Modelling"
+    },
+    {
+      "id": "function-pointer",
+      "name": "Function Pointer",
+      "subject_code": "CS101",
+      "module_id": "CS101-M3",
+      "aliases": [],
+      "prerequisites": 1,
+      "leads_to": 0,
+      "degree_centrality": 0.00667,
+      "betweenness": 0.0,
+      "community_id": 2,
+      "community_label": "Programming in C \u2014 core"
+    },
+    {
+      "id": "functional-dependency",
+      "name": "Functional Dependency",
+      "subject_code": "CS201",
+      "module_id": "CS201-M3",
+      "aliases": [
+        "FD"
+      ],
+      "prerequisites": 0,
+      "leads_to": 1,
+      "degree_centrality": 0.00667,
+      "betweenness": 0.0,
+      "community_id": 14,
+      "community_label": "Normalization"
+    },
+    {
+      "id": "graph-representation",
+      "name": "Graph Representation",
+      "subject_code": "CS102",
+      "module_id": "CS102-M3",
+      "aliases": [
+        "adjacency list",
+        "adjacency matrix"
+      ],
+      "prerequisites": 0,
+      "leads_to": 1,
+      "degree_centrality": 0.00667,
+      "betweenness": 0.0,
+      "community_id": 1,
+      "community_label": "Artificial Intelligence \u2014 core"
+    },
+    {
+      "id": "heuristic-function",
+      "name": "Heuristic Function",
+      "subject_code": "AI201",
+      "module_id": "AI201-M2",
+      "aliases": [
+        "heuristic",
+        "h(n)"
+      ],
+      "prerequisites": 0,
+      "leads_to": 2,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.0,
+      "community_id": 1,
+      "community_label": "Artificial Intelligence \u2014 core"
+    },
+    {
+      "id": "inference",
+      "name": "Inference",
+      "subject_code": "AI201",
+      "module_id": "AI201-M3",
+      "aliases": [
+        "inference procedure"
+      ],
+      "prerequisites": 0,
+      "leads_to": 3,
+      "degree_centrality": 0.02,
+      "betweenness": 0.0,
+      "community_id": 8,
+      "community_label": "Knowledge Representation"
+    },
+    {
+      "id": "join",
+      "name": "Join",
+      "subject_code": "CS201",
+      "module_id": "CS201-M2",
+      "aliases": [
+        "inner join",
+        "outer join"
+      ],
+      "prerequisites": 1,
+      "leads_to": 0,
+      "degree_centrality": 0.00667,
+      "betweenness": 0.0,
+      "community_id": 7,
+      "community_label": "Across subjects: Big Data Analytics, Database Systems"
+    },
+    {
+      "id": "k-means",
+      "name": "K Means",
+      "subject_code": "DS202",
+      "module_id": "DS202-M2",
+      "aliases": [
+        "k-means clustering"
+      ],
+      "prerequisites": 2,
+      "leads_to": 0,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.0,
+      "community_id": 20,
+      "community_label": "Unsupervised Learning"
+    },
+    {
+      "id": "laplace-transform",
+      "name": "Laplace Transform",
+      "subject_code": "MA101",
+      "module_id": "MA101-M3",
+      "aliases": [],
+      "prerequisites": 1,
+      "leads_to": 0,
+      "degree_centrality": 0.00667,
+      "betweenness": 0.0,
+      "community_id": 10,
+      "community_label": "Differential Equations"
+    },
+    {
+      "id": "lemmatization",
+      "name": "Lemmatization",
+      "subject_code": "DS302",
+      "module_id": "DS302-M1",
+      "aliases": [],
+      "prerequisites": 1,
+      "leads_to": 0,
+      "degree_centrality": 0.00667,
+      "betweenness": 0.0,
+      "community_id": 5,
+      "community_label": "Natural Language Processing \u2014 core"
+    },
+    {
+      "id": "limit",
+      "name": "Limit",
+      "subject_code": "MA101",
+      "module_id": "MA101-M1",
+      "aliases": [],
+      "prerequisites": 0,
+      "leads_to": 1,
+      "degree_centrality": 0.00667,
+      "betweenness": 0.0,
+      "community_id": 4,
+      "community_label": "Across subjects: Engineering Mathematics I, Deep Learning"
+    },
+    {
+      "id": "loop",
+      "name": "Loop",
+      "subject_code": "CS101",
+      "module_id": "CS101-M1",
+      "aliases": [
+        "for loop",
+        "while loop"
+      ],
+      "prerequisites": 1,
+      "leads_to": 0,
+      "degree_centrality": 0.00667,
+      "betweenness": 0.0,
+      "community_id": 11,
+      "community_label": "Basics and Control Flow"
+    },
+    {
+      "id": "mapreduce",
+      "name": "MapReduce",
+      "subject_code": "DS401",
+      "module_id": "DS401-M2",
+      "aliases": [],
+      "prerequisites": 0,
+      "leads_to": 2,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.0,
+      "community_id": 16,
+      "community_label": "MapReduce and Spark"
+    },
+    {
+      "id": "matrix-inverse",
+      "name": "Matrix Inverse",
+      "subject_code": "MA101",
+      "module_id": "MA101-M2",
+      "aliases": [
+        "inverse"
+      ],
+      "prerequisites": 1,
+      "leads_to": 0,
+      "degree_centrality": 0.00667,
+      "betweenness": 0.0,
+      "community_id": 9,
+      "community_label": "Linear Algebra"
+    },
+    {
+      "id": "multidimensional-array",
+      "name": "Multidimensional Array",
+      "subject_code": "CS101",
+      "module_id": "CS101-M2",
+      "aliases": [
+        "2D array"
+      ],
+      "prerequisites": 1,
+      "leads_to": 0,
+      "degree_centrality": 0.00667,
+      "betweenness": 0.0,
+      "community_id": 2,
+      "community_label": "Programming in C \u2014 core"
+    },
+    {
+      "id": "n-gram-model",
+      "name": "N Gram Model",
+      "subject_code": "DS302",
+      "module_id": "DS302-M2",
+      "aliases": [
+        "ngram"
+      ],
+      "prerequisites": 0,
+      "leads_to": 1,
+      "degree_centrality": 0.00667,
+      "betweenness": 0.0,
+      "community_id": 6,
+      "community_label": "Across subjects: Natural Language Processing, Deep Learning"
+    },
+    {
+      "id": "optimality",
+      "name": "Optimality",
+      "subject_code": "AI201",
+      "module_id": "AI201-M2",
+      "aliases": [
+        "optimal solution"
+      ],
+      "prerequisites": 2,
+      "leads_to": 0,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.0,
+      "community_id": 1,
+      "community_label": "Artificial Intelligence \u2014 core"
+    },
+    {
+      "id": "peas",
+      "name": "PEAS Description",
+      "subject_code": "AI201",
+      "module_id": "AI201-M1",
+      "aliases": [
+        "PEAS"
+      ],
+      "prerequisites": 0,
+      "leads_to": 1,
+      "degree_centrality": 0.00667,
+      "betweenness": 0.0,
+      "community_id": 1,
+      "community_label": "Artificial Intelligence \u2014 core"
+    },
+    {
+      "id": "personal-data",
+      "name": "Personal Data",
+      "subject_code": "DS402",
+      "module_id": "DS402-M2",
+      "aliases": [
+        "PII"
+      ],
+      "prerequisites": 0,
+      "leads_to": 2,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.0,
+      "community_id": 18,
+      "community_label": "Privacy and Data Protection"
+    },
+    {
+      "id": "pointer",
+      "name": "Pointer",
+      "subject_code": "CS101",
+      "module_id": "CS101-M3",
+      "aliases": [
+        "pointers"
+      ],
+      "prerequisites": 0,
+      "leads_to": 4,
+      "degree_centrality": 0.02667,
+      "betweenness": 0.0,
+      "community_id": 2,
+      "community_label": "Programming in C \u2014 core"
+    },
+    {
+      "id": "pointer-to-array",
+      "name": "Pointer to Array",
+      "subject_code": "CS101",
+      "module_id": "CS101-M3",
+      "aliases": [],
+      "prerequisites": 1,
+      "leads_to": 0,
+      "degree_centrality": 0.00667,
+      "betweenness": 0.0,
+      "community_id": 2,
+      "community_label": "Programming in C \u2014 core"
+    },
+    {
+      "id": "precision-recall",
+      "name": "Precision and Recall",
+      "subject_code": "DS202",
+      "module_id": "DS202-M3",
+      "aliases": [
+        "precision",
+        "recall",
+        "F1"
+      ],
+      "prerequisites": 1,
+      "leads_to": 1,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.0,
+      "community_id": 21,
+      "community_label": "Model Evaluation"
+    },
+    {
+      "id": "pretrained-language-model",
+      "name": "Pretrained Language Model",
+      "subject_code": "DS302",
+      "module_id": "DS302-M2",
+      "aliases": [
+        "LLM",
+        "BERT"
+      ],
+      "prerequisites": 2,
+      "leads_to": 0,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.0,
+      "community_id": 6,
+      "community_label": "Across subjects: Natural Language Processing, Deep Learning"
+    },
+    {
+      "id": "principal-component-analysis",
+      "name": "Principal Component Analysis",
+      "subject_code": "DS202",
+      "module_id": "DS202-M2",
+      "aliases": [
+        "PCA"
+      ],
+      "prerequisites": 2,
+      "leads_to": 0,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.0,
+      "community_id": 9,
+      "community_label": "Linear Algebra"
+    },
+    {
+      "id": "priority-queue",
+      "name": "Priority Queue",
+      "subject_code": "CS102",
+      "module_id": "CS102-M2",
+      "aliases": [
+        "heap"
+      ],
+      "prerequisites": 1,
+      "leads_to": 0,
+      "degree_centrality": 0.00667,
+      "betweenness": 0.0,
+      "community_id": 12,
+      "community_label": "Stacks and Queues"
+    },
+    {
+      "id": "propositional-logic",
+      "name": "Propositional Logic",
+      "subject_code": "AI201",
+      "module_id": "AI201-M3",
+      "aliases": [],
+      "prerequisites": 0,
+      "leads_to": 2,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.0,
+      "community_id": 8,
+      "community_label": "Knowledge Representation"
+    },
+    {
+      "id": "roc-curve",
+      "name": "ROC Curve",
+      "subject_code": "DS202",
+      "module_id": "DS202-M3",
+      "aliases": [
+        "true positive rate",
+        "AUC"
+      ],
+      "prerequisites": 2,
+      "leads_to": 0,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.0,
+      "community_id": 21,
+      "community_label": "Model Evaluation"
+    },
+    {
+      "id": "rational-agent",
+      "name": "Rational Agent",
+      "subject_code": "AI201",
+      "module_id": "AI201-M1",
+      "aliases": [
+        "agent",
+        "intelligent agent"
+      ],
+      "prerequisites": 0,
+      "leads_to": 2,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.0,
+      "community_id": 1,
+      "community_label": "Artificial Intelligence \u2014 core"
+    },
+    {
+      "id": "regularisation",
+      "name": "Regularisation",
+      "subject_code": "DS202",
+      "module_id": "DS202-M1",
+      "aliases": [
+        "L1",
+        "L2",
+        "ridge",
+        "lasso"
+      ],
+      "prerequisites": 1,
+      "leads_to": 0,
+      "degree_centrality": 0.00667,
+      "betweenness": 0.0,
+      "community_id": 3,
+      "community_label": "Across subjects: Machine Learning, AI Ethics and Governance"
+    },
+    {
+      "id": "relational-model",
+      "name": "Relational Model",
+      "subject_code": "CS201",
+      "module_id": "CS201-M2",
+      "aliases": [
+        "relations",
+        "tables"
+      ],
+      "prerequisites": 0,
+      "leads_to": 2,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.0,
+      "community_id": 7,
+      "community_label": "Across subjects: Big Data Analytics, Database Systems"
+    },
+    {
+      "id": "resolution",
+      "name": "Resolution",
+      "subject_code": "AI201",
+      "module_id": "AI201-M3",
+      "aliases": [],
+      "prerequisites": 2,
+      "leads_to": 0,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.0,
+      "community_id": 8,
+      "community_label": "Knowledge Representation"
+    },
+    {
+      "id": "risk-assessment",
+      "name": "Risk Assessment",
+      "subject_code": "DS402",
+      "module_id": "DS402-M3",
+      "aliases": [
+        "impact assessment"
+      ],
+      "prerequisites": 1,
+      "leads_to": 0,
+      "degree_centrality": 0.00667,
+      "betweenness": 0.0,
+      "community_id": 19,
+      "community_label": "Regulation and Accountability"
+    },
+    {
+      "id": "sequence-data",
+      "name": "Sequence Data",
+      "subject_code": "DS301",
+      "module_id": "DS301-M3",
+      "aliases": [
+        "time series",
+        "sequences"
+      ],
+      "prerequisites": 0,
+      "leads_to": 1,
+      "degree_centrality": 0.00667,
+      "betweenness": 0.0,
+      "community_id": 6,
+      "community_label": "Across subjects: Natural Language Processing, Deep Learning"
+    },
+    {
+      "id": "shuffle-sort",
+      "name": "Shuffle and Sort",
+      "subject_code": "DS401",
+      "module_id": "DS401-M2",
+      "aliases": [],
+      "prerequisites": 1,
+      "leads_to": 0,
+      "degree_centrality": 0.00667,
+      "betweenness": 0.0,
+      "community_id": 16,
+      "community_label": "MapReduce and Spark"
+    },
+    {
+      "id": "spark-dataframe",
+      "name": "Spark DataFrame",
+      "subject_code": "DS401",
+      "module_id": "DS401-M2",
+      "aliases": [
+        "dataframe"
+      ],
+      "prerequisites": 1,
+      "leads_to": 0,
+      "degree_centrality": 0.00667,
+      "betweenness": 0.0,
+      "community_id": 16,
+      "community_label": "MapReduce and Spark"
+    },
+    {
+      "id": "stack",
+      "name": "Stack",
+      "subject_code": "CS102",
+      "module_id": "CS102-M2",
+      "aliases": [
+        "LIFO"
+      ],
+      "prerequisites": 0,
+      "leads_to": 2,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.0,
+      "community_id": 12,
+      "community_label": "Stacks and Queues"
+    },
+    {
+      "id": "stack-application",
+      "name": "Stack Application",
+      "subject_code": "CS102",
+      "module_id": "CS102-M2",
+      "aliases": [
+        "expression evaluation"
+      ],
+      "prerequisites": 1,
+      "leads_to": 0,
+      "degree_centrality": 0.00667,
+      "betweenness": 0.0,
+      "community_id": 12,
+      "community_label": "Stacks and Queues"
+    },
+    {
+      "id": "stream-processing",
+      "name": "Stream Processing",
+      "subject_code": "DS401",
+      "module_id": "DS401-M3",
+      "aliases": [],
+      "prerequisites": 1,
+      "leads_to": 0,
+      "degree_centrality": 0.00667,
+      "betweenness": 0.0,
+      "community_id": 17,
+      "community_label": "Streaming Analytics"
+    },
+    {
+      "id": "streaming-data",
+      "name": "Streaming Data",
+      "subject_code": "DS401",
+      "module_id": "DS401-M3",
+      "aliases": [
+        "stream"
+      ],
+      "prerequisites": 0,
+      "leads_to": 2,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.0,
+      "community_id": 17,
+      "community_label": "Streaming Analytics"
+    },
+    {
+      "id": "string-function",
+      "name": "String Function",
+      "subject_code": "CS101",
+      "module_id": "CS101-M2",
+      "aliases": [
+        "strlen",
+        "strcpy"
+      ],
+      "prerequisites": 1,
+      "leads_to": 0,
+      "degree_centrality": 0.00667,
+      "betweenness": 0.0,
+      "community_id": 2,
+      "community_label": "Programming in C \u2014 core"
+    },
+    {
+      "id": "subquery",
+      "name": "Subquery",
+      "subject_code": "CS201",
+      "module_id": "CS201-M2",
+      "aliases": [
+        "nested query"
+      ],
+      "prerequisites": 1,
+      "leads_to": 0,
+      "degree_centrality": 0.00667,
+      "betweenness": 0.0,
+      "community_id": 7,
+      "community_label": "Across subjects: Big Data Analytics, Database Systems"
+    },
+    {
+      "id": "supervised-learning",
+      "name": "Supervised Learning",
+      "subject_code": "DS202",
+      "module_id": "DS202-M1",
+      "aliases": [],
+      "prerequisites": 0,
+      "leads_to": 4,
+      "degree_centrality": 0.02667,
+      "betweenness": 0.0,
+      "community_id": 3,
+      "community_label": "Across subjects: Machine Learning, AI Ethics and Governance"
+    },
+    {
+      "id": "task-environment",
+      "name": "Task Environment",
+      "subject_code": "AI201",
+      "module_id": "AI201-M1",
+      "aliases": [
+        "environment types"
+      ],
+      "prerequisites": 2,
+      "leads_to": 0,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.0,
+      "community_id": 1,
+      "community_label": "Artificial Intelligence \u2014 core"
+    },
+    {
+      "id": "taylor-series",
+      "name": "Taylor Series",
+      "subject_code": "MA101",
+      "module_id": "MA101-M1",
+      "aliases": [
+        "series expansion"
+      ],
+      "prerequisites": 1,
+      "leads_to": 0,
+      "degree_centrality": 0.00667,
+      "betweenness": 0.0,
+      "community_id": 4,
+      "community_label": "Across subjects: Engineering Mathematics I, Deep Learning"
+    },
+    {
+      "id": "text-summarisation",
+      "name": "Text Summarisation",
+      "subject_code": "DS302",
+      "module_id": "DS302-M3",
+      "aliases": [
+        "summarization"
+      ],
+      "prerequisites": 1,
+      "leads_to": 0,
+      "degree_centrality": 0.00667,
+      "betweenness": 0.0,
+      "community_id": 5,
+      "community_label": "Natural Language Processing \u2014 core"
+    },
+    {
+      "id": "tokenization",
+      "name": "Tokenization",
+      "subject_code": "DS302",
+      "module_id": "DS302-M1",
+      "aliases": [
+        "tokens"
+      ],
+      "prerequisites": 0,
+      "leads_to": 2,
+      "degree_centrality": 0.01333,
+      "betweenness": 0.0,
+      "community_id": 5,
+      "community_label": "Natural Language Processing \u2014 core"
+    },
+    {
+      "id": "transfer-learning",
+      "name": "Transfer Learning",
+      "subject_code": "DS301",
+      "module_id": "DS301-M2",
+      "aliases": [
+        "fine tuning"
+      ],
+      "prerequisites": 1,
+      "leads_to": 0,
+      "degree_centrality": 0.00667,
+      "betweenness": 0.0,
+      "community_id": 15,
+      "community_label": "Convolutional Networks"
+    },
+    {
+      "id": "variable",
+      "name": "Variable",
+      "subject_code": "CS101",
+      "module_id": "CS101-M1",
+      "aliases": [],
+      "prerequisites": 0,
+      "leads_to": 1,
+      "degree_centrality": 0.00667,
+      "betweenness": 0.0,
+      "community_id": 11,
+      "community_label": "Basics and Control Flow"
+    },
+    {
+      "id": "vector-space",
+      "name": "Vector Space",
+      "subject_code": "MA101",
+      "module_id": "MA101-M2",
+      "aliases": [],
+      "prerequisites": 0,
+      "leads_to": 1,
+      "degree_centrality": 0.00667,
+      "betweenness": 0.0,
+      "community_id": 9,
+      "community_label": "Linear Algebra"
+    },
+    {
+      "id": "windowing",
+      "name": "Windowing",
+      "subject_code": "DS401",
+      "module_id": "DS401-M3",
+      "aliases": [
+        "tumbling window",
+        "sliding window"
+      ],
+      "prerequisites": 1,
+      "leads_to": 0,
+      "degree_centrality": 0.00667,
+      "betweenness": 0.0,
+      "community_id": 17,
+      "community_label": "Streaming Analytics"
+    }
+  ],
+  "edges": [
+    {
+      "source": "rational-agent",
+      "target": "task-environment",
+      "relation": "related-to",
+      "weight": 2.0,
+      "note": "both introduced together when defining an agent"
+    },
+    {
+      "source": "rational-agent",
+      "target": "state-space-search",
+      "relation": "prerequisite",
+      "weight": 1.0,
+      "note": "an agent formulates its problem as a search"
+    },
+    {
+      "source": "peas",
+      "target": "task-environment",
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "PEAS is how a task environment is described"
+    },
+    {
+      "source": "state-space-search",
+      "target": "breadth-first-search",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "BFS is a strategy over the state space"
+    },
+    {
+      "source": "state-space-search",
+      "target": "depth-first-search",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "DFS is a strategy over the state space"
+    },
+    {
+      "source": "breadth-first-search",
+      "target": "depth-first-search",
+      "relation": "related-to",
+      "weight": 2.0,
+      "note": "the two uninformed strategies are compared"
+    },
+    {
+      "source": "breadth-first-search",
+      "target": "a-star-search",
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "uninformed search comes before informed search"
+    },
+    {
+      "source": "heuristic-function",
+      "target": "a-star-search",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "A star is defined in terms of h(n)"
+    },
+    {
+      "source": "heuristic-function",
+      "target": "admissibility",
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "admissibility is a property of a heuristic"
+    },
+    {
+      "source": "admissibility",
+      "target": "optimality",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "an admissible heuristic is what makes A star optimal"
+    },
+    {
+      "source": "a-star-search",
+      "target": "optimality",
+      "relation": "related-to",
+      "weight": 2.0,
+      "note": "optimality is discussed as a property of A star"
+    },
+    {
+      "source": "propositional-logic",
+      "target": "first-order-logic",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "FOL extends propositional logic"
+    },
+    {
+      "source": "propositional-logic",
+      "target": "horn-clause",
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "horn clauses are a restricted propositional form"
+    },
+    {
+      "source": "first-order-logic",
+      "target": "resolution",
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "resolution works on first order clauses"
+    },
+    {
+      "source": "horn-clause",
+      "target": "forward-chaining",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "forward chaining runs over horn clauses"
+    },
+    {
+      "source": "inference",
+      "target": "forward-chaining",
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "chaining is one inference procedure"
+    },
+    {
+      "source": "inference",
+      "target": "backward-chaining",
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "chaining is one inference procedure"
+    },
+    {
+      "source": "inference",
+      "target": "resolution",
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "resolution is an inference procedure"
+    },
+    {
+      "source": "forward-chaining",
+      "target": "backward-chaining",
+      "relation": "related-to",
+      "weight": 3.0,
+      "note": "the two directions are taught as a pair"
+    },
+    {
+      "source": "supervised-learning",
+      "target": "linear-regression",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "regression is the first supervised method taught"
+    },
+    {
+      "source": "supervised-learning",
+      "target": "overfitting",
+      "relation": "related-to",
+      "weight": 2.0,
+      "note": "overfitting is introduced with supervised models"
+    },
+    {
+      "source": "supervised-learning",
+      "target": "train-test-split",
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "held out data assumes a supervised setting"
+    },
+    {
+      "source": "supervised-learning",
+      "target": "perceptron",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "a neural network is a supervised model"
+    },
+    {
+      "source": "linear-regression",
+      "target": "principal-component-analysis",
+      "relation": "related-to",
+      "weight": 1.0,
+      "note": "both are linear methods taught in different modules"
+    },
+    {
+      "source": "overfitting",
+      "target": "regularisation",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "regularisation is the answer to overfitting"
+    },
+    {
+      "source": "overfitting",
+      "target": "bias-variance",
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "the tradeoff explains why overfitting happens"
+    },
+    {
+      "source": "overfitting",
+      "target": "training-data-bias",
+      "relation": "related-to",
+      "weight": 1.0,
+      "note": "both are faults that come from the data"
+    },
+    {
+      "source": "clustering",
+      "target": "centroid",
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "a cluster is summarised by its centroid"
+    },
+    {
+      "source": "clustering",
+      "target": "k-means",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "k means is the first clustering algorithm"
+    },
+    {
+      "source": "centroid",
+      "target": "k-means",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "k means moves centroids until they settle"
+    },
+    {
+      "source": "train-test-split",
+      "target": "cross-validation",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "cross validation generalises a single split"
+    },
+    {
+      "source": "train-test-split",
+      "target": "fairness-metric",
+      "relation": "related-to",
+      "weight": 1.0,
+      "note": "both are measured on held out data"
+    },
+    {
+      "source": "cross-validation",
+      "target": "bias-variance",
+      "relation": "related-to",
+      "weight": 2.0,
+      "note": "both are about generalisation"
+    },
+    {
+      "source": "confusion-matrix",
+      "target": "precision-recall",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "precision and recall are read off the matrix"
+    },
+    {
+      "source": "confusion-matrix",
+      "target": "roc-curve",
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "the ROC curve is built from matrix rates"
+    },
+    {
+      "source": "precision-recall",
+      "target": "roc-curve",
+      "relation": "related-to",
+      "weight": 2.0,
+      "note": "both summarise classifier behaviour"
+    },
+    {
+      "source": "limit",
+      "target": "derivative",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "a derivative is defined as a limit"
+    },
+    {
+      "source": "derivative",
+      "target": "chain-rule",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "the chain rule is a rule for derivatives"
+    },
+    {
+      "source": "derivative",
+      "target": "definite-integral",
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "integration is introduced as the inverse of differentiation"
+    },
+    {
+      "source": "derivative",
+      "target": "taylor-series",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "the series is built from repeated derivatives"
+    },
+    {
+      "source": "derivative",
+      "target": "backpropagation",
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "backpropagation is the chain rule applied to a network"
+    },
+    {
+      "source": "vector-space",
+      "target": "matrix-operations",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "matrices act on vectors"
+    },
+    {
+      "source": "matrix-operations",
+      "target": "determinant",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "the determinant is computed from the matrix"
+    },
+    {
+      "source": "determinant",
+      "target": "matrix-inverse",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "a matrix is invertible when its determinant is non zero"
+    },
+    {
+      "source": "determinant",
+      "target": "eigenvalue",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "eigenvalues come from the characteristic determinant"
+    },
+    {
+      "source": "eigenvalue",
+      "target": "principal-component-analysis",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "PCA is an eigenvalue problem"
+    },
+    {
+      "source": "differential-equation",
+      "target": "separable-equation",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "the simplest solvable form"
+    },
+    {
+      "source": "separable-equation",
+      "target": "linear-first-order",
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "the next family of first order equations"
+    },
+    {
+      "source": "linear-first-order",
+      "target": "second-order-linear",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "second order builds on first order methods"
+    },
+    {
+      "source": "second-order-linear",
+      "target": "laplace-transform",
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "transforms give another route to the same solutions"
+    },
+    {
+      "source": "variable",
+      "target": "data-type",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "every variable has a type"
+    },
+    {
+      "source": "data-type",
+      "target": "operator",
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "operators act on typed values"
+    },
+    {
+      "source": "operator",
+      "target": "conditional-statement",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "conditions are built from comparison operators"
+    },
+    {
+      "source": "conditional-statement",
+      "target": "loop",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "a loop repeats while a condition holds"
+    },
+    {
+      "source": "array",
+      "target": "array-indexing",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "elements are reached by index"
+    },
+    {
+      "source": "array",
+      "target": "c-string",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "a string is an array of characters"
+    },
+    {
+      "source": "array",
+      "target": "static-array",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "the C array is the structure studied here"
+    },
+    {
+      "source": "array-indexing",
+      "target": "multidimensional-array",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "two indices instead of one"
+    },
+    {
+      "source": "c-string",
+      "target": "string-function",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "the library functions operate on char arrays"
+    },
+    {
+      "source": "pointer",
+      "target": "pointer-arithmetic",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "arithmetic is defined on addresses"
+    },
+    {
+      "source": "pointer",
+      "target": "dynamic-memory",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "allocated memory is reached through a pointer"
+    },
+    {
+      "source": "pointer",
+      "target": "function-pointer",
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "a function also has an address"
+    },
+    {
+      "source": "pointer",
+      "target": "singly-linked-list",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "nodes are joined by pointers"
+    },
+    {
+      "source": "pointer-arithmetic",
+      "target": "pointer-to-array",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "array access is pointer arithmetic"
+    },
+    {
+      "source": "abstract-data-type",
+      "target": "static-array",
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "the array is the first concrete structure"
+    },
+    {
+      "source": "static-array",
+      "target": "singly-linked-list",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "the list fixes the array's fixed size"
+    },
+    {
+      "source": "singly-linked-list",
+      "target": "doubly-linked-list",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "a second link per node"
+    },
+    {
+      "source": "singly-linked-list",
+      "target": "circular-linked-list",
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "the tail links back to the head"
+    },
+    {
+      "source": "stack",
+      "target": "stack-application",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "applications follow the operations"
+    },
+    {
+      "source": "stack",
+      "target": "queue",
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "the two orders are taught as a pair"
+    },
+    {
+      "source": "queue",
+      "target": "circular-queue",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "the circular form reuses freed slots"
+    },
+    {
+      "source": "queue",
+      "target": "priority-queue",
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "ordering by priority instead of arrival"
+    },
+    {
+      "source": "binary-tree",
+      "target": "tree-traversal",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "traversal is defined over the tree"
+    },
+    {
+      "source": "binary-tree",
+      "target": "binary-search-tree",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "the BST adds an ordering rule"
+    },
+    {
+      "source": "tree-traversal",
+      "target": "graph-traversal",
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "traversal generalises from trees to graphs"
+    },
+    {
+      "source": "graph-representation",
+      "target": "graph-traversal",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "traversal walks the stored representation"
+    },
+    {
+      "source": "graph-traversal",
+      "target": "state-space-search",
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "search is traversal over a state graph"
+    },
+    {
+      "source": "entity",
+      "target": "attribute",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "entities are described by attributes"
+    },
+    {
+      "source": "entity",
+      "target": "relationship",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "relationships join entities"
+    },
+    {
+      "source": "relationship",
+      "target": "cardinality",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "cardinality constrains a relationship"
+    },
+    {
+      "source": "cardinality",
+      "target": "er-diagram",
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "the diagram records entities relationships and cardinality"
+    },
+    {
+      "source": "relational-model",
+      "target": "select-query",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "queries run over relations"
+    },
+    {
+      "source": "relational-model",
+      "target": "partitioning",
+      "relation": "related-to",
+      "weight": 1.0,
+      "note": "tables are partitioned across nodes"
+    },
+    {
+      "source": "select-query",
+      "target": "join",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "a join combines two selects"
+    },
+    {
+      "source": "select-query",
+      "target": "aggregate-function",
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "aggregates summarise selected rows"
+    },
+    {
+      "source": "select-query",
+      "target": "subquery",
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "a query nested inside another"
+    },
+    {
+      "source": "functional-dependency",
+      "target": "first-normal-form",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "normalisation is defined through dependencies"
+    },
+    {
+      "source": "first-normal-form",
+      "target": "second-normal-form",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "each form assumes the previous one"
+    },
+    {
+      "source": "second-normal-form",
+      "target": "third-normal-form",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "each form assumes the previous one"
+    },
+    {
+      "source": "third-normal-form",
+      "target": "boyce-codd-normal-form",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "BCNF is a stricter 3NF"
+    },
+    {
+      "source": "perceptron",
+      "target": "activation-function",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "the unit needs a non linearity"
+    },
+    {
+      "source": "activation-function",
+      "target": "feedforward-network",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "layers of activated units"
+    },
+    {
+      "source": "feedforward-network",
+      "target": "loss-function",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "the network's output is scored"
+    },
+    {
+      "source": "loss-function",
+      "target": "backpropagation",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "gradients of the loss train the weights"
+    },
+    {
+      "source": "backpropagation",
+      "target": "convolution",
+      "relation": "prerequisite",
+      "weight": 1.0,
+      "note": "convolutional layers are trained the same way"
+    },
+    {
+      "source": "convolution",
+      "target": "filter-kernel",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "the kernel is what convolves"
+    },
+    {
+      "source": "filter-kernel",
+      "target": "pooling",
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "pooling follows the convolution layer"
+    },
+    {
+      "source": "pooling",
+      "target": "cnn-architecture",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "the stack of layers forms the architecture"
+    },
+    {
+      "source": "cnn-architecture",
+      "target": "transfer-learning",
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "a trained architecture is reused"
+    },
+    {
+      "source": "sequence-data",
+      "target": "recurrent-network",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "recurrence handles ordered input"
+    },
+    {
+      "source": "recurrent-network",
+      "target": "lstm",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "LSTM fixes the vanishing gradient"
+    },
+    {
+      "source": "lstm",
+      "target": "attention-mechanism",
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "attention replaces carrying state along"
+    },
+    {
+      "source": "attention-mechanism",
+      "target": "transformer",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "the transformer is built from attention"
+    },
+    {
+      "source": "transformer",
+      "target": "pretrained-language-model",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "modern language models are transformers"
+    },
+    {
+      "source": "tokenization",
+      "target": "stopword-removal",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "stopwords are removed from tokens"
+    },
+    {
+      "source": "tokenization",
+      "target": "bag-of-words",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "counts are taken over tokens"
+    },
+    {
+      "source": "stopword-removal",
+      "target": "stemming",
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "the remaining tokens are reduced"
+    },
+    {
+      "source": "stemming",
+      "target": "lemmatization",
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "lemmatisation is the dictionary aware version"
+    },
+    {
+      "source": "bag-of-words",
+      "target": "text-classification",
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "the first classifiers run on bag of words"
+    },
+    {
+      "source": "n-gram-model",
+      "target": "word-embedding",
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "embeddings replace sparse counts"
+    },
+    {
+      "source": "word-embedding",
+      "target": "word2vec",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "word2vec is the first embedding method taught"
+    },
+    {
+      "source": "word2vec",
+      "target": "contextual-embedding",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "context dependent vectors follow static ones"
+    },
+    {
+      "source": "contextual-embedding",
+      "target": "pretrained-language-model",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "the model that produces the vectors"
+    },
+    {
+      "source": "text-classification",
+      "target": "named-entity-recognition",
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "tagging follows whole document labelling"
+    },
+    {
+      "source": "named-entity-recognition",
+      "target": "machine-translation",
+      "relation": "prerequisite",
+      "weight": 1.0,
+      "note": "sequence to sequence tasks build on tagging"
+    },
+    {
+      "source": "machine-translation",
+      "target": "question-answering",
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "both generate text conditioned on input"
+    },
+    {
+      "source": "question-answering",
+      "target": "text-summarisation",
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "both select and rewrite source content"
+    },
+    {
+      "source": "distributed-file-system",
+      "target": "hdfs",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "HDFS is the worked example"
+    },
+    {
+      "source": "hdfs",
+      "target": "data-replication",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "blocks are replicated across nodes"
+    },
+    {
+      "source": "data-replication",
+      "target": "partitioning",
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "data is split as well as copied"
+    },
+    {
+      "source": "partitioning",
+      "target": "cap-theorem",
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "the trade off the design faces"
+    },
+    {
+      "source": "mapreduce",
+      "target": "mapper-reducer",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "the two halves of the model"
+    },
+    {
+      "source": "mapreduce",
+      "target": "spark-rdd",
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "Spark generalises the model"
+    },
+    {
+      "source": "mapper-reducer",
+      "target": "shuffle-sort",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "the stage between map and reduce"
+    },
+    {
+      "source": "spark-rdd",
+      "target": "spark-dataframe",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "the typed API over RDDs"
+    },
+    {
+      "source": "streaming-data",
+      "target": "event-time",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "records carry the time they happened"
+    },
+    {
+      "source": "streaming-data",
+      "target": "message-queue",
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "the stream arrives through a broker"
+    },
+    {
+      "source": "event-time",
+      "target": "windowing",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "windows are cut on event time"
+    },
+    {
+      "source": "message-queue",
+      "target": "stream-processing",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "the engine consumes from the queue"
+    },
+    {
+      "source": "algorithmic-bias",
+      "target": "training-data-bias",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "most bias enters through the data"
+    },
+    {
+      "source": "training-data-bias",
+      "target": "fairness-metric",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "metrics are needed to measure it"
+    },
+    {
+      "source": "fairness-metric",
+      "target": "disparate-impact",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "one such measure"
+    },
+    {
+      "source": "fairness-metric",
+      "target": "bias-mitigation",
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "you mitigate against a measure"
+    },
+    {
+      "source": "personal-data",
+      "target": "consent",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "consent governs personal data"
+    },
+    {
+      "source": "personal-data",
+      "target": "anonymisation",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "anonymisation is applied to personal data"
+    },
+    {
+      "source": "consent",
+      "target": "data-minimisation",
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "collect only what consent covers"
+    },
+    {
+      "source": "anonymisation",
+      "target": "differential-privacy",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "a formal guarantee where anonymisation is weak"
+    },
+    {
+      "source": "ai-regulation",
+      "target": "model-documentation",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "regulation asks for documentation"
+    },
+    {
+      "source": "ai-regulation",
+      "target": "risk-assessment",
+      "relation": "prerequisite",
+      "weight": 2.0,
+      "note": "risk tiers drive the obligations"
+    },
+    {
+      "source": "model-documentation",
+      "target": "auditability",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "documentation is what makes an audit possible"
+    },
+    {
+      "source": "auditability",
+      "target": "accountability",
+      "relation": "prerequisite",
+      "weight": 3.0,
+      "note": "audits are how accountability is enforced"
+    }
+  ]
+}
