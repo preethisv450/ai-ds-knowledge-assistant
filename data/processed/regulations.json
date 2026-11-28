@@ -1,0 +1,50 @@
+{
+  "source_file": "Academic_Regulations.pdf",
+  "sections": [
+    {
+      "number": null,
+      "title": "Attendance",
+      "topic": "attendance",
+      "first_page": 1,
+      "last_page": 1,
+      "text": "A student must have at least 75 percent attendance in each subject to appear in the end-semester examination. A student with attendance between 65 and 75 percent may apply for condonation on medical grounds and must pay a condonation fee of Rs. 500 per subject. A student with attendance below 65 percent is detained and must repeat the semester.",
+      "word_count": 59
+    },
+    {
+      "number": null,
+      "title": "Assessment",
+      "topic": "evaluation",
+      "first_page": 1,
+      "last_page": 1,
+      "text": "Every subject has 40 marks of internal assessment and 60 marks of end-semester examination. To pass a subject a student must score at least 40 percent in the end-semester examination and at least 50 percent in total. SAMPLE DATA for testing - not real course material | page 1",
+      "word_count": 49
+    },
+    {
+      "number": null,
+      "title": "Grading",
+      "topic": "grading",
+      "first_page": 2,
+      "last_page": 2,
+      "text": "Marks are converted to letter grades: O for 90 and above, A+ for 80 to 89, A for 70 to 79, B+ for 60 to 69, B for 50 to 59 and F below 50. The CGPA is the sum of credits times grade points divided by the sum of credits.",
+      "word_count": 51
+    },
+    {
+      "number": null,
+      "title": "Re-evaluation",
+      "topic": "evaluation",
+      "first_page": 2,
+      "last_page": 2,
+      "text": "A student may apply for re-evaluation within 7 days of the result being published, with a fee of Rs. 1000 per paper. The better of the two scores is kept.",
+      "word_count": 30
+    },
+    {
+      "number": null,
+      "title": "Backlogs",
+      "topic": "examination",
+      "first_page": 2,
+      "last_page": 2,
+      "text": "A student who fails a subject may appear in the supplementary examination. The maximum duration to complete the 8-semester programme is 6 years. SAMPLE DATA for testing - not real course material | page 2",
+      "word_count": 35
+    }
+  ]
+}

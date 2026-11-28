@@ -22,3 +22,13 @@ Env override: `ANSWER_MIN_SCORE=0.15 python scripts/evaluate.py ...`.
 
 ## Caveat
 The sample PDFs are three short pages each, so 100% on 30 questions is a good sign, not proof. Re-run on the real documents when they are added.
+
+## Re-run after extending the regulation questions (D8 catch-up)
+
+The set was 23 syllabus and 7 regulation; the plan called for 15 regulation, so
+eight more were added from the Academic Regulations PDF (ids 31-38), taking the
+set to 38 questions: 35 answerable, 3 unanswerable.
+
+| Run | Questions | Accuracy | Cited expected page | Failures |
+|---|---|---|---|---|
+| 3 | 38 | TODO | TODO | TODO |

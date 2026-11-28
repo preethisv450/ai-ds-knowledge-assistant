@@ -29,3 +29,11 @@ id,question,mode,subject_code,module_id,expected_keywords,expected_doc,expected_
 28,What is the condonation fee for attendance between 65 and 75 percent?,Regulation,,,500,Academic_Regulations.pdf,1,yes
 29,What marks are needed to pass a subject?,Regulation,,,40|50,Academic_Regulations.pdf,1,yes
 30,What is the maximum duration to complete the programme?,Regulation,,,6 years,Academic_Regulations.pdf,2,yes
+31,What happens to a student whose attendance is below 65 percent?,Regulation,,,detained|repeat,Academic_Regulations.pdf,1,yes
+32,How many marks are internal assessment and how many are the end-semester examination?,Regulation,,,40|60,Academic_Regulations.pdf,1,yes
+33,What is the minimum percentage required in the end-semester examination to pass?,Regulation,,,40,Academic_Regulations.pdf,1,yes
+34,Which grade is awarded for 95 marks?,Regulation,,,O,Academic_Regulations.pdf,2,yes
+35,Which marks range is graded B?,Regulation,,,50|59,Academic_Regulations.pdf,2,yes
+36,How is the CGPA calculated?,Regulation,,,credits|grade points,Academic_Regulations.pdf,2,yes
+37,Within how many days must a student apply for re-evaluation?,Regulation,,,7,Academic_Regulations.pdf,2,yes
+38,Which score is kept after re-evaluation?,Regulation,,,better,Academic_Regulations.pdf,2,yes
